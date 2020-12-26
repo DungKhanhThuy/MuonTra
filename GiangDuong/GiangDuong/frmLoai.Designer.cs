@@ -179,6 +179,7 @@
             this.dataGridViewLoai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewLoai.Location = new System.Drawing.Point(3, 229);
             this.dataGridViewLoai.Name = "dataGridViewLoai";
+            this.dataGridViewLoai.ReadOnly = true;
             this.dataGridViewLoai.RowHeadersWidth = 51;
             this.dataGridViewLoai.RowTemplate.Height = 24;
             this.dataGridViewLoai.Size = new System.Drawing.Size(1020, 363);

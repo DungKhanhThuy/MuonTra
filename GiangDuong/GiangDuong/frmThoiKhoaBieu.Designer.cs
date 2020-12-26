@@ -44,6 +44,8 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewTKB = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dateTimePickerNgayKetThuc = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerNgayBatDau = new System.Windows.Forms.DateTimePicker();
             this.textMaPhong = new System.Windows.Forms.TextBox();
             this.textBuoi = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -59,8 +61,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePickerNgayBatDau = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerNgayKetThuc = new System.Windows.Forms.DateTimePicker();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTKB)).BeginInit();
@@ -187,6 +187,7 @@
             this.dataGridViewTKB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTKB.Location = new System.Drawing.Point(3, 262);
             this.dataGridViewTKB.Name = "dataGridViewTKB";
+            this.dataGridViewTKB.ReadOnly = true;
             this.dataGridViewTKB.RowHeadersWidth = 51;
             this.dataGridViewTKB.RowTemplate.Height = 24;
             this.dataGridViewTKB.Size = new System.Drawing.Size(1020, 330);
@@ -216,6 +217,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(690, 253);
             this.panel1.TabIndex = 1;
+            // 
+            // dateTimePickerNgayKetThuc
+            // 
+            this.dateTimePickerNgayKetThuc.Location = new System.Drawing.Point(470, 79);
+            this.dateTimePickerNgayKetThuc.Name = "dateTimePickerNgayKetThuc";
+            this.dateTimePickerNgayKetThuc.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerNgayKetThuc.TabIndex = 18;
+            // 
+            // dateTimePickerNgayBatDau
+            // 
+            this.dateTimePickerNgayBatDau.Location = new System.Drawing.Point(145, 79);
+            this.dateTimePickerNgayBatDau.Name = "dateTimePickerNgayBatDau";
+            this.dateTimePickerNgayBatDau.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerNgayBatDau.TabIndex = 17;
             // 
             // textMaPhong
             // 
@@ -344,20 +359,6 @@
             this.label1.Size = new System.Drawing.Size(56, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên lớp";
-            // 
-            // dateTimePickerNgayBatDau
-            // 
-            this.dateTimePickerNgayBatDau.Location = new System.Drawing.Point(145, 79);
-            this.dateTimePickerNgayBatDau.Name = "dateTimePickerNgayBatDau";
-            this.dateTimePickerNgayBatDau.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePickerNgayBatDau.TabIndex = 17;
-            // 
-            // dateTimePickerNgayKetThuc
-            // 
-            this.dateTimePickerNgayKetThuc.Location = new System.Drawing.Point(470, 79);
-            this.dateTimePickerNgayKetThuc.Name = "dateTimePickerNgayKetThuc";
-            this.dateTimePickerNgayKetThuc.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePickerNgayKetThuc.TabIndex = 18;
             // 
             // frmThoiKhoaBieu
             // 

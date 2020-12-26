@@ -177,6 +177,7 @@
             this.dataGridViewPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPhong.Location = new System.Drawing.Point(3, 229);
             this.dataGridViewPhong.Name = "dataGridViewPhong";
+            this.dataGridViewPhong.ReadOnly = true;
             this.dataGridViewPhong.RowHeadersWidth = 51;
             this.dataGridViewPhong.RowTemplate.Height = 24;
             this.dataGridViewPhong.Size = new System.Drawing.Size(1020, 363);

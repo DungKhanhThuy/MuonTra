@@ -44,6 +44,10 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewLichSu = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.richTextBoxNoiDung = new System.Windows.Forms.RichTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dateTimePickerThoiGian = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
             this.buttonHuy = new System.Windows.Forms.Button();
             this.buttonLuu = new System.Windows.Forms.Button();
             this.buttonXoa = new System.Windows.Forms.Button();
@@ -53,10 +57,6 @@
             this.textMaYC = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePickerThoiGian = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.richTextBoxNoiDung = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLichSu)).BeginInit();
@@ -101,49 +101,49 @@
             // lịchSửToolStripMenuItem
             // 
             this.lịchSửToolStripMenuItem.Name = "lịchSửToolStripMenuItem";
-            this.lịchSửToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.lịchSửToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.lịchSửToolStripMenuItem.Text = "Lịch sử";
             // 
             // thờiKhoáBiểuToolStripMenuItem
             // 
             this.thờiKhoáBiểuToolStripMenuItem.Name = "thờiKhoáBiểuToolStripMenuItem";
-            this.thờiKhoáBiểuToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.thờiKhoáBiểuToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.thờiKhoáBiểuToolStripMenuItem.Text = "Thời khoá biểu";
             // 
             // thiếtBịToolStripMenuItem
             // 
             this.thiếtBịToolStripMenuItem.Name = "thiếtBịToolStripMenuItem";
-            this.thiếtBịToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.thiếtBịToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.thiếtBịToolStripMenuItem.Text = "Thiết bị";
             // 
             // nhânViênToolStripMenuItem
             // 
             this.nhânViênToolStripMenuItem.Name = "nhânViênToolStripMenuItem";
-            this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.nhânViênToolStripMenuItem.Text = "Nhân viên";
             // 
             // họcViênToolStripMenuItem
             // 
             this.họcViênToolStripMenuItem.Name = "họcViênToolStripMenuItem";
-            this.họcViênToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.họcViênToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.họcViênToolStripMenuItem.Text = "Học viên";
             // 
             // phòngToolStripMenuItem
             // 
             this.phòngToolStripMenuItem.Name = "phòngToolStripMenuItem";
-            this.phòngToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.phòngToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.phòngToolStripMenuItem.Text = "Phòng";
             // 
             // lớpToolStripMenuItem
             // 
             this.lớpToolStripMenuItem.Name = "lớpToolStripMenuItem";
-            this.lớpToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.lớpToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.lớpToolStripMenuItem.Text = "Lớp";
             // 
             // loạiToolStripMenuItem
             // 
             this.loạiToolStripMenuItem.Name = "loạiToolStripMenuItem";
-            this.loạiToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.loạiToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.loạiToolStripMenuItem.Text = "Loại";
             // 
             // giaoBanToolStripMenuItem
@@ -183,6 +183,7 @@
             this.dataGridViewLichSu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewLichSu.Location = new System.Drawing.Point(3, 229);
             this.dataGridViewLichSu.Name = "dataGridViewLichSu";
+            this.dataGridViewLichSu.ReadOnly = true;
             this.dataGridViewLichSu.RowHeadersWidth = 51;
             this.dataGridViewLichSu.RowTemplate.Height = 24;
             this.dataGridViewLichSu.Size = new System.Drawing.Size(1020, 363);
@@ -208,6 +209,39 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(818, 220);
             this.panel1.TabIndex = 1;
+            // 
+            // richTextBoxNoiDung
+            // 
+            this.richTextBoxNoiDung.Location = new System.Drawing.Point(125, 72);
+            this.richTextBoxNoiDung.Name = "richTextBoxNoiDung";
+            this.richTextBoxNoiDung.Size = new System.Drawing.Size(687, 73);
+            this.richTextBoxNoiDung.TabIndex = 17;
+            this.richTextBoxNoiDung.Text = "";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(27, 88);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 17);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Nội dung";
+            // 
+            // dateTimePickerThoiGian
+            // 
+            this.dateTimePickerThoiGian.Location = new System.Drawing.Point(612, 28);
+            this.dateTimePickerThoiGian.Name = "dateTimePickerThoiGian";
+            this.dateTimePickerThoiGian.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerThoiGian.TabIndex = 14;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(536, 31);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 17);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Thời gian";
             // 
             // buttonHuy
             // 
@@ -286,39 +320,6 @@
             this.label1.Size = new System.Drawing.Size(81, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã yêu cầu";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(536, 31);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 17);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Thời gian";
-            // 
-            // dateTimePickerThoiGian
-            // 
-            this.dateTimePickerThoiGian.Location = new System.Drawing.Point(612, 28);
-            this.dateTimePickerThoiGian.Name = "dateTimePickerThoiGian";
-            this.dateTimePickerThoiGian.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePickerThoiGian.TabIndex = 14;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 88);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 17);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Nội dung";
-            // 
-            // richTextBoxNoiDung
-            // 
-            this.richTextBoxNoiDung.Location = new System.Drawing.Point(125, 72);
-            this.richTextBoxNoiDung.Name = "richTextBoxNoiDung";
-            this.richTextBoxNoiDung.Size = new System.Drawing.Size(687, 73);
-            this.richTextBoxNoiDung.TabIndex = 17;
-            this.richTextBoxNoiDung.Text = "";
             // 
             // frmLichSu
             // 

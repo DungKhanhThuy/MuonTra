@@ -179,6 +179,7 @@
             this.dataGridViewLop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewLop.Location = new System.Drawing.Point(3, 229);
             this.dataGridViewLop.Name = "dataGridViewLop";
+            this.dataGridViewLop.ReadOnly = true;
             this.dataGridViewLop.RowHeadersWidth = 51;
             this.dataGridViewLop.RowTemplate.Height = 24;
             this.dataGridViewLop.Size = new System.Drawing.Size(1020, 363);
