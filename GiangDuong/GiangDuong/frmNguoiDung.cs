@@ -10,13 +10,12 @@ using System.Windows.Forms;
 
 namespace GiangDuong
 {
-    public partial class frmGiaoBan : Form
+    public partial class frmNguoiDung : Form
     {
-        public frmGiaoBan()
+        public frmNguoiDung()
         {
             InitializeComponent();
         }
-
         private void mượnTrảToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmMuonTra hd = new frmMuonTra();

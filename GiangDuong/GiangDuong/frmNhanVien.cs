@@ -92,5 +92,12 @@ namespace GiangDuong
             hd.Show();
             Hide();
         }
+
+        private void ngườiDùngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmNguoiDung hd = new frmNguoiDung();
+            hd.Show();
+            Hide();
+        }
     }
 }
