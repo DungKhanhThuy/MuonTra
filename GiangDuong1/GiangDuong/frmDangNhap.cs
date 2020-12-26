@@ -23,8 +23,8 @@ namespace GiangDuong
             if (dn.DangNhapHT(txtUserName.Text, txtPass.Text) == true)
             {
                 MessageBox.Show("Bạn đăng nhập thành công ^^", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                frmMuonTra MuonTra = new frmMuonTra();
-                MuonTra.Show();
+                Form1 frm1 = new Form1();
+                frm1.Show();
                 Hide();
             }
             else MessageBox.Show("Tên đăng nhập hoặc mật khẩu sai. Mời bạn nhập lại !!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
