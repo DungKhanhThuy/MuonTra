@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassLoai.cs" />
+    <Compile Include="ClassLop.cs" />
     <Compile Include="ConnectDB.cs" />
     <Compile Include="DangNhap.cs" />
     <Compile Include="Form1.cs">

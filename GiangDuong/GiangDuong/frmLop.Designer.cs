@@ -193,9 +193,7 @@
             // 
             // dataGridViewLop
             // 
-            this.dataGridViewLop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewLop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dataGridViewLop.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewLop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewLop.Location = new System.Drawing.Point(3, 229);
@@ -205,6 +203,7 @@
             this.dataGridViewLop.RowTemplate.Height = 24;
             this.dataGridViewLop.Size = new System.Drawing.Size(1020, 363);
             this.dataGridViewLop.TabIndex = 1;
+            this.dataGridViewLop.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHocVien_CellClick);
             // 
             // panel1
             // 
@@ -225,15 +224,15 @@
             // 
             // textTenLop
             // 
-            this.textTenLop.Location = new System.Drawing.Point(440, 75);
+            this.textTenLop.Location = new System.Drawing.Point(387, 75);
             this.textTenLop.Name = "textTenLop";
-            this.textTenLop.Size = new System.Drawing.Size(100, 22);
+            this.textTenLop.Size = new System.Drawing.Size(170, 22);
             this.textTenLop.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(325, 78);
+            this.label1.Location = new System.Drawing.Point(309, 78);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 17);
             this.label1.TabIndex = 7;
@@ -247,6 +246,7 @@
             this.buttonHuy.TabIndex = 6;
             this.buttonHuy.Text = "Huỷ";
             this.buttonHuy.UseVisualStyleBackColor = true;
+            this.buttonHuy.Click += new System.EventHandler(this.buttonHuy_Click);
             // 
             // buttonLuu
             // 
@@ -256,6 +256,7 @@
             this.buttonLuu.TabIndex = 5;
             this.buttonLuu.Text = "Lưu";
             this.buttonLuu.UseVisualStyleBackColor = true;
+            this.buttonLuu.Click += new System.EventHandler(this.buttonLuu_Click);
             // 
             // buttonXoa
             // 
@@ -265,6 +266,7 @@
             this.buttonXoa.TabIndex = 2;
             this.buttonXoa.Text = "Xoá";
             this.buttonXoa.UseVisualStyleBackColor = true;
+            this.buttonXoa.Click += new System.EventHandler(this.buttonXoa_Click);
             // 
             // buttonSua
             // 
@@ -274,6 +276,7 @@
             this.buttonSua.TabIndex = 1;
             this.buttonSua.Text = "Sửa";
             this.buttonSua.UseVisualStyleBackColor = true;
+            this.buttonSua.Click += new System.EventHandler(this.buttonSua_Click);
             // 
             // buttonThem
             // 
@@ -283,6 +286,7 @@
             this.buttonThem.TabIndex = 0;
             this.buttonThem.Text = "Thêm";
             this.buttonThem.UseVisualStyleBackColor = true;
+            this.buttonThem.Click += new System.EventHandler(this.buttonThem_Click);
             // 
             // textMaLop
             // 
@@ -312,6 +316,7 @@
             this.Name = "frmLop";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin Lớp học";
+            this.Load += new System.EventHandler(this.frmLop_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
