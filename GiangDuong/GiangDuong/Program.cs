@@ -16,7 +16,7 @@ namespace GiangDuong
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmHocVien());
+            Application.Run(new frmDangNhap());
         }
     }
 }

@@ -41,6 +41,7 @@
             this.loạiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.giaoBanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sựCốToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ngườiDùngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewThietBi = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -61,7 +62,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.ngườiDùngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewThietBi)).BeginInit();
@@ -175,6 +175,13 @@
             this.sựCốToolStripMenuItem.Text = "Sự cố";
             this.sựCốToolStripMenuItem.Click += new System.EventHandler(this.sựCốToolStripMenuItem_Click);
             // 
+            // ngườiDùngToolStripMenuItem
+            // 
+            this.ngườiDùngToolStripMenuItem.Name = "ngườiDùngToolStripMenuItem";
+            this.ngườiDùngToolStripMenuItem.Size = new System.Drawing.Size(103, 24);
+            this.ngườiDùngToolStripMenuItem.Text = "Người dùng";
+            this.ngườiDùngToolStripMenuItem.Click += new System.EventHandler(this.ngườiDùngToolStripMenuItem_Click);
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -204,7 +211,7 @@
             this.dataGridViewThietBi.RowHeadersWidth = 51;
             this.dataGridViewThietBi.RowTemplate.Height = 24;
             this.dataGridViewThietBi.Size = new System.Drawing.Size(1020, 330);
-            this.dataGridViewThietBi.TabIndex = 0;
+            this.dataGridViewThietBi.TabIndex = 1;
             // 
             // panel1
             // 
@@ -229,21 +236,21 @@
             this.panel1.Location = new System.Drawing.Point(220, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(586, 253);
-            this.panel1.TabIndex = 1;
+            this.panel1.TabIndex = 0;
             // 
             // textMaPhong
             // 
             this.textMaPhong.Location = new System.Drawing.Point(431, 136);
             this.textMaPhong.Name = "textMaPhong";
             this.textMaPhong.Size = new System.Drawing.Size(100, 22);
-            this.textMaPhong.TabIndex = 16;
+            this.textMaPhong.TabIndex = 8;
             // 
             // textTinhTrang
             // 
             this.textTinhTrang.Location = new System.Drawing.Point(145, 136);
             this.textTinhTrang.Name = "textTinhTrang";
             this.textTinhTrang.Size = new System.Drawing.Size(100, 22);
-            this.textTinhTrang.TabIndex = 15;
+            this.textTinhTrang.TabIndex = 7;
             // 
             // label5
             // 
@@ -268,7 +275,7 @@
             this.buttonHuy.Location = new System.Drawing.Point(460, 189);
             this.buttonHuy.Name = "buttonHuy";
             this.buttonHuy.Size = new System.Drawing.Size(71, 48);
-            this.buttonHuy.TabIndex = 12;
+            this.buttonHuy.TabIndex = 10;
             this.buttonHuy.Text = "Huỷ";
             this.buttonHuy.UseVisualStyleBackColor = true;
             // 
@@ -277,7 +284,7 @@
             this.buttonLuu.Location = new System.Drawing.Point(355, 189);
             this.buttonLuu.Name = "buttonLuu";
             this.buttonLuu.Size = new System.Drawing.Size(71, 48);
-            this.buttonLuu.TabIndex = 11;
+            this.buttonLuu.TabIndex = 9;
             this.buttonLuu.Text = "Lưu";
             this.buttonLuu.UseVisualStyleBackColor = true;
             // 
@@ -286,7 +293,7 @@
             this.buttonXoa.Location = new System.Drawing.Point(250, 189);
             this.buttonXoa.Name = "buttonXoa";
             this.buttonXoa.Size = new System.Drawing.Size(71, 48);
-            this.buttonXoa.TabIndex = 10;
+            this.buttonXoa.TabIndex = 2;
             this.buttonXoa.Text = "Xoá";
             this.buttonXoa.UseVisualStyleBackColor = true;
             // 
@@ -295,7 +302,7 @@
             this.buttonSua.Location = new System.Drawing.Point(145, 189);
             this.buttonSua.Name = "buttonSua";
             this.buttonSua.Size = new System.Drawing.Size(71, 48);
-            this.buttonSua.TabIndex = 9;
+            this.buttonSua.TabIndex = 1;
             this.buttonSua.Text = "Sửa";
             this.buttonSua.UseVisualStyleBackColor = true;
             // 
@@ -304,7 +311,7 @@
             this.buttonThem.Location = new System.Drawing.Point(40, 189);
             this.buttonThem.Name = "buttonThem";
             this.buttonThem.Size = new System.Drawing.Size(71, 48);
-            this.buttonThem.TabIndex = 8;
+            this.buttonThem.TabIndex = 0;
             this.buttonThem.Text = "Thêm";
             this.buttonThem.UseVisualStyleBackColor = true;
             // 
@@ -313,21 +320,21 @@
             this.textMaLoai.Location = new System.Drawing.Point(431, 78);
             this.textMaLoai.Name = "textMaLoai";
             this.textMaLoai.Size = new System.Drawing.Size(100, 22);
-            this.textMaLoai.TabIndex = 7;
+            this.textMaLoai.TabIndex = 6;
             // 
             // textTenLoai
             // 
             this.textTenLoai.Location = new System.Drawing.Point(145, 78);
             this.textTenLoai.Name = "textTenLoai";
             this.textTenLoai.Size = new System.Drawing.Size(100, 22);
-            this.textTenLoai.TabIndex = 6;
+            this.textTenLoai.TabIndex = 5;
             // 
             // textMaTB
             // 
             this.textMaTB.Location = new System.Drawing.Point(431, 20);
             this.textMaTB.Name = "textMaTB";
             this.textMaTB.Size = new System.Drawing.Size(100, 22);
-            this.textMaTB.TabIndex = 5;
+            this.textMaTB.TabIndex = 4;
             this.textMaTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textTenTB
@@ -335,7 +342,7 @@
             this.textTenTB.Location = new System.Drawing.Point(145, 20);
             this.textTenTB.Name = "textTenTB";
             this.textTenTB.Size = new System.Drawing.Size(100, 22);
-            this.textTenTB.TabIndex = 4;
+            this.textTenTB.TabIndex = 3;
             // 
             // label4
             // 
@@ -372,13 +379,6 @@
             this.label1.Size = new System.Drawing.Size(79, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên thiết bị";
-            // 
-            // ngườiDùngToolStripMenuItem
-            // 
-            this.ngườiDùngToolStripMenuItem.Name = "ngườiDùngToolStripMenuItem";
-            this.ngườiDùngToolStripMenuItem.Size = new System.Drawing.Size(103, 24);
-            this.ngườiDùngToolStripMenuItem.Text = "Người dùng";
-            this.ngườiDùngToolStripMenuItem.Click += new System.EventHandler(this.ngườiDùngToolStripMenuItem_Click);
             // 
             // frmThietBi
             // 

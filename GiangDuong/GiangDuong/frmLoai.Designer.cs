@@ -203,7 +203,7 @@
             this.dataGridViewNguoiDung.RowHeadersWidth = 51;
             this.dataGridViewNguoiDung.RowTemplate.Height = 24;
             this.dataGridViewNguoiDung.Size = new System.Drawing.Size(1020, 363);
-            this.dataGridViewNguoiDung.TabIndex = 0;
+            this.dataGridViewNguoiDung.TabIndex = 1;
             // 
             // panel1
             // 
@@ -220,14 +220,14 @@
             this.panel1.Location = new System.Drawing.Point(220, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(586, 220);
-            this.panel1.TabIndex = 1;
+            this.panel1.TabIndex = 0;
             // 
             // buttonHuy
             // 
             this.buttonHuy.Location = new System.Drawing.Point(469, 151);
             this.buttonHuy.Name = "buttonHuy";
             this.buttonHuy.Size = new System.Drawing.Size(71, 48);
-            this.buttonHuy.TabIndex = 12;
+            this.buttonHuy.TabIndex = 6;
             this.buttonHuy.Text = "Huỷ";
             this.buttonHuy.UseVisualStyleBackColor = true;
             // 
@@ -236,7 +236,7 @@
             this.buttonLuu.Location = new System.Drawing.Point(364, 151);
             this.buttonLuu.Name = "buttonLuu";
             this.buttonLuu.Size = new System.Drawing.Size(71, 48);
-            this.buttonLuu.TabIndex = 11;
+            this.buttonLuu.TabIndex = 5;
             this.buttonLuu.Text = "Lưu";
             this.buttonLuu.UseVisualStyleBackColor = true;
             // 
@@ -245,7 +245,7 @@
             this.buttonXoa.Location = new System.Drawing.Point(259, 151);
             this.buttonXoa.Name = "buttonXoa";
             this.buttonXoa.Size = new System.Drawing.Size(71, 48);
-            this.buttonXoa.TabIndex = 10;
+            this.buttonXoa.TabIndex = 2;
             this.buttonXoa.Text = "Xoá";
             this.buttonXoa.UseVisualStyleBackColor = true;
             // 
@@ -254,7 +254,7 @@
             this.buttonSua.Location = new System.Drawing.Point(154, 151);
             this.buttonSua.Name = "buttonSua";
             this.buttonSua.Size = new System.Drawing.Size(71, 48);
-            this.buttonSua.TabIndex = 9;
+            this.buttonSua.TabIndex = 1;
             this.buttonSua.Text = "Sửa";
             this.buttonSua.UseVisualStyleBackColor = true;
             // 
@@ -263,7 +263,7 @@
             this.buttonThem.Location = new System.Drawing.Point(49, 151);
             this.buttonThem.Name = "buttonThem";
             this.buttonThem.Size = new System.Drawing.Size(71, 48);
-            this.buttonThem.TabIndex = 8;
+            this.buttonThem.TabIndex = 0;
             this.buttonThem.Text = "Thêm";
             this.buttonThem.UseVisualStyleBackColor = true;
             // 
@@ -272,7 +272,7 @@
             this.textMaLoai.Location = new System.Drawing.Point(440, 70);
             this.textMaLoai.Name = "textMaLoai";
             this.textMaLoai.Size = new System.Drawing.Size(100, 22);
-            this.textMaLoai.TabIndex = 5;
+            this.textMaLoai.TabIndex = 4;
             this.textMaLoai.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textTenLoai
@@ -280,7 +280,7 @@
             this.textTenLoai.Location = new System.Drawing.Point(154, 70);
             this.textTenLoai.Name = "textTenLoai";
             this.textTenLoai.Size = new System.Drawing.Size(100, 22);
-            this.textTenLoai.TabIndex = 4;
+            this.textTenLoai.TabIndex = 3;
             // 
             // label2
             // 
