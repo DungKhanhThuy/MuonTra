@@ -211,7 +211,7 @@
             this.dataGridViewHocVien.RowHeadersWidth = 51;
             this.dataGridViewHocVien.RowTemplate.Height = 24;
             this.dataGridViewHocVien.Size = new System.Drawing.Size(1020, 324);
-            this.dataGridViewHocVien.TabIndex = 0;
+            this.dataGridViewHocVien.TabIndex = 1;
             this.dataGridViewHocVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHocVien_CellClick);
             // 
             // panel1
@@ -237,21 +237,21 @@
             this.panel1.Location = new System.Drawing.Point(220, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(586, 259);
-            this.panel1.TabIndex = 1;
+            this.panel1.TabIndex = 0;
             // 
             // textDonVi
             // 
             this.textDonVi.Location = new System.Drawing.Point(409, 143);
             this.textDonVi.Name = "textDonVi";
             this.textDonVi.Size = new System.Drawing.Size(154, 22);
-            this.textDonVi.TabIndex = 16;
+            this.textDonVi.TabIndex = 8;
             // 
             // textSDT
             // 
             this.textSDT.Location = new System.Drawing.Point(142, 143);
             this.textSDT.Name = "textSDT";
             this.textSDT.Size = new System.Drawing.Size(100, 22);
-            this.textSDT.TabIndex = 15;
+            this.textSDT.TabIndex = 7;
             // 
             // label5
             // 
@@ -276,7 +276,7 @@
             this.buttonHuy.Location = new System.Drawing.Point(457, 199);
             this.buttonHuy.Name = "buttonHuy";
             this.buttonHuy.Size = new System.Drawing.Size(71, 48);
-            this.buttonHuy.TabIndex = 12;
+            this.buttonHuy.TabIndex = 10;
             this.buttonHuy.Text = "Huỷ";
             this.buttonHuy.UseVisualStyleBackColor = true;
             this.buttonHuy.Click += new System.EventHandler(this.buttonHuy_Click);
@@ -286,7 +286,7 @@
             this.buttonLuu.Location = new System.Drawing.Point(352, 199);
             this.buttonLuu.Name = "buttonLuu";
             this.buttonLuu.Size = new System.Drawing.Size(71, 48);
-            this.buttonLuu.TabIndex = 11;
+            this.buttonLuu.TabIndex = 9;
             this.buttonLuu.Text = "Lưu";
             this.buttonLuu.UseVisualStyleBackColor = true;
             this.buttonLuu.Click += new System.EventHandler(this.buttonLuu_Click);
@@ -296,7 +296,7 @@
             this.buttonXoa.Location = new System.Drawing.Point(247, 199);
             this.buttonXoa.Name = "buttonXoa";
             this.buttonXoa.Size = new System.Drawing.Size(71, 48);
-            this.buttonXoa.TabIndex = 10;
+            this.buttonXoa.TabIndex = 2;
             this.buttonXoa.Text = "Xoá";
             this.buttonXoa.UseVisualStyleBackColor = true;
             this.buttonXoa.Click += new System.EventHandler(this.buttonXoa_Click);
@@ -306,7 +306,7 @@
             this.buttonSua.Location = new System.Drawing.Point(142, 199);
             this.buttonSua.Name = "buttonSua";
             this.buttonSua.Size = new System.Drawing.Size(71, 48);
-            this.buttonSua.TabIndex = 9;
+            this.buttonSua.TabIndex = 1;
             this.buttonSua.Text = "Sửa";
             this.buttonSua.UseVisualStyleBackColor = true;
             this.buttonSua.Click += new System.EventHandler(this.buttonSua_Click);
@@ -316,7 +316,7 @@
             this.buttonThem.Location = new System.Drawing.Point(37, 199);
             this.buttonThem.Name = "buttonThem";
             this.buttonThem.Size = new System.Drawing.Size(71, 48);
-            this.buttonThem.TabIndex = 8;
+            this.buttonThem.TabIndex = 0;
             this.buttonThem.Text = "Thêm";
             this.buttonThem.UseVisualStyleBackColor = true;
             this.buttonThem.Click += new System.EventHandler(this.buttonThem_Click);
@@ -333,7 +333,7 @@
             this.textMaHV.Location = new System.Drawing.Point(142, 29);
             this.textMaHV.Name = "textMaHV";
             this.textMaHV.Size = new System.Drawing.Size(100, 22);
-            this.textMaHV.TabIndex = 5;
+            this.textMaHV.TabIndex = 3;
             this.textMaHV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textTenHV
@@ -385,7 +385,7 @@
             this.comboBoxMaLop.Location = new System.Drawing.Point(142, 90);
             this.comboBoxMaLop.Name = "comboBoxMaLop";
             this.comboBoxMaLop.Size = new System.Drawing.Size(100, 24);
-            this.comboBoxMaLop.TabIndex = 17;
+            this.comboBoxMaLop.TabIndex = 5;
             // 
             // frmHocVien
             // 

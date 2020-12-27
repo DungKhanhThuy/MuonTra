@@ -90,11 +90,11 @@
     <Compile Include="frmLichSu.Designer.cs">
       <DependentUpon>frmLichSu.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLoai.cs">
+    <Compile Include="frmNguoiDung.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLoai.Designer.cs">
-      <DependentUpon>frmLoai.cs</DependentUpon>
+    <Compile Include="frmNguoiDung.Designer.cs">
+      <DependentUpon>frmNguoiDung.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLop.cs">
       <SubType>Form</SubType>
@@ -108,11 +108,11 @@
     <Compile Include="frmMuonTra.Designer.cs">
       <DependentUpon>frmMuonTra.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNguoiDung.cs">
+    <Compile Include="frmLoai.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmNguoiDung.Designer.cs">
-      <DependentUpon>frmNguoiDung.cs</DependentUpon>
+    <Compile Include="frmLoai.Designer.cs">
+      <DependentUpon>frmLoai.cs</DependentUpon>
     </Compile>
     <Compile Include="frmNhanVien.cs">
       <SubType>Form</SubType>
@@ -159,8 +159,8 @@
     <EmbeddedResource Include="frmLichSu.resx">
       <DependentUpon>frmLichSu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLoai.resx">
-      <DependentUpon>frmLoai.cs</DependentUpon>
+    <EmbeddedResource Include="frmNguoiDung.resx">
+      <DependentUpon>frmNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLop.resx">
       <DependentUpon>frmLop.cs</DependentUpon>
@@ -168,8 +168,8 @@
     <EmbeddedResource Include="frmMuonTra.resx">
       <DependentUpon>frmMuonTra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNguoiDung.resx">
-      <DependentUpon>frmNguoiDung.cs</DependentUpon>
+    <EmbeddedResource Include="frmLoai.resx">
+      <DependentUpon>frmLoai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>

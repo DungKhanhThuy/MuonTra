@@ -22,7 +22,7 @@ namespace GiangDuong
 
         public void KhoiTao()
         {
-            textMaHV.Enabled = textTenHV.Enabled = textMaLop.Enabled = textTenLop.Enabled = textSDT.Enabled = textDonVi.Enabled = false;
+            textMaHV.Enabled = textTenHV.Enabled = comboBoxMaLop.Enabled = textTenLop.Enabled = textSDT.Enabled = textDonVi.Enabled = false;
             buttonThem.Enabled = buttonSua.Enabled = buttonXoa.Enabled = true;
             buttonLuu.Enabled = buttonHuy.Enabled = false;
         }
@@ -30,14 +30,14 @@ namespace GiangDuong
         //Mo cac button enable
         public void Mo()
         {
-            textMaHV.Enabled = textTenHV.Enabled = textMaLop.Enabled = textTenLop.Enabled = textSDT.Enabled = textDonVi.Enabled = true;
+            textMaHV.Enabled = textTenHV.Enabled = comboBoxMaLop.Enabled = textTenLop.Enabled = textSDT.Enabled = textDonVi.Enabled = true;
             buttonThem.Enabled = buttonSua.Enabled = buttonXoa.Enabled = false;
             buttonLuu.Enabled = buttonHuy.Enabled = true;
         }
 
         public void SetNull()
         {
-            textMaHV.Text = textTenHV.Text = textMaLop.Text = textTenLop.Text = textSDT.Text = textDonVi.Text = "";
+            textMaHV.Text = textTenHV.Text = comboBoxMaLop.Text = textTenLop.Text = textSDT.Text = textDonVi.Text = "";
         }
 
 
@@ -87,13 +87,13 @@ namespace GiangDuong
         {
             if(chon == 1)
             {
-                if (textTenHV.Text == "" || textMaLop.Text == "" || textTenLop.Text == "" || textSDT.Text == "" || textDonVi.Text == "")
+                if (textTenHV.Text == "" || comboBoxMaLop.Text == "" || textTenLop.Text == "" || textSDT.Text == "" || textDonVi.Text == "")
                     MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
                 else
                 {
                     if(DialogResult.Yes == MessageBox.Show("Bạn có muốn sửa học viên này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                     {
-                        hv.SuaHocVien(textMaHV.Text, textTenHV.Text, textDonVi.Text, textSDT.Text, textMaLop.Text);
+                        hv.SuaHocVien(textMaHV.Text, textTenHV.Text, textDonVi.Text, textSDT.Text, comboBoxMaLop.Text);
                         MessageBox.Show("Sửa thành công");
                         frmHocVien_Load(sender, e);
                     }    
@@ -101,13 +101,13 @@ namespace GiangDuong
             }
             else if(chon == 2)
             {
-                if (textTenHV.Text == "" || textMaLop.Text == "" || textTenLop.Text == "" || textSDT.Text == "" || textDonVi.Text == "")
+                if (textTenHV.Text == "" || comboBoxMaLop.Text == "" || textTenLop.Text == "" || textSDT.Text == "" || textDonVi.Text == "")
                     MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
                 else
                 {
                     if (DialogResult.Yes == MessageBox.Show("Bạn có muốn thêm học viên này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                     {
-                        hv.ThemHocVien(textMaHV.Text, textTenHV.Text, textDonVi.Text, textSDT.Text, textMaLop.Text);
+                        hv.ThemHocVien(textMaHV.Text, textTenHV.Text, textDonVi.Text, textSDT.Text, comboBoxMaLop.Text);
                         MessageBox.Show("Thêm thành công");
                         SetNull();
                         frmHocVien_Load(sender, e);
@@ -187,7 +187,7 @@ namespace GiangDuong
 
         private void loạiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmLoai hd = new frmLoai();
+            frmNguoiDung hd = new frmNguoiDung();
             hd.Show();
             Hide();
         }
@@ -208,7 +208,7 @@ namespace GiangDuong
 
         private void ngườiDùngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmNguoiDung hd = new frmNguoiDung();
+            frmLoai hd = new frmLoai();
             hd.Show();
             Hide();
         }
