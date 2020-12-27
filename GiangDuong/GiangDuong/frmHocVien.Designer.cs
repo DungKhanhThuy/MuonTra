@@ -248,6 +248,15 @@
             this.comboBoxMaLop.Size = new System.Drawing.Size(100, 24);
             this.comboBoxMaLop.TabIndex = 5;
             // 
+            // comboBoxMaLop
+            // 
+            this.comboBoxMaLop.FormattingEnabled = true;
+            this.comboBoxMaLop.Location = new System.Drawing.Point(142, 90);
+            this.comboBoxMaLop.Name = "comboBoxMaLop";
+            this.comboBoxMaLop.Size = new System.Drawing.Size(100, 24);
+            this.comboBoxMaLop.TabIndex = 17;
+            this.comboBoxMaLop.SelectedValueChanged += new System.EventHandler(this.comboBoxMaLop_SelectedValueChanged);
+            // 
             // textDonVi
             // 
             this.textDonVi.Location = new System.Drawing.Point(409, 143);

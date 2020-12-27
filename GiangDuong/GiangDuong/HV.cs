@@ -11,38 +11,29 @@ namespace GiangDuong
 {
     class HocVien
     {
+        ConnectDB cn = new ConnectDB();
         public DataTable Show()
-        {
-            string sql = "SELECT hv.MaHV, hv.TenHV, l.MaLop, l.TenLop, hv.SDT, hv.DonVi FROM HocVien as hv, Lop as l WHERE hv.MaLop = l.MaLop";
-            DataTable dt = new DataTable();
-            SqlConnection con = new SqlConnection(ConnectDB.getconnect());
-            con.Open();
-            SqlDataAdapter da = new SqlDataAdapter(sql, con);
-            da.Fill(dt);
-            con.Close();
-            da.Dispose();
-            return dt;
+        {            
+            return cn.LoadData("HienThi_HocVien");
         }
 
-        public void SuaHocVien(string MaHV, string TenHV, string DonVi, string SDT, string MaLop)
+        public void ThemHocVien(string mahv, string tenhv, string donvi, string sdt, string malop)
         {
             try
             {
-                string sql = "SuaHocVien";
-                SqlConnection con = new SqlConnection(ConnectDB.getconnect());
-                con.Open();
-                SqlCommand cmd = new SqlCommand(sql, con);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@MaHV", MaHV);
-                cmd.Parameters.AddWithValue("@TenHv", TenHV);
-                cmd.Parameters.AddWithValue("@DonVi", DonVi);
-                cmd.Parameters.AddWithValue("@SDT", SDT);
-                cmd.Parameters.AddWithValue("@MaLop", MaLop);
-
-                cmd.ExecuteNonQuery();
-                cmd.Dispose();
-                con.Close();
+                SqlCommand command = new SqlCommand();
+                SqlConnection cn = new SqlConnection(ConnectDB.getconnect());
+                cn.Open();
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "ThemHocVien";
+                command.Connection = cn;
+                command.Parameters.AddWithValue("@MaHV", SqlDbType.VarChar).Value = mahv;
+                command.Parameters.AddWithValue("@ten", SqlDbType.VarChar).Value = tenhv;
+                command.Parameters.AddWithValue("@DonVi", SqlDbType.VarChar).Value = donvi;
+                command.Parameters.AddWithValue("@SDT", SqlDbType.VarChar).Value = sdt;
+                command.Parameters.AddWithValue("@MaLop", SqlDbType.VarChar).Value = malop;
+                command.ExecuteNonQuery();
+                cn.Close();
             }
             catch (Exception ex)
             {
@@ -50,37 +41,63 @@ namespace GiangDuong
             }
         }
 
-        public void ThemHocVien(string MaHV, string TenHV, string DonVi, string SDT, string MaLop)
+        public void SuaHocVien(string mahv, string tenhv, string donvi, string sdt, string malop)
         {
-            string sql = "ThemHocVien";
-            SqlConnection con = new SqlConnection(ConnectDB.getconnect());
-            con.Open();
-            SqlCommand cmd = new SqlCommand(sql, con);
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.AddWithValue("@mahv", MaHV);
-            cmd.Parameters.AddWithValue("@ten", TenHV);
-            cmd.Parameters.AddWithValue("@donvi", DonVi);
-            cmd.Parameters.AddWithValue("@sdt", SDT);
-            cmd.Parameters.AddWithValue("@malop", MaLop);
-
-            cmd.ExecuteNonQuery();
-            cmd.Dispose();
-            con.Close();
+            try
+            {
+                SqlCommand command = new SqlCommand();
+                SqlConnection cn = new SqlConnection(ConnectDB.getconnect());
+                cn.Open();
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "SuaHocVien";
+                command.Connection = cn;
+                command.Parameters.AddWithValue("@MaHV", SqlDbType.VarChar).Value = mahv;
+                command.Parameters.AddWithValue("@ten", SqlDbType.VarChar).Value = tenhv;
+                command.Parameters.AddWithValue("@DonVi", SqlDbType.VarChar).Value = donvi;
+                command.Parameters.AddWithValue("@SDT", SqlDbType.VarChar).Value = sdt;
+                command.Parameters.AddWithValue("@MaLop", SqlDbType.VarChar).Value = malop;
+                command.ExecuteNonQuery();
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
-        public void XoaHocVien(string MaHV)
-        {
-            string sql = "XoaHocVien";
-            SqlConnection con = new SqlConnection(ConnectDB.getconnect());
-            con.Open();
-            SqlCommand cmd = new SqlCommand(sql, con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@MaHV", MaHV);
+        //public void ThemHocVien(string MaHV, string TenHV, string DonVi, string SDT, string MaLop)
+        //{
+        //    string sql = "ThemHocVien";
+        //    SqlConnection con = new SqlConnection(ConnectDB.getconnect());
+        //    con.Open();
+        //    SqlCommand cmd = new SqlCommand(sql, con);
+        //    cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.ExecuteNonQuery();
-            cmd.Dispose();
-            con.Close();
-        }
+        //    cmd.Parameters.AddWithValue("@mahv", MaHV);
+        //    cmd.Parameters.AddWithValue("@ten", TenHV);
+        //    cmd.Parameters.AddWithValue("@donvi", DonVi);
+        //    cmd.Parameters.AddWithValue("@sdt", SDT);
+        //    cmd.Parameters.AddWithValue("@malop", MaLop);
+
+        //    cmd.ExecuteNonQuery();
+        //    cmd.Dispose();
+        //    con.Close();
+        //}
+
+        //public void XoaHocVien(string MaHV)
+        //{
+        //    string sql = "XoaHocVien";
+        //    SqlConnection con = new SqlConnection(ConnectDB.getconnect());
+        //    con.Open();
+        //    SqlCommand cmd = new SqlCommand(sql, con);
+        //    cmd.CommandType = CommandType.StoredProcedure;
+        //    cmd.Parameters.AddWithValue("@MaHV", MaHV);
+
+        //    cmd.ExecuteNonQuery();
+        //    cmd.Dispose();
+        //    con.Close();
+        //}
+
+
     }
 }
