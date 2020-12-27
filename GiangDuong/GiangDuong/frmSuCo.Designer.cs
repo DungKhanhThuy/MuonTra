@@ -45,6 +45,8 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewGiaoBan = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBoxMaTB = new System.Windows.Forms.ComboBox();
+            this.comboBoxMaYC = new System.Windows.Forms.ComboBox();
             this.richTextBoxXuLy = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,8 +60,6 @@
             this.textMaSC = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxMaYC = new System.Windows.Forms.ComboBox();
-            this.comboBoxMaTB = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGiaoBan)).BeginInit();
@@ -202,6 +202,7 @@
             this.dataGridViewGiaoBan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewGiaoBan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewGiaoBan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewGiaoBan.Location = new System.Drawing.Point(3, 229);
             this.dataGridViewGiaoBan.Name = "dataGridViewGiaoBan";
@@ -233,6 +234,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(954, 220);
             this.panel1.TabIndex = 0;
+            // 
+            // comboBoxMaTB
+            // 
+            this.comboBoxMaTB.FormattingEnabled = true;
+            this.comboBoxMaTB.Location = new System.Drawing.Point(714, 24);
+            this.comboBoxMaTB.Name = "comboBoxMaTB";
+            this.comboBoxMaTB.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxMaTB.TabIndex = 5;
+            // 
+            // comboBoxMaYC
+            // 
+            this.comboBoxMaYC.FormattingEnabled = true;
+            this.comboBoxMaYC.Location = new System.Drawing.Point(459, 24);
+            this.comboBoxMaYC.Name = "comboBoxMaYC";
+            this.comboBoxMaYC.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxMaYC.TabIndex = 4;
             // 
             // richTextBoxXuLy
             // 
@@ -346,22 +363,6 @@
             this.label1.Size = new System.Drawing.Size(65, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã sự cố";
-            // 
-            // comboBoxMaYC
-            // 
-            this.comboBoxMaYC.FormattingEnabled = true;
-            this.comboBoxMaYC.Location = new System.Drawing.Point(459, 24);
-            this.comboBoxMaYC.Name = "comboBoxMaYC";
-            this.comboBoxMaYC.Size = new System.Drawing.Size(121, 24);
-            this.comboBoxMaYC.TabIndex = 4;
-            // 
-            // comboBoxMaTB
-            // 
-            this.comboBoxMaTB.FormattingEnabled = true;
-            this.comboBoxMaTB.Location = new System.Drawing.Point(714, 24);
-            this.comboBoxMaTB.Name = "comboBoxMaTB";
-            this.comboBoxMaTB.Size = new System.Drawing.Size(121, 24);
-            this.comboBoxMaTB.TabIndex = 5;
             // 
             // frmSuCo
             // 

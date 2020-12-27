@@ -45,6 +45,9 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewTKB = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBoxMaPhong = new System.Windows.Forms.ComboBox();
+            this.comboBoxMaLop = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.dateTimePickerNgayKetThuc = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerNgayBatDau = new System.Windows.Forms.DateTimePicker();
             this.textBuoi = new System.Windows.Forms.TextBox();
@@ -59,9 +62,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBoxMaLop = new System.Windows.Forms.ComboBox();
-            this.comboBoxMaPhong = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTKB)).BeginInit();
@@ -204,6 +204,7 @@
             this.dataGridViewTKB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewTKB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewTKB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTKB.Location = new System.Drawing.Point(3, 262);
             this.dataGridViewTKB.Name = "dataGridViewTKB";
@@ -237,6 +238,31 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(690, 253);
             this.panel1.TabIndex = 0;
+            // 
+            // comboBoxMaPhong
+            // 
+            this.comboBoxMaPhong.FormattingEnabled = true;
+            this.comboBoxMaPhong.Location = new System.Drawing.Point(470, 139);
+            this.comboBoxMaPhong.Name = "comboBoxMaPhong";
+            this.comboBoxMaPhong.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxMaPhong.TabIndex = 8;
+            // 
+            // comboBoxMaLop
+            // 
+            this.comboBoxMaLop.FormattingEnabled = true;
+            this.comboBoxMaLop.Location = new System.Drawing.Point(145, 26);
+            this.comboBoxMaLop.Name = "comboBoxMaLop";
+            this.comboBoxMaLop.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxMaLop.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(34, 29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 17);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Mã lớp";
             // 
             // dateTimePickerNgayKetThuc
             // 
@@ -355,31 +381,6 @@
             this.label1.Size = new System.Drawing.Size(56, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên lớp";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(34, 29);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 17);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Mã lớp";
-            // 
-            // comboBoxMaLop
-            // 
-            this.comboBoxMaLop.FormattingEnabled = true;
-            this.comboBoxMaLop.Location = new System.Drawing.Point(145, 26);
-            this.comboBoxMaLop.Name = "comboBoxMaLop";
-            this.comboBoxMaLop.Size = new System.Drawing.Size(121, 24);
-            this.comboBoxMaLop.TabIndex = 3;
-            // 
-            // comboBoxMaPhong
-            // 
-            this.comboBoxMaPhong.FormattingEnabled = true;
-            this.comboBoxMaPhong.Location = new System.Drawing.Point(470, 139);
-            this.comboBoxMaPhong.Name = "comboBoxMaPhong";
-            this.comboBoxMaPhong.Size = new System.Drawing.Size(121, 24);
-            this.comboBoxMaPhong.TabIndex = 8;
             // 
             // frmThoiKhoaBieu
             // 

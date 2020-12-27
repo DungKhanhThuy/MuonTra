@@ -45,6 +45,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewHocVien = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBoxMaLop = new System.Windows.Forms.ComboBox();
             this.textDonVi = new System.Windows.Forms.TextBox();
             this.textSDT = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -61,7 +62,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxMaLop = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHocVien)).BeginInit();
@@ -204,6 +204,7 @@
             this.dataGridViewHocVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewHocVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewHocVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewHocVien.Location = new System.Drawing.Point(3, 268);
             this.dataGridViewHocVien.Name = "dataGridViewHocVien";
@@ -238,6 +239,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(586, 259);
             this.panel1.TabIndex = 0;
+            // 
+            // comboBoxMaLop
+            // 
+            this.comboBoxMaLop.FormattingEnabled = true;
+            this.comboBoxMaLop.Location = new System.Drawing.Point(142, 90);
+            this.comboBoxMaLop.Name = "comboBoxMaLop";
+            this.comboBoxMaLop.Size = new System.Drawing.Size(100, 24);
+            this.comboBoxMaLop.TabIndex = 5;
             // 
             // textDonVi
             // 
@@ -378,14 +387,6 @@
             this.label1.Size = new System.Drawing.Size(90, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên học viên";
-            // 
-            // comboBoxMaLop
-            // 
-            this.comboBoxMaLop.FormattingEnabled = true;
-            this.comboBoxMaLop.Location = new System.Drawing.Point(142, 90);
-            this.comboBoxMaLop.Name = "comboBoxMaLop";
-            this.comboBoxMaLop.Size = new System.Drawing.Size(100, 24);
-            this.comboBoxMaLop.TabIndex = 5;
             // 
             // frmHocVien
             // 

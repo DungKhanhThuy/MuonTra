@@ -45,6 +45,8 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewNhanVien = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textTenNV = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.buttonHuy = new System.Windows.Forms.Button();
             this.buttonLuu = new System.Windows.Forms.Button();
             this.buttonXoa = new System.Windows.Forms.Button();
@@ -56,8 +58,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textTenNV = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNhanVien)).BeginInit();
@@ -200,6 +200,7 @@
             this.dataGridViewNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewNhanVien.Location = new System.Drawing.Point(3, 229);
             this.dataGridViewNhanVien.Name = "dataGridViewNhanVien";
@@ -229,6 +230,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(586, 220);
             this.panel1.TabIndex = 0;
+            // 
+            // textTenNV
+            // 
+            this.textTenNV.Location = new System.Drawing.Point(428, 38);
+            this.textTenNV.Name = "textTenNV";
+            this.textTenNV.Size = new System.Drawing.Size(100, 22);
+            this.textTenNV.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(313, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 17);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Tên nhân viên";
             // 
             // buttonHuy
             // 
@@ -323,22 +340,6 @@
             this.label2.Size = new System.Drawing.Size(93, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Mã nhân viên";
-            // 
-            // textTenNV
-            // 
-            this.textTenNV.Location = new System.Drawing.Point(428, 38);
-            this.textTenNV.Name = "textTenNV";
-            this.textTenNV.Size = new System.Drawing.Size(100, 22);
-            this.textTenNV.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(313, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 17);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Tên nhân viên";
             // 
             // frmNhanVien
             // 

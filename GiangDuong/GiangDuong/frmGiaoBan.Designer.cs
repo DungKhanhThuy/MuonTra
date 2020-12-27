@@ -45,6 +45,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewGiaoBan = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBoxMaNV = new System.Windows.Forms.ComboBox();
             this.richTextBoxNoiDung = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePickerThoiGian = new System.Windows.Forms.DateTimePicker();
@@ -57,7 +58,6 @@
             this.textMaNK = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxMaNV = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGiaoBan)).BeginInit();
@@ -200,6 +200,7 @@
             this.dataGridViewGiaoBan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewGiaoBan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewGiaoBan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewGiaoBan.Location = new System.Drawing.Point(3, 229);
             this.dataGridViewGiaoBan.Name = "dataGridViewGiaoBan";
@@ -229,6 +230,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(818, 220);
             this.panel1.TabIndex = 0;
+            // 
+            // comboBoxMaNV
+            // 
+            this.comboBoxMaNV.FormattingEnabled = true;
+            this.comboBoxMaNV.Location = new System.Drawing.Point(396, 26);
+            this.comboBoxMaNV.Name = "comboBoxMaNV";
+            this.comboBoxMaNV.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxMaNV.TabIndex = 4;
             // 
             // richTextBoxNoiDung
             // 
@@ -332,14 +341,6 @@
             this.label1.Size = new System.Drawing.Size(77, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã nhật ký";
-            // 
-            // comboBoxMaNV
-            // 
-            this.comboBoxMaNV.FormattingEnabled = true;
-            this.comboBoxMaNV.Location = new System.Drawing.Point(396, 26);
-            this.comboBoxMaNV.Name = "comboBoxMaNV";
-            this.comboBoxMaNV.Size = new System.Drawing.Size(121, 24);
-            this.comboBoxMaNV.TabIndex = 4;
             // 
             // frmGiaoBan
             // 

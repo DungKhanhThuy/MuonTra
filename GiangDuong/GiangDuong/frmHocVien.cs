@@ -80,6 +80,8 @@ namespace GiangDuong
             KhoiTao();
             dataGridViewHocVien.DataSource = hv.Show();
 
+            
+
             chon = 0;
         }
 

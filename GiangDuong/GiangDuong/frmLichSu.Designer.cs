@@ -45,6 +45,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewLichSu = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBoxMaTB = new System.Windows.Forms.ComboBox();
             this.richTextBoxNoiDung = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePickerThoiGian = new System.Windows.Forms.DateTimePicker();
@@ -57,7 +58,6 @@
             this.textMaYC = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxMaTB = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLichSu)).BeginInit();
@@ -200,6 +200,7 @@
             this.dataGridViewLichSu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewLichSu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewLichSu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewLichSu.Location = new System.Drawing.Point(3, 229);
             this.dataGridViewLichSu.Name = "dataGridViewLichSu";
@@ -229,6 +230,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(818, 220);
             this.panel1.TabIndex = 0;
+            // 
+            // comboBoxMaTB
+            // 
+            this.comboBoxMaTB.FormattingEnabled = true;
+            this.comboBoxMaTB.Location = new System.Drawing.Point(377, 28);
+            this.comboBoxMaTB.Name = "comboBoxMaTB";
+            this.comboBoxMaTB.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxMaTB.TabIndex = 4;
             // 
             // richTextBoxNoiDung
             // 
@@ -332,14 +341,6 @@
             this.label1.Size = new System.Drawing.Size(81, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã yêu cầu";
-            // 
-            // comboBoxMaTB
-            // 
-            this.comboBoxMaTB.FormattingEnabled = true;
-            this.comboBoxMaTB.Location = new System.Drawing.Point(377, 28);
-            this.comboBoxMaTB.Name = "comboBoxMaTB";
-            this.comboBoxMaTB.Size = new System.Drawing.Size(121, 24);
-            this.comboBoxMaTB.TabIndex = 4;
             // 
             // frmLichSu
             // 

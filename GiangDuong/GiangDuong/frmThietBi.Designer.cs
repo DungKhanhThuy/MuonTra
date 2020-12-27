@@ -45,6 +45,10 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewThietBi = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBoxMaLoai = new System.Windows.Forms.ComboBox();
+            this.textMaTB = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.textMaPhong = new System.Windows.Forms.TextBox();
             this.textTinhTrang = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -58,10 +62,6 @@
             this.textTenTB = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textMaTB = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBoxMaLoai = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewThietBi)).BeginInit();
@@ -204,6 +204,7 @@
             this.dataGridViewThietBi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewThietBi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewThietBi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewThietBi.Location = new System.Drawing.Point(3, 262);
             this.dataGridViewThietBi.Name = "dataGridViewThietBi";
@@ -237,6 +238,40 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(586, 253);
             this.panel1.TabIndex = 0;
+            // 
+            // comboBoxMaLoai
+            // 
+            this.comboBoxMaLoai.FormattingEnabled = true;
+            this.comboBoxMaLoai.Location = new System.Drawing.Point(145, 81);
+            this.comboBoxMaLoai.Name = "comboBoxMaLoai";
+            this.comboBoxMaLoai.Size = new System.Drawing.Size(103, 24);
+            this.comboBoxMaLoai.TabIndex = 5;
+            // 
+            // textMaTB
+            // 
+            this.textMaTB.Location = new System.Drawing.Point(148, 23);
+            this.textMaTB.Name = "textMaTB";
+            this.textMaTB.Size = new System.Drawing.Size(100, 22);
+            this.textMaTB.TabIndex = 3;
+            this.textMaTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(37, 84);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 17);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Mã loại";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(37, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(73, 17);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Mã thiết bị";
             // 
             // textMaPhong
             // 
@@ -346,40 +381,6 @@
             this.label1.Size = new System.Drawing.Size(79, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên thiết bị";
-            // 
-            // textMaTB
-            // 
-            this.textMaTB.Location = new System.Drawing.Point(148, 23);
-            this.textMaTB.Name = "textMaTB";
-            this.textMaTB.Size = new System.Drawing.Size(100, 22);
-            this.textMaTB.TabIndex = 3;
-            this.textMaTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(37, 84);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 17);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "Mã loại";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 17);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Mã thiết bị";
-            // 
-            // comboBoxMaLoai
-            // 
-            this.comboBoxMaLoai.FormattingEnabled = true;
-            this.comboBoxMaLoai.Location = new System.Drawing.Point(145, 81);
-            this.comboBoxMaLoai.Name = "comboBoxMaLoai";
-            this.comboBoxMaLoai.Size = new System.Drawing.Size(103, 24);
-            this.comboBoxMaLoai.TabIndex = 5;
             // 
             // frmThietBi
             // 

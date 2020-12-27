@@ -45,6 +45,8 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewNguoiDung = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textTenLoai = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.buttonHuy = new System.Windows.Forms.Button();
             this.buttonLuu = new System.Windows.Forms.Button();
             this.buttonXoa = new System.Windows.Forms.Button();
@@ -52,8 +54,6 @@
             this.buttonThem = new System.Windows.Forms.Button();
             this.textMaLoai = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textTenLoai = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNguoiDung)).BeginInit();
@@ -196,6 +196,7 @@
             this.dataGridViewNguoiDung.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewNguoiDung.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewNguoiDung.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewNguoiDung.Location = new System.Drawing.Point(3, 229);
             this.dataGridViewNguoiDung.Name = "dataGridViewNguoiDung";
@@ -221,6 +222,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(586, 220);
             this.panel1.TabIndex = 0;
+            // 
+            // textTenLoai
+            // 
+            this.textTenLoai.Location = new System.Drawing.Point(458, 78);
+            this.textTenLoai.Name = "textTenLoai";
+            this.textTenLoai.Size = new System.Drawing.Size(100, 22);
+            this.textTenLoai.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(343, 81);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 17);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Tên loại";
             // 
             // buttonHuy
             // 
@@ -283,22 +300,6 @@
             this.label2.Size = new System.Drawing.Size(53, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Mã loại";
-            // 
-            // textTenLoai
-            // 
-            this.textTenLoai.Location = new System.Drawing.Point(458, 78);
-            this.textTenLoai.Name = "textTenLoai";
-            this.textTenLoai.Size = new System.Drawing.Size(100, 22);
-            this.textTenLoai.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(343, 81);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 17);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Tên loại";
             // 
             // frmLoai
             // 
