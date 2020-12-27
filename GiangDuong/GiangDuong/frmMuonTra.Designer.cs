@@ -533,7 +533,7 @@
             this.textMaHV.Name = "textMaHV";
             this.textMaHV.Size = new System.Drawing.Size(100, 22);
             this.textMaHV.TabIndex = 5;
-            this.textMaHV.TextChanged += new System.EventHandler(this.textMaHV_TextChanged);
+            this.textMaHV.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textMaHV_KeyDown);
             // 
             // label3
             // 
@@ -550,6 +550,7 @@
             this.textMaYC.Name = "textMaYC";
             this.textMaYC.Size = new System.Drawing.Size(100, 22);
             this.textMaYC.TabIndex = 1;
+            this.textMaYC.MouseEnter += new System.EventHandler(this.textMaYC_MouseEnter);
             // 
             // label1
             // 

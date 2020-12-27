@@ -248,22 +248,36 @@ namespace GiangDuong
 
         }
 
-        private void textMaHV_TextChanged(object sender, EventArgs e)
+        
+
+        private void textMaHV_KeyPress(object sender, KeyPressEventArgs e)
         {
-            try
+
+        }
+
+        private void textMaYC_MouseEnter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void textMaHV_KeyDown(object sender, KeyEventArgs e)
+        {
+            //try
             {
-                DataTable dt = cn.LoadData1("HienThi_HocVien", "@MaHV", textMaHV.Text);
-                if (dt.Rows.Count != 0)
+                if(e.KeyCode == Keys.Enter)
                 {
-                    textTenHV.Text = dt.Rows[0][1].ToString();
-                }
-
-
+                    DataTable dt = cn.LoadData1("HienThi_HocVien", "@MaHV", textMaHV.Text);
+                    if (dt.Rows.Count != 0)
+                    {
+                        textTenHV.Text = dt.Rows[0][1].ToString();
+                    }
+                }    
+                
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
     }
 }
