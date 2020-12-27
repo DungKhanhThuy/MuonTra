@@ -242,14 +242,14 @@
             // comboBoxMaLoai
             // 
             this.comboBoxMaLoai.FormattingEnabled = true;
-            this.comboBoxMaLoai.Location = new System.Drawing.Point(145, 81);
+            this.comboBoxMaLoai.Location = new System.Drawing.Point(145, 78);
             this.comboBoxMaLoai.Name = "comboBoxMaLoai";
             this.comboBoxMaLoai.Size = new System.Drawing.Size(103, 24);
             this.comboBoxMaLoai.TabIndex = 5;
             // 
             // textMaTB
             // 
-            this.textMaTB.Location = new System.Drawing.Point(148, 23);
+            this.textMaTB.Location = new System.Drawing.Point(145, 23);
             this.textMaTB.Name = "textMaTB";
             this.textMaTB.Size = new System.Drawing.Size(100, 22);
             this.textMaTB.TabIndex = 3;
@@ -258,7 +258,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(37, 84);
+            this.label4.Location = new System.Drawing.Point(37, 82);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 17);
             this.label4.TabIndex = 16;
@@ -275,14 +275,14 @@
             // 
             // textMaPhong
             // 
-            this.textMaPhong.Location = new System.Drawing.Point(431, 136);
+            this.textMaPhong.Location = new System.Drawing.Point(431, 135);
             this.textMaPhong.Name = "textMaPhong";
             this.textMaPhong.Size = new System.Drawing.Size(100, 22);
             this.textMaPhong.TabIndex = 8;
             // 
             // textTinhTrang
             // 
-            this.textTinhTrang.Location = new System.Drawing.Point(145, 136);
+            this.textTinhTrang.Location = new System.Drawing.Point(145, 135);
             this.textTinhTrang.Name = "textTinhTrang";
             this.textTinhTrang.Size = new System.Drawing.Size(103, 22);
             this.textTinhTrang.TabIndex = 7;
@@ -290,7 +290,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(316, 139);
+            this.label5.Location = new System.Drawing.Point(316, 138);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 17);
             this.label5.TabIndex = 14;
@@ -299,7 +299,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(37, 139);
+            this.label6.Location = new System.Drawing.Point(37, 138);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 17);
             this.label6.TabIndex = 13;
@@ -359,7 +359,7 @@
             // 
             // textTenTB
             // 
-            this.textTenTB.Location = new System.Drawing.Point(431, 21);
+            this.textTenTB.Location = new System.Drawing.Point(431, 23);
             this.textTenTB.Name = "textTenTB";
             this.textTenTB.Size = new System.Drawing.Size(100, 22);
             this.textTenTB.TabIndex = 4;
@@ -376,7 +376,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(316, 24);
+            this.label1.Location = new System.Drawing.Point(316, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 17);
             this.label1.TabIndex = 0;

@@ -238,7 +238,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(561, 76);
+            this.label3.Location = new System.Drawing.Point(561, 79);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 17);
             this.label3.TabIndex = 13;
@@ -291,7 +291,7 @@
             // 
             // textMatKhau
             // 
-            this.textMatKhau.Location = new System.Drawing.Point(395, 73);
+            this.textMatKhau.Location = new System.Drawing.Point(395, 76);
             this.textMatKhau.Name = "textMatKhau";
             this.textMatKhau.Size = new System.Drawing.Size(100, 22);
             this.textMatKhau.TabIndex = 4;
@@ -299,7 +299,7 @@
             // 
             // textMaNV
             // 
-            this.textMaNV.Location = new System.Drawing.Point(154, 70);
+            this.textMaNV.Location = new System.Drawing.Point(154, 76);
             this.textMaNV.Name = "textMaNV";
             this.textMaNV.Size = new System.Drawing.Size(100, 22);
             this.textMaNV.TabIndex = 3;
@@ -307,7 +307,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(284, 76);
+            this.label2.Location = new System.Drawing.Point(284, 79);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 17);
             this.label2.TabIndex = 1;
@@ -316,7 +316,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 73);
+            this.label1.Location = new System.Drawing.Point(39, 79);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 17);
             this.label1.TabIndex = 0;

@@ -286,7 +286,7 @@
             // 
             // textMaLoai
             // 
-            this.textMaLoai.Location = new System.Drawing.Point(154, 76);
+            this.textMaLoai.Location = new System.Drawing.Point(154, 78);
             this.textMaLoai.Name = "textMaLoai";
             this.textMaLoai.Size = new System.Drawing.Size(100, 22);
             this.textMaLoai.TabIndex = 3;
@@ -295,7 +295,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(43, 79);
+            this.label2.Location = new System.Drawing.Point(43, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 17);
             this.label2.TabIndex = 1;
