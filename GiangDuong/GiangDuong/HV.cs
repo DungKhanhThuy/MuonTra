@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace GiangDuong
 {
@@ -25,21 +26,28 @@ namespace GiangDuong
 
         public void SuaHocVien(string MaHV, string TenHV, string DonVi, string SDT, string MaLop)
         {
-            string sql = "SuaHocVien";
-            SqlConnection con = new SqlConnection(ConnectDB.getconnect());
-            con.Open();
-            SqlCommand cmd = new SqlCommand(sql, con);
-            cmd.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                string sql = "SuaHocVien";
+                SqlConnection con = new SqlConnection(ConnectDB.getconnect());
+                con.Open();
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@MaHV", MaHV);
-            cmd.Parameters.AddWithValue("@TenHv", TenHV);
-            cmd.Parameters.AddWithValue("@DonVi", DonVi);
-            cmd.Parameters.AddWithValue("@SDT", SDT);
-            cmd.Parameters.AddWithValue("@MaLop", MaLop);
+                cmd.Parameters.AddWithValue("@MaHV", MaHV);
+                cmd.Parameters.AddWithValue("@TenHv", TenHV);
+                cmd.Parameters.AddWithValue("@DonVi", DonVi);
+                cmd.Parameters.AddWithValue("@SDT", SDT);
+                cmd.Parameters.AddWithValue("@MaLop", MaLop);
 
-            cmd.ExecuteNonQuery();
-            cmd.Dispose();
-            con.Close();
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void ThemHocVien(string MaHV, string TenHV, string DonVi, string SDT, string MaLop)

@@ -41,6 +41,7 @@
             this.loạiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.giaoBanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sựCốToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ngườiDùngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewHocVien = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -53,7 +54,6 @@
             this.buttonXoa = new System.Windows.Forms.Button();
             this.buttonSua = new System.Windows.Forms.Button();
             this.buttonThem = new System.Windows.Forms.Button();
-            this.textMaLop = new System.Windows.Forms.TextBox();
             this.textTenLop = new System.Windows.Forms.TextBox();
             this.textMaHV = new System.Windows.Forms.TextBox();
             this.textTenHV = new System.Windows.Forms.TextBox();
@@ -61,7 +61,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.ngườiDùngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.comboBoxMaLop = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHocVien)).BeginInit();
@@ -175,6 +175,13 @@
             this.sựCốToolStripMenuItem.Text = "Sự cố";
             this.sựCốToolStripMenuItem.Click += new System.EventHandler(this.sựCốToolStripMenuItem_Click);
             // 
+            // ngườiDùngToolStripMenuItem
+            // 
+            this.ngườiDùngToolStripMenuItem.Name = "ngườiDùngToolStripMenuItem";
+            this.ngườiDùngToolStripMenuItem.Size = new System.Drawing.Size(103, 24);
+            this.ngườiDùngToolStripMenuItem.Text = "Người dùng";
+            this.ngườiDùngToolStripMenuItem.Click += new System.EventHandler(this.ngườiDùngToolStripMenuItem_Click);
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -210,6 +217,7 @@
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel1.Controls.Add(this.comboBoxMaLop);
             this.panel1.Controls.Add(this.textDonVi);
             this.panel1.Controls.Add(this.textSDT);
             this.panel1.Controls.Add(this.label5);
@@ -219,7 +227,6 @@
             this.panel1.Controls.Add(this.buttonXoa);
             this.panel1.Controls.Add(this.buttonSua);
             this.panel1.Controls.Add(this.buttonThem);
-            this.panel1.Controls.Add(this.textMaLop);
             this.panel1.Controls.Add(this.textTenLop);
             this.panel1.Controls.Add(this.textMaHV);
             this.panel1.Controls.Add(this.textTenHV);
@@ -234,9 +241,9 @@
             // 
             // textDonVi
             // 
-            this.textDonVi.Location = new System.Drawing.Point(428, 143);
+            this.textDonVi.Location = new System.Drawing.Point(409, 143);
             this.textDonVi.Name = "textDonVi";
-            this.textDonVi.Size = new System.Drawing.Size(100, 22);
+            this.textDonVi.Size = new System.Drawing.Size(154, 22);
             this.textDonVi.TabIndex = 16;
             // 
             // textSDT
@@ -314,23 +321,16 @@
             this.buttonThem.UseVisualStyleBackColor = true;
             this.buttonThem.Click += new System.EventHandler(this.buttonThem_Click);
             // 
-            // textMaLop
-            // 
-            this.textMaLop.Location = new System.Drawing.Point(428, 88);
-            this.textMaLop.Name = "textMaLop";
-            this.textMaLop.Size = new System.Drawing.Size(100, 22);
-            this.textMaLop.TabIndex = 7;
-            // 
             // textTenLop
             // 
-            this.textTenLop.Location = new System.Drawing.Point(142, 88);
+            this.textTenLop.Location = new System.Drawing.Point(409, 90);
             this.textTenLop.Name = "textTenLop";
-            this.textTenLop.Size = new System.Drawing.Size(100, 22);
+            this.textTenLop.Size = new System.Drawing.Size(154, 22);
             this.textTenLop.TabIndex = 6;
             // 
             // textMaHV
             // 
-            this.textMaHV.Location = new System.Drawing.Point(428, 25);
+            this.textMaHV.Location = new System.Drawing.Point(142, 29);
             this.textMaHV.Name = "textMaHV";
             this.textMaHV.Size = new System.Drawing.Size(100, 22);
             this.textMaHV.TabIndex = 5;
@@ -338,15 +338,15 @@
             // 
             // textTenHV
             // 
-            this.textTenHV.Location = new System.Drawing.Point(142, 25);
+            this.textTenHV.Location = new System.Drawing.Point(409, 32);
             this.textTenHV.Name = "textTenHV";
-            this.textTenHV.Size = new System.Drawing.Size(100, 22);
+            this.textTenHV.Size = new System.Drawing.Size(154, 22);
             this.textTenHV.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(317, 91);
+            this.label4.Location = new System.Drawing.Point(31, 93);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 17);
             this.label4.TabIndex = 3;
@@ -355,7 +355,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(35, 91);
+            this.label3.Location = new System.Drawing.Point(321, 90);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 17);
             this.label3.TabIndex = 2;
@@ -364,7 +364,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(317, 28);
+            this.label2.Location = new System.Drawing.Point(31, 32);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 17);
             this.label2.TabIndex = 1;
@@ -373,18 +373,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 28);
+            this.label1.Location = new System.Drawing.Point(313, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên học viên";
             // 
-            // ngườiDùngToolStripMenuItem
+            // comboBoxMaLop
             // 
-            this.ngườiDùngToolStripMenuItem.Name = "ngườiDùngToolStripMenuItem";
-            this.ngườiDùngToolStripMenuItem.Size = new System.Drawing.Size(103, 24);
-            this.ngườiDùngToolStripMenuItem.Text = "Người dùng";
-            this.ngườiDùngToolStripMenuItem.Click += new System.EventHandler(this.ngườiDùngToolStripMenuItem_Click);
+            this.comboBoxMaLop.FormattingEnabled = true;
+            this.comboBoxMaLop.Location = new System.Drawing.Point(142, 90);
+            this.comboBoxMaLop.Name = "comboBoxMaLop";
+            this.comboBoxMaLop.Size = new System.Drawing.Size(100, 24);
+            this.comboBoxMaLop.TabIndex = 17;
             // 
             // frmHocVien
             // 
@@ -425,7 +426,6 @@
         private System.Windows.Forms.DataGridView dataGridViewHocVien;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textMaLop;
         private System.Windows.Forms.TextBox textTenLop;
         private System.Windows.Forms.TextBox textMaHV;
         private System.Windows.Forms.TextBox textTenHV;
@@ -445,5 +445,6 @@
         private System.Windows.Forms.ToolStripMenuItem lơpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loạiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ngườiDùngToolStripMenuItem;
+        private System.Windows.Forms.ComboBox comboBoxMaLop;
     }
 }
