@@ -53,10 +53,10 @@
             this.textChucVu = new System.Windows.Forms.TextBox();
             this.textSDT = new System.Windows.Forms.TextBox();
             this.textMaNV = new System.Windows.Forms.TextBox();
-            this.textTenNV = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.textTenNV = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -212,6 +212,8 @@
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel1.Controls.Add(this.textTenNV);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.buttonHuy);
             this.panel1.Controls.Add(this.buttonLuu);
             this.panel1.Controls.Add(this.buttonXoa);
@@ -220,11 +222,9 @@
             this.panel1.Controls.Add(this.textChucVu);
             this.panel1.Controls.Add(this.textSDT);
             this.panel1.Controls.Add(this.textMaNV);
-            this.panel1.Controls.Add(this.textTenNV);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(220, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(586, 220);
@@ -291,18 +291,11 @@
             // 
             // textMaNV
             // 
-            this.textMaNV.Location = new System.Drawing.Point(428, 35);
+            this.textMaNV.Location = new System.Drawing.Point(142, 38);
             this.textMaNV.Name = "textMaNV";
             this.textMaNV.Size = new System.Drawing.Size(100, 22);
-            this.textMaNV.TabIndex = 4;
+            this.textMaNV.TabIndex = 3;
             this.textMaNV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textTenNV
-            // 
-            this.textTenNV.Location = new System.Drawing.Point(142, 35);
-            this.textTenNV.Name = "textTenNV";
-            this.textTenNV.Size = new System.Drawing.Size(100, 22);
-            this.textTenNV.TabIndex = 3;
             // 
             // label4
             // 
@@ -325,19 +318,26 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(317, 38);
+            this.label2.Location = new System.Drawing.Point(31, 41);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Mã nhân viên";
             // 
+            // textTenNV
+            // 
+            this.textTenNV.Location = new System.Drawing.Point(428, 38);
+            this.textTenNV.Name = "textTenNV";
+            this.textTenNV.Size = new System.Drawing.Size(100, 22);
+            this.textTenNV.TabIndex = 4;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 38);
+            this.label1.Location = new System.Drawing.Point(313, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 17);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 9;
             this.label1.Text = "Tên nhân viên";
             // 
             // frmNhanVien
@@ -381,10 +381,8 @@
         private System.Windows.Forms.TextBox textChucVu;
         private System.Windows.Forms.TextBox textSDT;
         private System.Windows.Forms.TextBox textMaNV;
-        private System.Windows.Forms.TextBox textTenNV;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonHuy;
         private System.Windows.Forms.Button buttonLuu;
         private System.Windows.Forms.Button buttonXoa;
@@ -394,5 +392,7 @@
         private System.Windows.Forms.ToolStripMenuItem lớpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loạiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ngườiDùngToolStripMenuItem;
+        private System.Windows.Forms.TextBox textTenNV;
+        private System.Windows.Forms.Label label1;
     }
 }

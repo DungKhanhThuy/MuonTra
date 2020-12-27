@@ -47,7 +47,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dateTimePickerNgayKetThuc = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerNgayBatDau = new System.Windows.Forms.DateTimePicker();
-            this.textMaPhong = new System.Windows.Forms.TextBox();
             this.textBuoi = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -56,12 +55,13 @@
             this.buttonXoa = new System.Windows.Forms.Button();
             this.buttonSua = new System.Windows.Forms.Button();
             this.buttonThem = new System.Windows.Forms.Button();
-            this.textMaLop = new System.Windows.Forms.TextBox();
             this.textTenLop = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBoxMaLop = new System.Windows.Forms.ComboBox();
+            this.comboBoxMaPhong = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTKB)).BeginInit();
@@ -216,9 +216,11 @@
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel1.Controls.Add(this.comboBoxMaPhong);
+            this.panel1.Controls.Add(this.comboBoxMaLop);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.dateTimePickerNgayKetThuc);
             this.panel1.Controls.Add(this.dateTimePickerNgayBatDau);
-            this.panel1.Controls.Add(this.textMaPhong);
             this.panel1.Controls.Add(this.textBuoi);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label6);
@@ -227,11 +229,9 @@
             this.panel1.Controls.Add(this.buttonXoa);
             this.panel1.Controls.Add(this.buttonSua);
             this.panel1.Controls.Add(this.buttonThem);
-            this.panel1.Controls.Add(this.textMaLop);
             this.panel1.Controls.Add(this.textTenLop);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(168, 3);
             this.panel1.Name = "panel1";
@@ -247,17 +247,10 @@
             // 
             // dateTimePickerNgayBatDau
             // 
-            this.dateTimePickerNgayBatDau.Location = new System.Drawing.Point(145, 79);
+            this.dateTimePickerNgayBatDau.Location = new System.Drawing.Point(145, 84);
             this.dateTimePickerNgayBatDau.Name = "dateTimePickerNgayBatDau";
             this.dateTimePickerNgayBatDau.Size = new System.Drawing.Size(200, 22);
             this.dateTimePickerNgayBatDau.TabIndex = 5;
-            // 
-            // textMaPhong
-            // 
-            this.textMaPhong.Location = new System.Drawing.Point(470, 139);
-            this.textMaPhong.Name = "textMaPhong";
-            this.textMaPhong.Size = new System.Drawing.Size(100, 22);
-            this.textMaPhong.TabIndex = 8;
             // 
             // textBuoi
             // 
@@ -278,7 +271,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(38, 139);
+            this.label6.Location = new System.Drawing.Point(34, 139);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(36, 17);
             this.label6.TabIndex = 13;
@@ -329,20 +322,12 @@
             this.buttonThem.Text = "Thêm";
             this.buttonThem.UseVisualStyleBackColor = true;
             // 
-            // textMaLop
-            // 
-            this.textMaLop.Location = new System.Drawing.Point(470, 23);
-            this.textMaLop.Name = "textMaLop";
-            this.textMaLop.Size = new System.Drawing.Size(100, 22);
-            this.textMaLop.TabIndex = 4;
-            this.textMaLop.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // textTenLop
             // 
-            this.textTenLop.Location = new System.Drawing.Point(145, 20);
+            this.textTenLop.Location = new System.Drawing.Point(470, 23);
             this.textTenLop.Name = "textTenLop";
             this.textTenLop.Size = new System.Drawing.Size(100, 22);
-            this.textTenLop.TabIndex = 3;
+            this.textTenLop.TabIndex = 4;
             // 
             // label4
             // 
@@ -356,29 +341,45 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(38, 81);
+            this.label3.Location = new System.Drawing.Point(34, 84);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Ngày bắt đầu";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(359, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Mã lớp";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 23);
+            this.label1.Location = new System.Drawing.Point(359, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên lớp";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(34, 29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 17);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Mã lớp";
+            // 
+            // comboBoxMaLop
+            // 
+            this.comboBoxMaLop.FormattingEnabled = true;
+            this.comboBoxMaLop.Location = new System.Drawing.Point(145, 26);
+            this.comboBoxMaLop.Name = "comboBoxMaLop";
+            this.comboBoxMaLop.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxMaLop.TabIndex = 3;
+            // 
+            // comboBoxMaPhong
+            // 
+            this.comboBoxMaPhong.FormattingEnabled = true;
+            this.comboBoxMaPhong.Location = new System.Drawing.Point(470, 139);
+            this.comboBoxMaPhong.Name = "comboBoxMaPhong";
+            this.comboBoxMaPhong.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxMaPhong.TabIndex = 8;
             // 
             // frmThoiKhoaBieu
             // 
@@ -418,10 +419,8 @@
         private System.Windows.Forms.DataGridView dataGridViewTKB;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textMaLop;
         private System.Windows.Forms.TextBox textTenLop;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonHuy;
         private System.Windows.Forms.Button buttonLuu;
@@ -431,12 +430,14 @@
         private System.Windows.Forms.ToolStripMenuItem phòngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lớpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loạiToolStripMenuItem;
-        private System.Windows.Forms.TextBox textMaPhong;
         private System.Windows.Forms.TextBox textBuoi;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTimePickerNgayKetThuc;
         private System.Windows.Forms.DateTimePicker dateTimePickerNgayBatDau;
         private System.Windows.Forms.ToolStripMenuItem ngườiDùngToolStripMenuItem;
+        private System.Windows.Forms.ComboBox comboBoxMaPhong;
+        private System.Windows.Forms.ComboBox comboBoxMaLop;
+        private System.Windows.Forms.Label label2;
     }
 }

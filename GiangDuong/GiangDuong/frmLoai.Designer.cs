@@ -51,8 +51,8 @@
             this.buttonSua = new System.Windows.Forms.Button();
             this.buttonThem = new System.Windows.Forms.Button();
             this.textMaLoai = new System.Windows.Forms.TextBox();
-            this.textTenLoai = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.textTenLoai = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -208,15 +208,15 @@
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel1.Controls.Add(this.textTenLoai);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.buttonHuy);
             this.panel1.Controls.Add(this.buttonLuu);
             this.panel1.Controls.Add(this.buttonXoa);
             this.panel1.Controls.Add(this.buttonSua);
             this.panel1.Controls.Add(this.buttonThem);
             this.panel1.Controls.Add(this.textMaLoai);
-            this.panel1.Controls.Add(this.textTenLoai);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(220, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(586, 220);
@@ -269,35 +269,35 @@
             // 
             // textMaLoai
             // 
-            this.textMaLoai.Location = new System.Drawing.Point(440, 70);
+            this.textMaLoai.Location = new System.Drawing.Point(154, 76);
             this.textMaLoai.Name = "textMaLoai";
             this.textMaLoai.Size = new System.Drawing.Size(100, 22);
-            this.textMaLoai.TabIndex = 4;
+            this.textMaLoai.TabIndex = 3;
             this.textMaLoai.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textTenLoai
-            // 
-            this.textTenLoai.Location = new System.Drawing.Point(154, 70);
-            this.textTenLoai.Name = "textTenLoai";
-            this.textTenLoai.Size = new System.Drawing.Size(100, 22);
-            this.textTenLoai.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(329, 73);
+            this.label2.Location = new System.Drawing.Point(43, 79);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Mã loại";
             // 
+            // textTenLoai
+            // 
+            this.textTenLoai.Location = new System.Drawing.Point(458, 78);
+            this.textTenLoai.Name = "textTenLoai";
+            this.textTenLoai.Size = new System.Drawing.Size(100, 22);
+            this.textTenLoai.TabIndex = 4;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 73);
+            this.label1.Location = new System.Drawing.Point(343, 81);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 17);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 7;
             this.label1.Text = "Tên loại";
             // 
             // frmLoai
@@ -338,9 +338,7 @@
         private System.Windows.Forms.DataGridView dataGridViewNguoiDung;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textMaLoai;
-        private System.Windows.Forms.TextBox textTenLoai;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonHuy;
         private System.Windows.Forms.Button buttonLuu;
         private System.Windows.Forms.Button buttonXoa;
@@ -350,5 +348,7 @@
         private System.Windows.Forms.ToolStripMenuItem lớpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loạiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ngườiDùngToolStripMenuItem;
+        private System.Windows.Forms.TextBox textTenLoai;
+        private System.Windows.Forms.Label label1;
     }
 }

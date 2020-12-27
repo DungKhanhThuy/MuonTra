@@ -54,10 +54,10 @@
             this.buttonXoa = new System.Windows.Forms.Button();
             this.buttonSua = new System.Windows.Forms.Button();
             this.buttonThem = new System.Windows.Forms.Button();
-            this.textMaTB = new System.Windows.Forms.TextBox();
             this.textMaYC = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxMaTB = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLichSu)).BeginInit();
@@ -212,6 +212,7 @@
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel1.Controls.Add(this.comboBoxMaTB);
             this.panel1.Controls.Add(this.richTextBoxNoiDung);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.dateTimePickerThoiGian);
@@ -221,7 +222,6 @@
             this.panel1.Controls.Add(this.buttonXoa);
             this.panel1.Controls.Add(this.buttonSua);
             this.panel1.Controls.Add(this.buttonThem);
-            this.panel1.Controls.Add(this.textMaTB);
             this.panel1.Controls.Add(this.textMaYC);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -308,14 +308,6 @@
             this.buttonThem.Text = "Thêm";
             this.buttonThem.UseVisualStyleBackColor = true;
             // 
-            // textMaTB
-            // 
-            this.textMaTB.Location = new System.Drawing.Point(375, 28);
-            this.textMaTB.Name = "textMaTB";
-            this.textMaTB.Size = new System.Drawing.Size(100, 22);
-            this.textMaTB.TabIndex = 4;
-            this.textMaTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // textMaYC
             // 
             this.textMaYC.Location = new System.Drawing.Point(125, 26);
@@ -340,6 +332,14 @@
             this.label1.Size = new System.Drawing.Size(81, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã yêu cầu";
+            // 
+            // comboBoxMaTB
+            // 
+            this.comboBoxMaTB.FormattingEnabled = true;
+            this.comboBoxMaTB.Location = new System.Drawing.Point(377, 28);
+            this.comboBoxMaTB.Name = "comboBoxMaTB";
+            this.comboBoxMaTB.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxMaTB.TabIndex = 4;
             // 
             // frmLichSu
             // 
@@ -378,7 +378,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridView dataGridViewLichSu;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textMaTB;
         private System.Windows.Forms.TextBox textMaYC;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -395,5 +394,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox richTextBoxNoiDung;
         private System.Windows.Forms.ToolStripMenuItem ngườiDùngToolStripMenuItem;
+        private System.Windows.Forms.ComboBox comboBoxMaTB;
     }
 }

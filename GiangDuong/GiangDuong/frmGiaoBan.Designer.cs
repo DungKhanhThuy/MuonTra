@@ -54,10 +54,10 @@
             this.buttonXoa = new System.Windows.Forms.Button();
             this.buttonSua = new System.Windows.Forms.Button();
             this.buttonThem = new System.Windows.Forms.Button();
-            this.textMaNV = new System.Windows.Forms.TextBox();
             this.textMaNK = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxMaNV = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGiaoBan)).BeginInit();
@@ -212,6 +212,7 @@
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel1.Controls.Add(this.comboBoxMaNV);
             this.panel1.Controls.Add(this.richTextBoxNoiDung);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.dateTimePickerThoiGian);
@@ -221,7 +222,6 @@
             this.panel1.Controls.Add(this.buttonXoa);
             this.panel1.Controls.Add(this.buttonSua);
             this.panel1.Controls.Add(this.buttonThem);
-            this.panel1.Controls.Add(this.textMaNV);
             this.panel1.Controls.Add(this.textMaNK);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -308,14 +308,6 @@
             this.buttonThem.Text = "Thêm";
             this.buttonThem.UseVisualStyleBackColor = true;
             // 
-            // textMaNV
-            // 
-            this.textMaNV.Location = new System.Drawing.Point(375, 28);
-            this.textMaNV.Name = "textMaNV";
-            this.textMaNV.Size = new System.Drawing.Size(100, 22);
-            this.textMaNV.TabIndex = 4;
-            this.textMaNV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // textMaNK
             // 
             this.textMaNK.Location = new System.Drawing.Point(125, 26);
@@ -340,6 +332,14 @@
             this.label1.Size = new System.Drawing.Size(77, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã nhật ký";
+            // 
+            // comboBoxMaNV
+            // 
+            this.comboBoxMaNV.FormattingEnabled = true;
+            this.comboBoxMaNV.Location = new System.Drawing.Point(396, 26);
+            this.comboBoxMaNV.Name = "comboBoxMaNV";
+            this.comboBoxMaNV.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxMaNV.TabIndex = 4;
             // 
             // frmGiaoBan
             // 
@@ -378,7 +378,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridView dataGridViewGiaoBan;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textMaNV;
         private System.Windows.Forms.TextBox textMaNK;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -395,5 +394,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox richTextBoxNoiDung;
         private System.Windows.Forms.ToolStripMenuItem ngườiDùngToolStripMenuItem;
+        private System.Windows.Forms.ComboBox comboBoxMaNV;
     }
 }

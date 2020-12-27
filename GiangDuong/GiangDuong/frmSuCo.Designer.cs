@@ -47,7 +47,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.richTextBoxXuLy = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textMaTB = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.richTextBoxSuCo = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -56,10 +55,11 @@
             this.buttonXoa = new System.Windows.Forms.Button();
             this.buttonSua = new System.Windows.Forms.Button();
             this.buttonThem = new System.Windows.Forms.Button();
-            this.textMaYC = new System.Windows.Forms.TextBox();
             this.textMaSC = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxMaYC = new System.Windows.Forms.ComboBox();
+            this.comboBoxMaTB = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGiaoBan)).BeginInit();
@@ -214,9 +214,10 @@
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel1.Controls.Add(this.comboBoxMaTB);
+            this.panel1.Controls.Add(this.comboBoxMaYC);
             this.panel1.Controls.Add(this.richTextBoxXuLy);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textMaTB);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.richTextBoxSuCo);
             this.panel1.Controls.Add(this.label4);
@@ -225,7 +226,6 @@
             this.panel1.Controls.Add(this.buttonXoa);
             this.panel1.Controls.Add(this.buttonSua);
             this.panel1.Controls.Add(this.buttonThem);
-            this.panel1.Controls.Add(this.textMaYC);
             this.panel1.Controls.Add(this.textMaSC);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -250,14 +250,6 @@
             this.label6.Size = new System.Drawing.Size(39, 17);
             this.label6.TabIndex = 22;
             this.label6.Text = "Xử lý";
-            // 
-            // textMaTB
-            // 
-            this.textMaTB.Location = new System.Drawing.Point(714, 24);
-            this.textMaTB.Name = "textMaTB";
-            this.textMaTB.Size = new System.Drawing.Size(100, 22);
-            this.textMaTB.TabIndex = 5;
-            this.textMaTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -330,14 +322,6 @@
             this.buttonThem.Text = "Thêm";
             this.buttonThem.UseVisualStyleBackColor = true;
             // 
-            // textMaYC
-            // 
-            this.textMaYC.Location = new System.Drawing.Point(468, 24);
-            this.textMaYC.Name = "textMaYC";
-            this.textMaYC.Size = new System.Drawing.Size(100, 22);
-            this.textMaYC.TabIndex = 4;
-            this.textMaYC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // textMaSC
             // 
             this.textMaSC.Location = new System.Drawing.Point(218, 24);
@@ -362,6 +346,22 @@
             this.label1.Size = new System.Drawing.Size(65, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã sự cố";
+            // 
+            // comboBoxMaYC
+            // 
+            this.comboBoxMaYC.FormattingEnabled = true;
+            this.comboBoxMaYC.Location = new System.Drawing.Point(459, 24);
+            this.comboBoxMaYC.Name = "comboBoxMaYC";
+            this.comboBoxMaYC.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxMaYC.TabIndex = 4;
+            // 
+            // comboBoxMaTB
+            // 
+            this.comboBoxMaTB.FormattingEnabled = true;
+            this.comboBoxMaTB.Location = new System.Drawing.Point(714, 24);
+            this.comboBoxMaTB.Name = "comboBoxMaTB";
+            this.comboBoxMaTB.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxMaTB.TabIndex = 5;
             // 
             // frmSuCo
             // 
@@ -400,7 +400,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridView dataGridViewGiaoBan;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textMaYC;
         private System.Windows.Forms.TextBox textMaSC;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -416,8 +415,9 @@
         private System.Windows.Forms.RichTextBox richTextBoxSuCo;
         private System.Windows.Forms.RichTextBox richTextBoxXuLy;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textMaTB;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ToolStripMenuItem ngườiDùngToolStripMenuItem;
+        private System.Windows.Forms.ComboBox comboBoxMaTB;
+        private System.Windows.Forms.ComboBox comboBoxMaYC;
     }
 }

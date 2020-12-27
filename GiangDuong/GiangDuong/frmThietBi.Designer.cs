@@ -54,14 +54,14 @@
             this.buttonXoa = new System.Windows.Forms.Button();
             this.buttonSua = new System.Windows.Forms.Button();
             this.buttonThem = new System.Windows.Forms.Button();
-            this.textMaLoai = new System.Windows.Forms.TextBox();
             this.textTenLoai = new System.Windows.Forms.TextBox();
-            this.textMaTB = new System.Windows.Forms.TextBox();
             this.textTenTB = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.textMaTB = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBoxMaLoai = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewThietBi)).BeginInit();
@@ -216,6 +216,10 @@
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel1.Controls.Add(this.comboBoxMaLoai);
+            this.panel1.Controls.Add(this.textMaTB);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.textMaPhong);
             this.panel1.Controls.Add(this.textTinhTrang);
             this.panel1.Controls.Add(this.label5);
@@ -225,13 +229,9 @@
             this.panel1.Controls.Add(this.buttonXoa);
             this.panel1.Controls.Add(this.buttonSua);
             this.panel1.Controls.Add(this.buttonThem);
-            this.panel1.Controls.Add(this.textMaLoai);
             this.panel1.Controls.Add(this.textTenLoai);
-            this.panel1.Controls.Add(this.textMaTB);
             this.panel1.Controls.Add(this.textTenTB);
-            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(220, 3);
             this.panel1.Name = "panel1";
@@ -249,13 +249,13 @@
             // 
             this.textTinhTrang.Location = new System.Drawing.Point(145, 136);
             this.textTinhTrang.Name = "textTinhTrang";
-            this.textTinhTrang.Size = new System.Drawing.Size(100, 22);
+            this.textTinhTrang.Size = new System.Drawing.Size(103, 22);
             this.textTinhTrang.TabIndex = 7;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(320, 139);
+            this.label5.Location = new System.Drawing.Point(316, 139);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 17);
             this.label5.TabIndex = 14;
@@ -264,7 +264,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(38, 139);
+            this.label6.Location = new System.Drawing.Point(37, 139);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 17);
             this.label6.TabIndex = 13;
@@ -315,70 +315,71 @@
             this.buttonThem.Text = "Thêm";
             this.buttonThem.UseVisualStyleBackColor = true;
             // 
-            // textMaLoai
-            // 
-            this.textMaLoai.Location = new System.Drawing.Point(431, 78);
-            this.textMaLoai.Name = "textMaLoai";
-            this.textMaLoai.Size = new System.Drawing.Size(100, 22);
-            this.textMaLoai.TabIndex = 6;
-            // 
             // textTenLoai
             // 
-            this.textTenLoai.Location = new System.Drawing.Point(145, 78);
+            this.textTenLoai.Location = new System.Drawing.Point(431, 79);
             this.textTenLoai.Name = "textTenLoai";
             this.textTenLoai.Size = new System.Drawing.Size(100, 22);
-            this.textTenLoai.TabIndex = 5;
-            // 
-            // textMaTB
-            // 
-            this.textMaTB.Location = new System.Drawing.Point(431, 20);
-            this.textMaTB.Name = "textMaTB";
-            this.textMaTB.Size = new System.Drawing.Size(100, 22);
-            this.textMaTB.TabIndex = 4;
-            this.textMaTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textTenLoai.TabIndex = 6;
             // 
             // textTenTB
             // 
-            this.textTenTB.Location = new System.Drawing.Point(145, 20);
+            this.textTenTB.Location = new System.Drawing.Point(431, 21);
             this.textTenTB.Name = "textTenTB";
             this.textTenTB.Size = new System.Drawing.Size(100, 22);
-            this.textTenTB.TabIndex = 3;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(320, 81);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 17);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Mã loại";
+            this.textTenTB.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(38, 81);
+            this.label3.Location = new System.Drawing.Point(316, 82);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Tên loại";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(320, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Mã thiết bị";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 23);
+            this.label1.Location = new System.Drawing.Point(316, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên thiết bị";
+            // 
+            // textMaTB
+            // 
+            this.textMaTB.Location = new System.Drawing.Point(148, 23);
+            this.textMaTB.Name = "textMaTB";
+            this.textMaTB.Size = new System.Drawing.Size(100, 22);
+            this.textMaTB.TabIndex = 3;
+            this.textMaTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(37, 84);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 17);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Mã loại";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(37, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(73, 17);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Mã thiết bị";
+            // 
+            // comboBoxMaLoai
+            // 
+            this.comboBoxMaLoai.FormattingEnabled = true;
+            this.comboBoxMaLoai.Location = new System.Drawing.Point(145, 81);
+            this.comboBoxMaLoai.Name = "comboBoxMaLoai";
+            this.comboBoxMaLoai.Size = new System.Drawing.Size(103, 24);
+            this.comboBoxMaLoai.TabIndex = 5;
             // 
             // frmThietBi
             // 
@@ -417,13 +418,9 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridView dataGridViewThietBi;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textMaLoai;
         private System.Windows.Forms.TextBox textTenLoai;
-        private System.Windows.Forms.TextBox textMaTB;
         private System.Windows.Forms.TextBox textTenTB;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonHuy;
         private System.Windows.Forms.Button buttonLuu;
@@ -438,5 +435,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ToolStripMenuItem ngườiDùngToolStripMenuItem;
+        private System.Windows.Forms.ComboBox comboBoxMaLoai;
+        private System.Windows.Forms.TextBox textMaTB;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
     }
 }
