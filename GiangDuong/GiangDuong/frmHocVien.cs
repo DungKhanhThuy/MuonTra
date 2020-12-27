@@ -15,14 +15,17 @@ namespace GiangDuong
         public frmHocVien()
         {
             InitializeComponent();
+            HienThi_MaHV();
         }
 
         HocVien hv = new HocVien();
         int chon;
+        ConnectDB cn = new ConnectDB();
 
+        
         public void KhoiTao()
         {
-            textMaHV.Enabled = textTenHV.Enabled = textMaLop.Enabled = textTenLop.Enabled = textSDT.Enabled = textDonVi.Enabled = false;
+            textMaHV.Enabled = textTenHV.Enabled = comboBoxMaLop.Enabled = textTenLop.Enabled = textSDT.Enabled = textDonVi.Enabled = false;
             buttonThem.Enabled = buttonSua.Enabled = buttonXoa.Enabled = true;
             buttonLuu.Enabled = buttonHuy.Enabled = false;
         }
@@ -30,14 +33,14 @@ namespace GiangDuong
         //Mo cac button enable
         public void Mo()
         {
-            textMaHV.Enabled = textTenHV.Enabled = textMaLop.Enabled = textTenLop.Enabled = textSDT.Enabled = textDonVi.Enabled = true;
+            textMaHV.Enabled = textTenHV.Enabled = comboBoxMaLop.Enabled = textTenLop.Enabled = textSDT.Enabled = textDonVi.Enabled = true;
             buttonThem.Enabled = buttonSua.Enabled = buttonXoa.Enabled = false;
             buttonLuu.Enabled = buttonHuy.Enabled = true;
         }
 
         public void SetNull()
         {
-            textMaHV.Text = textTenHV.Text = textMaLop.Text = textTenLop.Text = textSDT.Text = textDonVi.Text = "";
+            textMaHV.Text = textTenHV.Text = comboBoxMaLop.Text = textTenLop.Text = textSDT.Text = textDonVi.Text = "";
         }
 
 
@@ -49,30 +52,58 @@ namespace GiangDuong
                 textMaHV.Text = dataGridViewHocVien.Rows[e.RowIndex].Cells[0].Value.ToString();
                 textTenHV.Text = dataGridViewHocVien.Rows[e.RowIndex].Cells[1].Value.ToString();
                 textTenLop.Text = dataGridViewHocVien.Rows[e.RowIndex].Cells[2].Value.ToString();
-                textDonVi.Text = dataGridViewHocVien.Rows[e.RowIndex].Cells[3].Value.ToString();
-                textSDT.Text = dataGridViewHocVien.Rows[e.RowIndex].Cells[4].Value.ToString();
+                textSDT.Text = dataGridViewHocVien.Rows[e.RowIndex].Cells[3].Value.ToString();
+                textDonVi.Text = dataGridViewHocVien.Rows[e.RowIndex].Cells[4].Value.ToString();
 
             }
             catch
             { }
+        }
+        private void buttonThem_Click(object sender, EventArgs e)
+        {
+            Mo();
+            SetNull();
+            chon = 1;
+            DataTable dt = cn.LoadData("HienThi_Lop");
+            comboBoxMaLop.Text = dt.Rows[0][0].ToString();
+        }
+
+        private void buttonHuy_Click(object sender, EventArgs e)
+        {
+            frmHocVien_Load(sender, e);
+            SetNull();
         }
 
         private void buttonSua_Click(object sender, EventArgs e)
         {
             Mo();
             textMaHV.Enabled = false;
-            chon = 1;
+            chon = 2;
         }
 
         private void buttonXoa_Click(object sender, EventArgs e)
         {
-            if(DialogResult.Yes == MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            try
             {
-                hv.XoaHocVien(textMaHV.Text);
-                MessageBox.Show("Xóa thành công!");
-                frmHocVien_Load(sender, e);
-                SetNull();
-            }    
+                if (cn.LoadData1("XemHocVien", "@MaHV", textMaHV.Text).Rows.Count == 0)
+                    MessageBox.Show("Không tìm thấy Học viên này");
+                else
+                {
+                    if (DialogResult.Yes == MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                    {
+                        cn.Xoa("XoaHocVien","@MaHV", textMaHV.Text);
+                        MessageBox.Show("Xóa thành công!");
+                        frmHocVien_Load(sender, e);
+                        SetNull();
+                    }
+                }
+                
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void frmHocVien_Load(object sender, EventArgs e)
@@ -85,49 +116,50 @@ namespace GiangDuong
 
         private void buttonLuu_Click(object sender, EventArgs e)
         {
-            if(chon == 1)
+            if (chon == 1) //Them
             {
-                if (textTenHV.Text == "" || textMaLop.Text == "" || textTenLop.Text == "" || textSDT.Text == "" || textDonVi.Text == "")
-                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+                if (cn.LoadData1("XemHocVien", "@MaHV", textMaHV.Text).Rows.Count > 0)
+                    MessageBox.Show("Mã học viên đã có trong danh sách");
                 else
                 {
-                    if(DialogResult.Yes == MessageBox.Show("Bạn có muốn sửa học viên này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                    if (textTenHV.Text == "" || comboBoxMaLop.Text == "" || textTenLop.Text == "" || textSDT.Text == "" || textDonVi.Text == "")
+                        MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+                    else
                     {
-                        hv.SuaHocVien(textMaHV.Text, textTenHV.Text, textDonVi.Text, textSDT.Text, textMaLop.Text);
-                        MessageBox.Show("Sửa thành công");
-                        frmHocVien_Load(sender, e);
-                    }    
-                }    
-            }
-            else if(chon == 2)
-            {
-                if (textTenHV.Text == "" || textMaLop.Text == "" || textTenLop.Text == "" || textSDT.Text == "" || textDonVi.Text == "")
-                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
-                else
-                {
-                    if (DialogResult.Yes == MessageBox.Show("Bạn có muốn thêm học viên này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-                    {
-                        hv.ThemHocVien(textMaHV.Text, textTenHV.Text, textDonVi.Text, textSDT.Text, textMaLop.Text);
+                        hv.ThemHocVien(textMaHV.Text, textTenHV.Text, textDonVi.Text, textSDT.Text, comboBoxMaLop.Text);
                         MessageBox.Show("Thêm thành công");
-                        SetNull();
                         frmHocVien_Load(sender, e);
                     }
                 }
-            }    
+                
+            }
+            else if (chon == 2) //Sua
+            {
+                if (textTenHV.Text == "" || comboBoxMaLop.Text == "" || textTenLop.Text == "" || textSDT.Text == "" || textDonVi.Text == "")
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+                else
+                {
+                    if (DialogResult.Yes == MessageBox.Show("Bạn có muốn sửa học viên này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                    {
+                        hv.SuaHocVien(textMaHV.Text, textTenHV.Text, textDonVi.Text, textSDT.Text, comboBoxMaLop.Text);
+                        MessageBox.Show("Sửa thành công");
+                        frmHocVien_Load(sender, e);
+                    }
+                }
+            }
         }
 
-        private void buttonThem_Click(object sender, EventArgs e)
+        public void HienThi_MaHV()
         {
-            Mo();
-            SetNull();
-            chon = 2;
+            comboBoxMaLop.DataSource = cn.LoadData("HienThi_Lop");
+            comboBoxMaLop.DisplayMember = "MaLop";
+            comboBoxMaLop.ValueMember = "TenLop";
+            comboBoxMaLop.SelectedValue = "MaLop";
+            comboBoxMaLop.SelectedIndex = 0;
+
         }
 
-        private void buttonHuy_Click(object sender, EventArgs e)
-        {
-            frmHocVien_Load(sender, e);
-            SetNull();
-		}
+        
 
         private void mượnTrảToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -211,6 +243,38 @@ namespace GiangDuong
             frmNguoiDung hd = new frmNguoiDung();
             hd.Show();
             Hide();
+        }
+
+        
+
+        
+
+        private void comboBoxMaLop_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ConnectDB cn = new ConnectDB();
+
+            textTenLop.Text = cn.LoadData1("HienThi_TenLop", "MaLop", comboBoxMaLop.Text).ToString();
+        }
+
+        private void comboBoxMaLop_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable dt = cn.LoadData1("HienThi_TenLop", "@MaLop", comboBoxMaLop.Text);
+                if (dt.Rows.Count != 0)
+                {
+                    if (comboBoxMaLop.SelectedItem != null)
+                    {
+                        textTenLop.Text = dt.Rows[0][1].ToString();
+                    }
+                }    
+                    
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
