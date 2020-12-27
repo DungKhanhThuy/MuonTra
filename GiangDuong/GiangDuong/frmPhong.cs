@@ -100,39 +100,39 @@ namespace GiangDuong
             Hide();
         }
 
-        ClassLop lop = new ClassLop();
+        ClassPhong phong = new ClassPhong();
         int chon;
         ConnectDB cn = new ConnectDB();
 
 
         public void KhoiTao()
         {
-            textMaLop.Enabled = textTenLop.Enabled = false;
-            buttonThem.Enabled = buttonSua.Enabled = buttonXoa.Enabled = true;
+            textMaPhong.Enabled = false;
+            buttonThem.Enabled =  buttonXoa.Enabled = true;
             buttonLuu.Enabled = buttonHuy.Enabled = false;
         }
 
         //Mo cac button enable
         public void Mo()
         {
-            textMaLop.Enabled = textTenLop.Enabled = true;
-            buttonThem.Enabled = buttonSua.Enabled = buttonXoa.Enabled = false;
+            textMaPhong.Enabled = true;
+            buttonThem.Enabled =  buttonXoa.Enabled = false;
             buttonLuu.Enabled = buttonHuy.Enabled = true;
         }
 
         public void SetNull()
         {
-            textMaLop.Text = textTenLop.Text = "";
+            textMaPhong.Text = "";
         }
 
 
 
-        private void dataGridViewHocVien_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewPhong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                textMaLop.Text = dataGridViewLop.Rows[e.RowIndex].Cells[0].Value.ToString();
-                textTenLop.Text = dataGridViewLop.Rows[e.RowIndex].Cells[1].Value.ToString();
+                textMaPhong.Text = dataGridViewPhong.Rows[e.RowIndex].Cells[0].Value.ToString();
+               
             }
             catch (Exception ex)
             {
@@ -144,19 +144,18 @@ namespace GiangDuong
             Mo();
             SetNull();
             chon = 1;
-            DataTable dt = cn.LoadData("HienThi_Lop");
+            DataTable dt = cn.LoadData("HienThi_Phong");
         }
 
         private void buttonHuy_Click(object sender, EventArgs e)
         {
-            frmLop_Load(sender, e);
+            frmPhong_Load(sender, e);
             SetNull();
         }
 
         private void buttonSua_Click(object sender, EventArgs e)
         {
             Mo();
-            textMaLop.Enabled = false;
             chon = 2;
         }
 
@@ -164,15 +163,15 @@ namespace GiangDuong
         {
             try
             {
-                if (cn.LoadData1("XemLop", "@MaLop", textMaLop.Text).Rows.Count == 0)
-                    MessageBox.Show("Không tìm thấy Lớp này");
+                if (cn.LoadData1("XemPhong", "@MaPhong", textMaPhong.Text).Rows.Count == 0)
+                    MessageBox.Show("Không tìm thấy Phòng này");
                 else
                 {
                     if (DialogResult.Yes == MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                     {
-                        cn.Xoa("XoaLop", "@MaLop", textMaLop.Text);
+                        cn.Xoa("XoaPhong", "@MaPhong", textMaPhong.Text);
                         MessageBox.Show("Xóa thành công!");
-                        frmLop_Load(sender, e);
+                        frmPhong_Load(sender, e);
                         SetNull();
                     }
                 }
@@ -185,12 +184,12 @@ namespace GiangDuong
 
         }
 
-        private void frmLop_Load(object sender, EventArgs e)
+        private void frmPhong_Load(object sender, EventArgs e)
         {
             try
             {
                 KhoiTao();
-                dataGridViewLop.DataSource = lop.Show();
+                dataGridViewPhong.DataSource = phong.Show();
                 chon = 0;
             }
             catch (Exception ex)
@@ -205,32 +204,32 @@ namespace GiangDuong
             {
                 if (chon == 1) //Them
                 {
-                    if (cn.LoadData1("XemLop", "@MaLop", textMaLop.Text).Rows.Count > 0)
-                        MessageBox.Show("Mã lớp đã có trong danh sách");
+                    if (cn.LoadData1("XemPhong", "@MaPhong", textMaPhong.Text).Rows.Count > 0)
+                        MessageBox.Show("Mã phòng đã có trong danh sách");
                     else
                     {
-                        if (textTenLop.Text == "")
+                        if (textMaPhong.Text == "")
                             MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
                         else
                         {
-                            lop.ThemLop(textMaLop.Text, textTenLop.Text);
+                            phong.ThemPhong(textMaPhong.Text);
                             MessageBox.Show("Thêm thành công");
-                            frmLop_Load(sender, e);
+                            frmPhong_Load(sender, e);
                         }
                     }
 
                 }
                 else if (chon == 2) //Sua
                 {
-                    if (textTenLop.Text == "")
+                    if (textMaPhong.Text == "")
                         MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
                     else
                     {
                         if (DialogResult.Yes == MessageBox.Show("Bạn có muốn sửa loại này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                         {
-                            lop.SuaLop(textMaLop.Text, textTenLop.Text);
+                            phong.SuaPhong(textMaPhong.Text);
                             MessageBox.Show("Sửa thành công");
-                            frmLop_Load(sender, e);
+                            frmPhong_Load(sender, e);
                         }
                     }
                 }

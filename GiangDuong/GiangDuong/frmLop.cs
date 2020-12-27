@@ -127,7 +127,7 @@ namespace GiangDuong
 
 
 
-        private void dataGridViewHocVien_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewLop_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -222,15 +222,20 @@ namespace GiangDuong
                 }
                 else if (chon == 2) //Sua
                 {
-                    if (textTenLop.Text == "")
-                        MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+                    if (cn.LoadData1("XemLop", "@MaLop", textMaLop.Text).Rows.Count == 0)
+                        MessageBox.Show("Mã lớp chưa có trong danh sách");
                     else
                     {
-                        if (DialogResult.Yes == MessageBox.Show("Bạn có muốn sửa loại này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                        if (textTenLop.Text == "")
+                            MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+                        else
                         {
-                            lop.SuaLop(textMaLop.Text, textTenLop.Text);
-                            MessageBox.Show("Sửa thành công");
-                            frmLop_Load(sender, e);
+                            if (DialogResult.Yes == MessageBox.Show("Bạn có muốn sửa loại này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                            {
+                                lop.SuaLop(textMaLop.Text, textTenLop.Text);
+                                MessageBox.Show("Sửa thành công");
+                                frmLop_Load(sender, e);
+                            }
                         }
                     }
                 }

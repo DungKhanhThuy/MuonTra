@@ -17,7 +17,7 @@ namespace GiangDuong
             return cn.LoadData("HienThi_Phong");
         }
 
-        public void ThemLoai(string maphong)
+        public void ThemPhong(string maphong)
         {
             try
             {
@@ -39,7 +39,7 @@ namespace GiangDuong
             }
         }
 
-        public void SuaLoai(string maphong)
+        public void SuaPhong(string maphong)
         {
             try
             {

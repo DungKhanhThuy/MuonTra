@@ -127,7 +127,7 @@ namespace GiangDuong
 
 
 
-        private void dataGridViewHocVien_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewLoai_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -220,17 +220,23 @@ namespace GiangDuong
                 }
                 else if (chon == 2) //Sua
                 {
-                    if (textTenLoai.Text == "")
-                        MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+                    if (cn.LoadData1("XemLoai", "@MaLoai", textMaLoai.Text).Rows.Count == 0)
+                        MessageBox.Show("Mã loại chưa có trong danh sách");
                     else
                     {
-                        if (DialogResult.Yes == MessageBox.Show("Bạn có muốn sửa loại này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                        if (textTenLoai.Text == "")
+                            MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+                        else
                         {
-                            loai.SuaLoai(textMaLoai.Text, textTenLoai.Text);
-                            MessageBox.Show("Sửa thành công");
-                            frmLoai_Load(sender, e);
+                            if (DialogResult.Yes == MessageBox.Show("Bạn có muốn sửa loại này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                            {
+                                loai.SuaLoai(textMaLoai.Text, textTenLoai.Text);
+                                MessageBox.Show("Sửa thành công");
+                                frmLoai_Load(sender, e);
+                            }
                         }
                     }
+                    
                 }
             }
             catch (Exception ex)
