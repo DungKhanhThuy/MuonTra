@@ -74,7 +74,7 @@ namespace GiangDuong
 
         private void loạiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmNguoiDung hd = new frmNguoiDung();
+            frmLoai hd = new frmLoai();
             hd.Show();
             Hide();
         }
@@ -95,9 +95,148 @@ namespace GiangDuong
 
         private void ngườiDùngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmLoai hd = new frmLoai();
+            frmNguoiDung hd = new frmNguoiDung();
             hd.Show();
             Hide();
+        }
+
+        ClassLoai loai = new ClassLoai();
+        int chon;
+        ConnectDB cn = new ConnectDB();
+
+
+        public void KhoiTao()
+        {
+            textMaLoai.Enabled = textTenLoai.Enabled = false;
+            buttonThem.Enabled = buttonSua.Enabled = buttonXoa.Enabled = true;
+            buttonLuu.Enabled = buttonHuy.Enabled = false;
+        }
+
+        //Mo cac button enable
+        public void Mo()
+        {
+            textMaLoai.Enabled = textTenLoai.Enabled = true;
+            buttonThem.Enabled = buttonSua.Enabled = buttonXoa.Enabled = false;
+            buttonLuu.Enabled = buttonHuy.Enabled = true;
+        }
+
+        public void SetNull()
+        {
+            textMaLoai.Text = textTenLoai.Text = "";
+        }
+
+
+
+        private void dataGridViewHocVien_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                textMaLoai.Text = dataGridViewLoai.Rows[e.RowIndex].Cells[0].Value.ToString();
+                textTenLoai.Text = dataGridViewLoai.Rows[e.RowIndex].Cells[1].Value.ToString();
+            }
+            catch
+            { }
+        }
+        private void buttonThem_Click(object sender, EventArgs e)
+        {
+            Mo();
+            SetNull();
+            chon = 1;
+            DataTable dt = cn.LoadData("HienThi_Loai");
+        }
+
+        private void buttonHuy_Click(object sender, EventArgs e)
+        {
+            frmLoai_Load(sender, e);
+            SetNull();
+        }
+
+        private void buttonSua_Click(object sender, EventArgs e)
+        {
+            Mo();
+            textMaLoai.Enabled = false;
+            chon = 2;
+        }
+
+        private void buttonXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cn.LoadData1("XemLoai", "@MaLoai", textMaLoai.Text).Rows.Count == 0)
+                    MessageBox.Show("Không tìm thấy Loại thiết bị này");
+                else
+                {
+                    if (DialogResult.Yes == MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                    {
+                        cn.Xoa("XoaLoai", "@MaLoai", textMaLoai.Text);
+                        MessageBox.Show("Xóa thành công!");
+                        frmLoai_Load(sender, e);
+                        SetNull();
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void frmLoai_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                KhoiTao();
+                dataGridViewLoai.DataSource = loai.Show();
+                chon = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void buttonLuu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (chon == 1) //Them
+                {
+                    if (cn.LoadData1("XemLoai", "@MaLoai", textMaLoai.Text).Rows.Count > 0)
+                        MessageBox.Show("Mã loại đã có trong danh sách");
+                    else
+                    {
+                        if (textTenLoai.Text == "")
+                            MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+                        else
+                        {
+                            loai.ThemLoai(textMaLoai.Text, textTenLoai.Text);
+                            MessageBox.Show("Thêm thành công");
+                            frmLoai_Load(sender, e);
+                        }
+                    }
+
+                }
+                else if (chon == 2) //Sua
+                {
+                    if (textTenLoai.Text == "")
+                        MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+                    else
+                    {
+                        if (DialogResult.Yes == MessageBox.Show("Bạn có muốn sửa loại này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                        {
+                            loai.SuaLoai(textMaLoai.Text, textTenLoai.Text);
+                            MessageBox.Show("Sửa thành công");
+                            frmLoai_Load(sender, e);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

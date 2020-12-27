@@ -43,7 +43,7 @@
             this.sựCốToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ngườiDùngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridViewNguoiDung = new System.Windows.Forms.DataGridView();
+            this.dataGridViewLoai = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textTenLoai = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -56,7 +56,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNguoiDung)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLoai)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -181,7 +181,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.dataGridViewNguoiDung, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dataGridViewLoai, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 45);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -191,20 +191,18 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1026, 595);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
-            // dataGridViewNguoiDung
+            // dataGridViewLoai
             // 
-            this.dataGridViewNguoiDung.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewNguoiDung.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewNguoiDung.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewNguoiDung.Location = new System.Drawing.Point(3, 229);
-            this.dataGridViewNguoiDung.Name = "dataGridViewNguoiDung";
-            this.dataGridViewNguoiDung.ReadOnly = true;
-            this.dataGridViewNguoiDung.RowHeadersWidth = 51;
-            this.dataGridViewNguoiDung.RowTemplate.Height = 24;
-            this.dataGridViewNguoiDung.Size = new System.Drawing.Size(1020, 363);
-            this.dataGridViewNguoiDung.TabIndex = 1;
+            this.dataGridViewLoai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.dataGridViewLoai.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewLoai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewLoai.Location = new System.Drawing.Point(3, 229);
+            this.dataGridViewLoai.Name = "dataGridViewLoai";
+            this.dataGridViewLoai.ReadOnly = true;
+            this.dataGridViewLoai.RowHeadersWidth = 51;
+            this.dataGridViewLoai.RowTemplate.Height = 24;
+            this.dataGridViewLoai.Size = new System.Drawing.Size(1020, 363);
+            this.dataGridViewLoai.TabIndex = 1;
             // 
             // panel1
             // 
@@ -225,15 +223,15 @@
             // 
             // textTenLoai
             // 
-            this.textTenLoai.Location = new System.Drawing.Point(458, 78);
+            this.textTenLoai.Location = new System.Drawing.Point(408, 78);
             this.textTenLoai.Name = "textTenLoai";
-            this.textTenLoai.Size = new System.Drawing.Size(100, 22);
+            this.textTenLoai.Size = new System.Drawing.Size(150, 22);
             this.textTenLoai.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(343, 81);
+            this.label1.Location = new System.Drawing.Point(321, 81);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 17);
             this.label1.TabIndex = 7;
@@ -247,6 +245,7 @@
             this.buttonHuy.TabIndex = 6;
             this.buttonHuy.Text = "Huỷ";
             this.buttonHuy.UseVisualStyleBackColor = true;
+            this.buttonHuy.Click += new System.EventHandler(this.buttonHuy_Click);
             // 
             // buttonLuu
             // 
@@ -256,6 +255,7 @@
             this.buttonLuu.TabIndex = 5;
             this.buttonLuu.Text = "Lưu";
             this.buttonLuu.UseVisualStyleBackColor = true;
+            this.buttonLuu.Click += new System.EventHandler(this.buttonLuu_Click);
             // 
             // buttonXoa
             // 
@@ -265,6 +265,7 @@
             this.buttonXoa.TabIndex = 2;
             this.buttonXoa.Text = "Xoá";
             this.buttonXoa.UseVisualStyleBackColor = true;
+            this.buttonXoa.Click += new System.EventHandler(this.buttonXoa_Click);
             // 
             // buttonSua
             // 
@@ -274,6 +275,7 @@
             this.buttonSua.TabIndex = 1;
             this.buttonSua.Text = "Sửa";
             this.buttonSua.UseVisualStyleBackColor = true;
+            this.buttonSua.Click += new System.EventHandler(this.buttonSua_Click);
             // 
             // buttonThem
             // 
@@ -283,6 +285,7 @@
             this.buttonThem.TabIndex = 0;
             this.buttonThem.Text = "Thêm";
             this.buttonThem.UseVisualStyleBackColor = true;
+            this.buttonThem.Click += new System.EventHandler(this.buttonThem_Click);
             // 
             // textMaLoai
             // 
@@ -312,10 +315,11 @@
             this.Name = "frmLoai";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin Loại thiết bị";
+            this.Load += new System.EventHandler(this.frmLoai_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNguoiDung)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLoai)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -336,7 +340,7 @@
         private System.Windows.Forms.ToolStripMenuItem giaoBanToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sựCốToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataGridView dataGridViewNguoiDung;
+        private System.Windows.Forms.DataGridView dataGridViewLoai;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textMaLoai;
         private System.Windows.Forms.Label label2;

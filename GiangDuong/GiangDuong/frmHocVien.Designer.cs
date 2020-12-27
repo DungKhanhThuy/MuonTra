@@ -79,14 +79,14 @@
             this.ngườiDùngToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1026, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1026, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // mượnTrảToolStripMenuItem
             // 
             this.mượnTrảToolStripMenuItem.Name = "mượnTrảToolStripMenuItem";
-            this.mượnTrảToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
+            this.mượnTrảToolStripMenuItem.Size = new System.Drawing.Size(84, 26);
             this.mượnTrảToolStripMenuItem.Text = "Mượn trả";
             this.mượnTrảToolStripMenuItem.Click += new System.EventHandler(this.mượnTrảToolStripMenuItem_Click);
             // 
@@ -102,7 +102,7 @@
             this.lơpToolStripMenuItem,
             this.loạiToolStripMenuItem});
             this.thôngTinToolStripMenuItem.Name = "thôngTinToolStripMenuItem";
-            this.thôngTinToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
+            this.thôngTinToolStripMenuItem.Size = new System.Drawing.Size(86, 26);
             this.thôngTinToolStripMenuItem.Text = "Thông tin";
             // 
             // lịchSửToolStripMenuItem
@@ -164,21 +164,21 @@
             // giaoBanToolStripMenuItem
             // 
             this.giaoBanToolStripMenuItem.Name = "giaoBanToolStripMenuItem";
-            this.giaoBanToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
+            this.giaoBanToolStripMenuItem.Size = new System.Drawing.Size(83, 26);
             this.giaoBanToolStripMenuItem.Text = "Giao ban";
             this.giaoBanToolStripMenuItem.Click += new System.EventHandler(this.giaoBanToolStripMenuItem_Click);
             // 
             // sựCốToolStripMenuItem
             // 
             this.sựCốToolStripMenuItem.Name = "sựCốToolStripMenuItem";
-            this.sựCốToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
+            this.sựCốToolStripMenuItem.Size = new System.Drawing.Size(60, 26);
             this.sựCốToolStripMenuItem.Text = "Sự cố";
             this.sựCốToolStripMenuItem.Click += new System.EventHandler(this.sựCốToolStripMenuItem_Click);
             // 
             // ngườiDùngToolStripMenuItem
             // 
             this.ngườiDùngToolStripMenuItem.Name = "ngườiDùngToolStripMenuItem";
-            this.ngườiDùngToolStripMenuItem.Size = new System.Drawing.Size(103, 24);
+            this.ngườiDùngToolStripMenuItem.Size = new System.Drawing.Size(103, 26);
             this.ngườiDùngToolStripMenuItem.Text = "Người dùng";
             this.ngườiDùngToolStripMenuItem.Click += new System.EventHandler(this.ngườiDùngToolStripMenuItem_Click);
             // 
@@ -201,9 +201,7 @@
             // 
             // dataGridViewHocVien
             // 
-            this.dataGridViewHocVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewHocVien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dataGridViewHocVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewHocVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewHocVien.Location = new System.Drawing.Point(3, 268);
@@ -239,14 +237,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(586, 259);
             this.panel1.TabIndex = 0;
-            // 
-            // comboBoxMaLop
-            // 
-            this.comboBoxMaLop.FormattingEnabled = true;
-            this.comboBoxMaLop.Location = new System.Drawing.Point(142, 85);
-            this.comboBoxMaLop.Name = "comboBoxMaLop";
-            this.comboBoxMaLop.Size = new System.Drawing.Size(100, 24);
-            this.comboBoxMaLop.TabIndex = 5;
             // 
             // comboBoxMaLop
             // 

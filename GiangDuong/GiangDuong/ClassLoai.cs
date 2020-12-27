@@ -9,15 +9,15 @@ using System.Windows.Forms;
 
 namespace GiangDuong
 {
-    class HocVien
+    class ClassLoai
     {
         ConnectDB cn = new ConnectDB();
         public DataTable Show()
-        {            
-            return cn.LoadData("HienThi_HocVien");
+        {
+            return cn.LoadData("HienThi_Loai");
         }
 
-        public void ThemHocVien(string mahv, string tenhv, string donvi, string sdt, string malop)
+        public void ThemLoai(string maloai, string tenloai)
         {
             try
             {
@@ -25,13 +25,11 @@ namespace GiangDuong
                 SqlConnection cn = new SqlConnection(ConnectDB.getconnect());
                 cn.Open();
                 command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "ThemHocVien";
+                command.CommandText = "ThemLoai";
                 command.Connection = cn;
-                command.Parameters.AddWithValue("@MaHV", SqlDbType.VarChar).Value = mahv;
-                command.Parameters.AddWithValue("@ten", SqlDbType.VarChar).Value = tenhv;
-                command.Parameters.AddWithValue("@DonVi", SqlDbType.VarChar).Value = donvi;
-                command.Parameters.AddWithValue("@SDT", SqlDbType.VarChar).Value = sdt;
-                command.Parameters.AddWithValue("@MaLop", SqlDbType.VarChar).Value = malop;
+                command.Parameters.AddWithValue("@MaLoai", SqlDbType.VarChar).Value = maloai;
+                command.Parameters.AddWithValue("@TenLoai", SqlDbType.VarChar).Value = tenloai;
+                
                 command.ExecuteNonQuery();
                 cn.Close();
             }
@@ -41,7 +39,7 @@ namespace GiangDuong
             }
         }
 
-        public void SuaHocVien(string mahv, string tenhv, string donvi, string sdt, string malop)
+        public void SuaLoai(string maloai, string tenloai)
         {
             try
             {
@@ -49,13 +47,10 @@ namespace GiangDuong
                 SqlConnection cn = new SqlConnection(ConnectDB.getconnect());
                 cn.Open();
                 command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "SuaHocVien";
+                command.CommandText = "SuaLoai";
                 command.Connection = cn;
-                command.Parameters.AddWithValue("@MaHV", SqlDbType.VarChar).Value = mahv;
-                command.Parameters.AddWithValue("@ten", SqlDbType.VarChar).Value = tenhv;
-                command.Parameters.AddWithValue("@DonVi", SqlDbType.VarChar).Value = donvi;
-                command.Parameters.AddWithValue("@SDT", SqlDbType.VarChar).Value = sdt;
-                command.Parameters.AddWithValue("@MaLop", SqlDbType.VarChar).Value = malop;
+                command.Parameters.AddWithValue("@MaLoai", SqlDbType.VarChar).Value = maloai;
+                command.Parameters.AddWithValue("@TenLoai", SqlDbType.VarChar).Value = tenloai;
                 command.ExecuteNonQuery();
                 cn.Close();
             }
