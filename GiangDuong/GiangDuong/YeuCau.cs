@@ -9,15 +9,15 @@ using System.Windows.Forms;
 
 namespace GiangDuong
 {
-    class HocVien
+    class YeuCau
     {
         ConnectDB cn = new ConnectDB();
         public DataTable Show()
-        {            
-            return cn.LoadData("HienThi_HocVien");
+        {
+            return cn.LoadData("HienThi_YeuCau");
         }
 
-        public void HocVien_DB(string proc, string mahv, string tenhv, string donvi, string sdt, string malop)
+        public void YeuCau_DB(string proc, string mayc, string mahv, string manv, DateTime tgmuon, DateTime tgtra, string ghichu )
         {
             try
             {
@@ -27,11 +27,12 @@ namespace GiangDuong
                 command.CommandType = CommandType.StoredProcedure;
                 command.CommandText = proc;
                 command.Connection = cn;
+                command.Parameters.AddWithValue("@MaYC", SqlDbType.VarChar).Value = mayc;
                 command.Parameters.AddWithValue("@MaHV", SqlDbType.VarChar).Value = mahv;
-                command.Parameters.AddWithValue("@ten", SqlDbType.VarChar).Value = tenhv;
-                command.Parameters.AddWithValue("@DonVi", SqlDbType.VarChar).Value = donvi;
-                command.Parameters.AddWithValue("@SDT", SqlDbType.VarChar).Value = sdt;
-                command.Parameters.AddWithValue("@MaLop", SqlDbType.VarChar).Value = malop;
+                command.Parameters.AddWithValue("@MaNV", SqlDbType.VarChar).Value = manv;
+                command.Parameters.AddWithValue("@TGMuon", SqlDbType.VarChar).Value = tgmuon;
+                command.Parameters.AddWithValue("@TGTra", SqlDbType.VarChar).Value = tgtra;
+                command.Parameters.AddWithValue("@GhiChu", SqlDbType.VarChar).Value = ghichu;
                 command.ExecuteNonQuery();
                 cn.Close();
             }
