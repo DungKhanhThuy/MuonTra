@@ -109,9 +109,7 @@ namespace GiangDuong
         private void frmHocVien_Load(object sender, EventArgs e)
         {
             KhoiTao();
-            dataGridViewHocVien.DataSource = hv.Show();
-
-            
+            dataGridViewHocVien.DataSource = hv.Show();         
 
             chon = 0;
         }
@@ -128,7 +126,7 @@ namespace GiangDuong
                         MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
                     else
                     {
-                        hv.ThemHocVien(textMaHV.Text, textTenHV.Text, textDonVi.Text, textSDT.Text, comboBoxMaLop.Text);
+                        hv.HocVien_DB("ThemHocVien", textMaHV.Text, textTenHV.Text, textDonVi.Text, textSDT.Text, comboBoxMaLop.Text);
                         MessageBox.Show("Thêm thành công");
                         frmHocVien_Load(sender, e);
                     }
@@ -137,17 +135,23 @@ namespace GiangDuong
             }
             else if (chon == 2) //Sua
             {
-                if (textTenHV.Text == "" || comboBoxMaLop.Text == "" || textTenLop.Text == "" || textSDT.Text == "" || textDonVi.Text == "")
-                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+                if (cn.LoadData1("XemHocVien", "@MaHV", textMaHV.Text).Rows.Count == 0)
+                    MessageBox.Show("Mã học viên chưa có trong danh sách");
                 else
                 {
-                    if (DialogResult.Yes == MessageBox.Show("Bạn có muốn sửa học viên này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                    if (textTenHV.Text == "" || comboBoxMaLop.Text == "" || textTenLop.Text == "" || textSDT.Text == "" || textDonVi.Text == "")
+                        MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+                    else
                     {
-                        hv.SuaHocVien(textMaHV.Text, textTenHV.Text, textDonVi.Text, textSDT.Text, comboBoxMaLop.Text);
-                        MessageBox.Show("Sửa thành công");
-                        frmHocVien_Load(sender, e);
+                        if (DialogResult.Yes == MessageBox.Show("Bạn có muốn sửa học viên này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                        {
+                            hv.HocVien_DB("SuaHocVien", textMaHV.Text, textTenHV.Text, textDonVi.Text, textSDT.Text, comboBoxMaLop.Text);
+                            MessageBox.Show("Sửa thành công");
+                            frmHocVien_Load(sender, e);
+                        }
                     }
                 }
+                
             }
         }
 
@@ -162,6 +166,28 @@ namespace GiangDuong
         }
 
         
+        private void comboBoxMaLop_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable dt = cn.LoadData1("HienThi_TenLop", "@MaLop", comboBoxMaLop.Text);
+                if (dt.Rows.Count != 0)
+                {
+                    if (comboBoxMaLop.SelectedItem != null)
+                    {
+                        textTenLop.Text = dt.Rows[0][1].ToString();
+                    }
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
 
         private void mượnTrảToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -251,32 +277,6 @@ namespace GiangDuong
 
         
 
-        private void comboBoxMaLop_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ConnectDB cn = new ConnectDB();
-
-            textTenLop.Text = cn.LoadData1("HienThi_TenLop", "MaLop", comboBoxMaLop.Text).ToString();
-        }
-
-        private void comboBoxMaLop_SelectedValueChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                DataTable dt = cn.LoadData1("HienThi_TenLop", "@MaLop", comboBoxMaLop.Text);
-                if (dt.Rows.Count != 0)
-                {
-                    if (comboBoxMaLop.SelectedItem != null)
-                    {
-                        textTenLop.Text = dt.Rows[0][1].ToString();
-                    }
-                }    
-                    
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        
     }
 }
