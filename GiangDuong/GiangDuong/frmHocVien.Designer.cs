@@ -44,7 +44,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewHocVien = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textChucVu = new System.Windows.Forms.TextBox();
+            this.textDonVi = new System.Windows.Forms.TextBox();
             this.textSDT = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -192,11 +192,12 @@
             this.dataGridViewHocVien.RowTemplate.Height = 24;
             this.dataGridViewHocVien.Size = new System.Drawing.Size(1020, 324);
             this.dataGridViewHocVien.TabIndex = 0;
+            this.dataGridViewHocVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHocVien_CellClick);
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.panel1.Controls.Add(this.textChucVu);
+            this.panel1.Controls.Add(this.textDonVi);
             this.panel1.Controls.Add(this.textSDT);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label6);
@@ -218,12 +219,12 @@
             this.panel1.Size = new System.Drawing.Size(586, 259);
             this.panel1.TabIndex = 1;
             // 
-            // textChucVu
+            // textDonVi
             // 
-            this.textChucVu.Location = new System.Drawing.Point(428, 143);
-            this.textChucVu.Name = "textChucVu";
-            this.textChucVu.Size = new System.Drawing.Size(100, 22);
-            this.textChucVu.TabIndex = 16;
+            this.textDonVi.Location = new System.Drawing.Point(428, 143);
+            this.textDonVi.Name = "textDonVi";
+            this.textDonVi.Size = new System.Drawing.Size(100, 22);
+            this.textDonVi.TabIndex = 16;
             // 
             // textSDT
             // 
@@ -237,9 +238,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(317, 146);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 17);
+            this.label5.Size = new System.Drawing.Size(48, 17);
             this.label5.TabIndex = 14;
-            this.label5.Text = "Chức vụ";
+            this.label5.Text = "Đơn vị";
             // 
             // label6
             // 
@@ -258,6 +259,7 @@
             this.buttonHuy.TabIndex = 12;
             this.buttonHuy.Text = "Huỷ";
             this.buttonHuy.UseVisualStyleBackColor = true;
+            this.buttonHuy.Click += new System.EventHandler(this.buttonHuy_Click);
             // 
             // buttonLuu
             // 
@@ -267,6 +269,7 @@
             this.buttonLuu.TabIndex = 11;
             this.buttonLuu.Text = "Lưu";
             this.buttonLuu.UseVisualStyleBackColor = true;
+            this.buttonLuu.Click += new System.EventHandler(this.buttonLuu_Click);
             // 
             // buttonXoa
             // 
@@ -276,6 +279,7 @@
             this.buttonXoa.TabIndex = 10;
             this.buttonXoa.Text = "Xoá";
             this.buttonXoa.UseVisualStyleBackColor = true;
+            this.buttonXoa.Click += new System.EventHandler(this.buttonXoa_Click);
             // 
             // buttonSua
             // 
@@ -285,6 +289,7 @@
             this.buttonSua.TabIndex = 9;
             this.buttonSua.Text = "Sửa";
             this.buttonSua.UseVisualStyleBackColor = true;
+            this.buttonSua.Click += new System.EventHandler(this.buttonSua_Click);
             // 
             // buttonThem
             // 
@@ -294,6 +299,7 @@
             this.buttonThem.TabIndex = 8;
             this.buttonThem.Text = "Thêm";
             this.buttonThem.UseVisualStyleBackColor = true;
+            this.buttonThem.Click += new System.EventHandler(this.buttonThem_Click);
             // 
             // textMaLop
             // 
@@ -370,6 +376,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmHocVien";
             this.Text = "Thông tin Học viên";
+            this.Load += new System.EventHandler(this.frmHocVien_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -409,7 +416,7 @@
         private System.Windows.Forms.Button buttonXoa;
         private System.Windows.Forms.Button buttonSua;
         private System.Windows.Forms.Button buttonThem;
-        private System.Windows.Forms.TextBox textChucVu;
+        private System.Windows.Forms.TextBox textDonVi;
         private System.Windows.Forms.TextBox textSDT;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
