@@ -25,7 +25,7 @@ namespace GiangDuong
 
         public void KhoiTao_YeuCau()
         {
-            textMaYC.Enabled = textMaHV.Enabled = textTenHV.Enabled = textMaNV.Enabled = textTenNV.Enabled = textTGMuon.Enabled = textTGTra.Enabled = textGhiChu.Enabled = false;
+            textMaYC.Enabled = textMaPhong.Enabled = textMaHV.Enabled = textTenHV.Enabled = textMaNV.Enabled = textTenNV.Enabled = textTGMuon.Enabled = textTGTra.Enabled = textGhiChu.Enabled = false;
             buttonThemYC.Enabled = buttonSuaYC.Enabled = buttonXoaYC.Enabled = true;
             buttonLuuYC.Enabled = buttonHuyYC.Enabled = false;
         }
@@ -33,14 +33,14 @@ namespace GiangDuong
         //Mo cac button enable
         public void Mo_YeuCau()
         {
-            textMaYC.Enabled = textMaHV.Enabled = textTenHV.Enabled = textMaNV.Enabled = textTenNV.Enabled = textTGMuon.Enabled = textTGTra.Enabled = textGhiChu.Enabled = true;
+            textMaYC.Enabled = textMaPhong.Enabled = textMaHV.Enabled = textTenHV.Enabled = textMaNV.Enabled = textTenNV.Enabled = textTGMuon.Enabled = textTGTra.Enabled = textGhiChu.Enabled = true;
             buttonThemYC.Enabled = buttonSuaYC.Enabled = buttonXoaYC.Enabled = false;
             buttonLuuYC.Enabled = buttonHuyYC.Enabled = true;
         }
 
         public void SetNull_YeuCau()
         {
-            textMaYC.Text = textMaHV.Text = textTenHV.Text = textMaNV.Text = textTenNV.Text = textTGMuon.Text = textTGTra.Text = textGhiChu.Text = "";
+            textMaYC.Text = textMaPhong.Text = textMaHV.Text = textTenHV.Text = textMaNV.Text = textTenNV.Text = textTGMuon.Text = textTGTra.Text = textGhiChu.Text = "";
         }
 
 
@@ -150,13 +150,14 @@ namespace GiangDuong
             try
             {
                 textMaYC.Text = dataGridView_YeuCau.Rows[e.RowIndex].Cells[0].Value.ToString();
-                textMaHV.Text = dataGridView_YeuCau.Rows[e.RowIndex].Cells[1].Value.ToString();
-                textTenHV.Text = dataGridView_YeuCau.Rows[e.RowIndex].Cells[2].Value.ToString();
-                textMaNV.Text = dataGridView_YeuCau.Rows[e.RowIndex].Cells[3].Value.ToString();
-                textTenNV.Text = dataGridView_YeuCau.Rows[e.RowIndex].Cells[4].Value.ToString();
-                textTGMuon.Text = dataGridView_YeuCau.Rows[e.RowIndex].Cells[5].Value.ToString();
-                textTGTra.Text = dataGridView_YeuCau.Rows[e.RowIndex].Cells[6].Value.ToString();
-                textGhiChu.Text = dataGridView_YeuCau.Rows[e.RowIndex].Cells[7].Value.ToString();
+                textMaPhong.Text = dataGridView_YeuCau.Rows[e.RowIndex].Cells[1].Value.ToString();
+                textMaHV.Text = dataGridView_YeuCau.Rows[e.RowIndex].Cells[2].Value.ToString();
+                textTenHV.Text = dataGridView_YeuCau.Rows[e.RowIndex].Cells[3].Value.ToString();
+                textMaNV.Text = dataGridView_YeuCau.Rows[e.RowIndex].Cells[4].Value.ToString();
+                textTenNV.Text = dataGridView_YeuCau.Rows[e.RowIndex].Cells[5].Value.ToString();
+                textTGMuon.Text = dataGridView_YeuCau.Rows[e.RowIndex].Cells[6].Value.ToString();
+                textTGTra.Text = dataGridView_YeuCau.Rows[e.RowIndex].Cells[7].Value.ToString();
+                textGhiChu.Text = dataGridView_YeuCau.Rows[e.RowIndex].Cells[8].Value.ToString();
             }
             catch
             { }
