@@ -74,7 +74,7 @@ namespace GiangDuong
 
         private void loạiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmNguoiDung hd = new frmNguoiDung();
+            frmLoai hd = new frmLoai();
             hd.Show();
             Hide();
         }
@@ -95,7 +95,7 @@ namespace GiangDuong
 
         private void ngườiDùngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmLoai hd = new frmLoai();
+            frmNguoiDung hd = new frmNguoiDung();
             hd.Show();
             Hide();
         }
@@ -183,9 +183,9 @@ namespace GiangDuong
                 {
                     if (DialogResult.Yes == MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                     {
-                        cn.Xoa("XoaHocVien", "@MaHV", comboBoxMaLop.Text);
+                        cn.LoadData2("XoaTKB", "@MaLop", "@MaPhong", comboBoxMaLop.Text, comboBoxMaPhong.Text);
                         MessageBox.Show("Xóa thành công!");
-                        frmHocVien_Load(sender, e);
+                        frmThoiKhoaBieu_Load(sender, e);
                         SetNull();
                     }
                 }
@@ -201,47 +201,47 @@ namespace GiangDuong
         private void frmThoiKhoaBieu_Load(object sender, EventArgs e)
         {
             KhoiTao();
-            dataGridViewTKB_CellClick.DataSource = hv.Show();
-            HienThi_MaHV();
+            dataGridViewTKB.DataSource = thoiKhoaBieu.Show();
+            HienThi_MaLop();
+            HienThi_MaPhong();
             chon = 0;
             ngườiDùngToolStripMenuItem.Enabled = frmDangNhap.bientoancuc.ad;
-
         }
 
         private void buttonLuu_Click(object sender, EventArgs e)
         {
             if (chon == 1) //Them
             {
-                if (cn.LoadData1("XemHocVien", "@MaHV", comboBoxMaLop.Text).Rows.Count > 0)
-                    MessageBox.Show("Mã học viên đã có trong danh sách");
+                if (cn.LoadData2("XemTKB", "@MaLop", "@MaPhong", comboBoxMaLop.Text, comboBoxMaPhong.Text).Rows.Count > 0)
+                    MessageBox.Show("Thời khoá biểu đã có trong danh sách");
                 else
                 {
-                    if (textTenLop.Text == "" || comboBoxMaLop.Text == "" || textTenLop.Text == "" || textSDT.Text == "" || textDonVi.Text == "")
+                    if (comboBoxMaLop.Text == "" || textTenLop.Text == "" || dateTimePickerNgayBatDau.Text == "" || dateTimePickerNgayKetThuc.Text == "" || textBuoi.Text == "" || comboBoxMaPhong.Text == "")
                         MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
                     else
                     {
-                        hv.HocVien_DB("ThemHocVien", comboBoxMaLop.Text, textTenLop.Text, textDonVi.Text, textSDT.Text, comboBoxMaLop.Text);
+                        thoiKhoaBieu.TKB_DB("ThemTKB", comboBoxMaLop.Text, comboBoxMaPhong.Text, dateTimePickerNgayBatDau.Text, textBuoi.Text, dateTimePickerNgayKetThuc.Text);
                         MessageBox.Show("Thêm thành công");
-                        frmHocVien_Load(sender, e);
+                        frmThoiKhoaBieu_Load(sender, e);
                     }
                 }
 
             }
             else if (chon == 2) //Sua
             {
-                if (cn.LoadData1("XemHocVien", "@MaHV", comboBoxMaLop.Text).Rows.Count == 0)
-                    MessageBox.Show("Mã học viên chưa có trong danh sách");
+                if (cn.LoadData2("XemTKB", "@MaLop", "@MaPhong", comboBoxMaLop.Text, comboBoxMaPhong.Text).Rows.Count == 0)
+                    MessageBox.Show("Thời khoá biểu này chưa có trong danh sách");
                 else
                 {
-                    if (textTenLop.Text == "" || comboBoxMaLop.Text == "" || textTenLop.Text == "" || textSDT.Text == "" || textDonVi.Text == "")
+                    if (comboBoxMaLop.Text == "" || textTenLop.Text == "" || dateTimePickerNgayBatDau.Text == "" || dateTimePickerNgayKetThuc.Text == "" || textBuoi.Text == "" || comboBoxMaPhong.Text == "")
                         MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
                     else
                     {
-                        if (DialogResult.Yes == MessageBox.Show("Bạn có muốn sửa học viên này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                        if (DialogResult.Yes == MessageBox.Show("Bạn có muốn sửa thời khoá biểu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                         {
-                            hv.HocVien_DB("SuaHocVien", comboBoxMaLop.Text, textTenLop.Text, textDonVi.Text, textSDT.Text, comboBoxMaLop.Text);
+                            thoiKhoaBieu.TKB_DB("SuaTKB", comboBoxMaLop.Text, comboBoxMaPhong.Text, dateTimePickerNgayBatDau.Text, textBuoi.Text, dateTimePickerNgayKetThuc.Text);
                             MessageBox.Show("Sửa thành công");
-                            frmHocVien_Load(sender, e);
+                            frmThoiKhoaBieu_Load(sender, e);
                         }
                     }
                 }
@@ -249,11 +249,21 @@ namespace GiangDuong
             }
         }
 
-        public void HienThi_MaHV()
+        public void HienThi_MaLop()
         {
             comboBoxMaLop.DataSource = cn.LoadData("HienThi_Lop");
+            comboBoxMaLop.DisplayMember = "TenLop";
+            comboBoxMaLop.ValueMember = "MaLop";
+            comboBoxMaLop.SelectedValue = "MaLop";
+            comboBoxMaLop.SelectedIndex = 0;
+
+        }
+
+        public void HienThi_MaPhong()
+        {
+            comboBoxMaLop.DataSource = cn.LoadData("HienThi_Phong");
             comboBoxMaLop.DisplayMember = "MaLop";
-            comboBoxMaLop.ValueMember = "TenLop";
+            comboBoxMaLop.ValueMember = "MaLop";
             comboBoxMaLop.SelectedValue = "MaLop";
             comboBoxMaLop.SelectedIndex = 0;
 
