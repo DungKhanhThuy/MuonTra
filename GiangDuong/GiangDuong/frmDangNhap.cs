@@ -28,6 +28,8 @@ namespace GiangDuong
             if (dn.DangNhapHT(txtUserName.Text, txtPass.Text) == true)
             {
                 MessageBox.Show("Bạn đăng nhập thành công ^^", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                frmMuonTra mt = new frmMuonTra();
+                mt.Sender(txtUserName.Text);
                 ConnectDB cn = new ConnectDB();
                 DataTable dt = cn.LoadData1("HienThi_MatKhau_LaAdmin", "@MaNV", txtUserName.Text);
                 if (dt.Rows[0][2].ToString() == "Co")
@@ -38,8 +40,7 @@ namespace GiangDuong
                 {
                     bientoancuc.ad = false;
                 }
-                frmHocVien hv = new frmHocVien();
-                hv.Show();
+                mt.Show();
                 Hide();
             }
             else MessageBox.Show("Tên đăng nhập hoặc mật khẩu sai. Mời bạn nhập lại !!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -134,7 +134,7 @@ namespace GiangDuong
             textMaTB.Text = textTenTB.Text = comboBoxMaLoai.Text = textTenLoai.Text = textTinhTrang.Text = comboBoxMaPhong.Text = "";
         }
 
-
+        string temp;
 
         private void dataGridViewThietBi_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -146,6 +146,7 @@ namespace GiangDuong
                 textTenLoai.Text = dataGridViewThietBi.Rows[e.RowIndex].Cells[3].Value.ToString();
                 textTinhTrang.Text = dataGridViewThietBi.Rows[e.RowIndex].Cells[4].Value.ToString();
                 comboBoxMaPhong.Text = dataGridViewThietBi.Rows[e.RowIndex].Cells[5].Value.ToString();
+                temp = comboBoxMaPhong.Text;
             }
             catch (Exception ex)
             {
@@ -254,8 +255,10 @@ namespace GiangDuong
 
                 if (chon == 1) //Them
                 {
-                    if (cn.LoadData1("XemTB", "@MaTB", textMaTB.Text).Rows.Count > 0)
-                        MessageBox.Show("Thiết bị đã có trong danh sách");
+                    if (cn.LoadData2("XemTB1", "@MaTB", "@MaPhong", textMaTB.Text, comboBoxMaPhong.Text).Rows.Count > 0)
+                    {
+                        MessageBox.Show("Thiết bị này đã gắn với phòng này trong danh sách");
+                    }
                     else
                     {
                         if (textTenTB.Text == "" || textTenLoai.Text == "" || textTinhTrang.Text == "")
@@ -263,11 +266,34 @@ namespace GiangDuong
                         else
                         {
                             if (comboBoxMaPhong.Text == "")
+                            {
+                                if (cn.LoadData1("XemTB", "@MaTB", textMaTB.Text).Rows.Count > 0)
+                                {
+                                    MessageBox.Show("Thiết bị đã nhập kho");
+                                }
+                                else
+                                {
+                                    thietBi.TB_DB("ThemTB", textMaTB.Text, textTenTB.Text, comboBoxMaLoai.Text, textTinhTrang.Text);
+                                }
+                            }
 
-                                thietBi.TB_DB("ThemTB", textMaTB.Text, textTenTB.Text, comboBoxMaLoai.Text, textTinhTrang.Text);
+                                
                             else
-                                cn.LoadData5("ThemTB1", "@MaTB", "@TenTB", "@MaLoai", "@TinhTrang", "@MaPhong",
-                                textMaTB.Text, textTenTB.Text, comboBoxMaLoai.Text, textTinhTrang.Text, comboBoxMaPhong.Text);
+                            {
+                                if (cn.LoadData1("XemTB", "@MaTB", textMaTB.Text).Rows.Count == 0)
+                                {
+                                    cn.LoadData5("ThemTB1", "@MaTB", "@TenTB", "@MaLoai", "@TinhTrang", "@MaPhong",
+                                        textMaTB.Text, textTenTB.Text, comboBoxMaLoai.Text, textTinhTrang.Text, comboBoxMaPhong.Text);
+                                }
+                                else
+                                {
+                                    
+                                        cn.LoadData5("SuaTB2", "@MaTB", "@TenTB", "@MaLoai", "@TinhTrang", "@MaPhong",
+                                                                                textMaTB.Text, textTenTB.Text, comboBoxMaLoai.Text, textTinhTrang.Text, comboBoxMaPhong.Text);
+                                    
+                                }
+                            }
+
 
                             MessageBox.Show("Thêm thành công");
                             frmThietBi_Load(sender, e);
@@ -279,6 +305,10 @@ namespace GiangDuong
                 {
                     if (cn.LoadData1("XemTB", "@MaTB", textMaTB.Text).Rows.Count == 0)
                         MessageBox.Show("Thiết bị này chưa có trong danh sách");
+                    else if (cn.LoadData2("XemTB1", "@MaTB", "@MaPhong", textMaTB.Text, comboBoxMaPhong.Text).Rows.Count > 0)
+                    {
+                        MessageBox.Show("Thiết bị này đã gắn với phòng này trong danh sách");
+                    }
                     else
                     {
                         if (textTenTB.Text == "" || textTenLoai.Text == "" || textTinhTrang.Text == "")
@@ -291,15 +321,15 @@ namespace GiangDuong
                                     thietBi.TB_DB("SuaTB", textMaTB.Text, textTenTB.Text, comboBoxMaLoai.Text, textTinhTrang.Text);
                                 else
                                 {
-                                    try
+                                    if (cn.LoadData2("XemTB1", "@MaTB", "@MaPhong", textMaTB.Text, temp).Rows.Count == 0)
                                     {
                                         cn.LoadData5("SuaTB2", "@MaTB", "@TenTB", "@MaLoai", "@TinhTrang", "@MaPhong",
                                                                                 textMaTB.Text, textTenTB.Text, comboBoxMaLoai.Text, textTinhTrang.Text, comboBoxMaPhong.Text);
                                     }
-                                    catch (Exception)
+                                    else
                                     {
-                                        cn.LoadData5("SuaTB1", "@MaTB", "@TenTB", "@MaLoai", "@TinhTrang", "@MaPhong",
-                                                                                textMaTB.Text, textTenTB.Text, comboBoxMaLoai.Text, textTinhTrang.Text, comboBoxMaPhong.Text);
+                                        cn.LoadData6("SuaTB1", "@MaTB", "@TenTB", "@MaLoai", "@TinhTrang", "@MaPhong", "@MaPhongCu",
+                                                                                textMaTB.Text, textTenTB.Text, comboBoxMaLoai.Text, textTinhTrang.Text, comboBoxMaPhong.Text, temp);
                                     }
                                 }
                                 MessageBox.Show("Sửa thành công");
@@ -318,7 +348,7 @@ namespace GiangDuong
         }
         public void HienThi_MaLoai()
         {
-            comboBoxMaLoai.DataSource = cn.LoadData("HienThi_Loai");
+            comboBoxMaLoai.DataSource = cn.LoadData("HienThi_Loai_Dung");
             comboBoxMaLoai.DisplayMember = "MaLoai";
             comboBoxMaLoai.ValueMember = "MaLoai";
             comboBoxMaLoai.SelectedValue = "MaLoai";

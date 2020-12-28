@@ -62,12 +62,16 @@
     <Compile Include="ClassLoai.cs" />
     <Compile Include="ClassLop.cs" />
     <Compile Include="ClassNguoiDung.cs" />
+    <Compile Include="CTYC.cs" />
+    <Compile Include="frmMuonTra.cs" />
+    <Compile Include="frmMuonTra.designer.cs">
+      <DependentUpon>frmMuonTra.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhanVien.cs" />
     <Compile Include="ClassPhong.cs" />
     <Compile Include="ClassThietBi.cs" />
     <Compile Include="ClassThoiKhoaBieu.cs" />
     <Compile Include="ConnectDB.cs" />
-    <Compile Include="CTYC.cs" />
     <Compile Include="DangNhap.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -111,12 +115,6 @@
     <Compile Include="frmLop.Designer.cs">
       <DependentUpon>frmLop.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMuonTra.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMuonTra.Designer.cs">
-      <DependentUpon>frmMuonTra.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmLoai.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,9 +152,9 @@
       <DependentUpon>frmThoiKhoaBieu.cs</DependentUpon>
     </Compile>
     <Compile Include="HV.cs" />
-    <Compile Include="YeuCau.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="YeuCau.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,14 +170,14 @@
     <EmbeddedResource Include="frmLichSu.resx">
       <DependentUpon>frmLichSu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMuonTra.resx">
+      <DependentUpon>frmMuonTra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmNguoiDung.resx">
       <DependentUpon>frmNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLop.resx">
       <DependentUpon>frmLop.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMuonTra.resx">
-      <DependentUpon>frmMuonTra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLoai.resx">
       <DependentUpon>frmLoai.cs</DependentUpon>

@@ -12,12 +12,12 @@ namespace GiangDuong
     class CTYC
     {
         ConnectDB cn = new ConnectDB();
-        public DataTable Show()
+        public DataTable Show(string mayc)
         {
-            return cn.LoadData("HienThi_YeuCau");
+            return cn.LoadData1("HienThi_CTYC", "@MaYC", mayc);
         }
 
-        public void YeuCau_DB(string proc, string mayc, string mahv, string manv, DateTime tgmuon, DateTime tgtra, string ghichu)
+        public void CTYC_DB(string proc, string mayc, string matb, string datra)
         {
             try
             {
@@ -28,11 +28,8 @@ namespace GiangDuong
                 command.CommandText = proc;
                 command.Connection = cn;
                 command.Parameters.AddWithValue("@MaYC", SqlDbType.VarChar).Value = mayc;
-                command.Parameters.AddWithValue("@MaHV", SqlDbType.VarChar).Value = mahv;
-                command.Parameters.AddWithValue("@MaNV", SqlDbType.VarChar).Value = manv;
-                command.Parameters.AddWithValue("@TGMuon", SqlDbType.VarChar).Value = tgmuon;
-                command.Parameters.AddWithValue("@TGTra", SqlDbType.VarChar).Value = tgtra;
-                command.Parameters.AddWithValue("@GhiChu", SqlDbType.VarChar).Value = ghichu;
+                command.Parameters.AddWithValue("@MaTB", SqlDbType.VarChar).Value = matb;
+                command.Parameters.AddWithValue("@DaTra", SqlDbType.Bit).Value = datra;
                 command.ExecuteNonQuery();
                 cn.Close();
             }
@@ -41,5 +38,28 @@ namespace GiangDuong
                 MessageBox.Show(ex.Message);
             }
         }
+
+        public void Xoa_CTYC(string proc, string mayc, string matb)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand();
+                SqlConnection cn = new SqlConnection(ConnectDB.getconnect());
+                cn.Open();
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = proc;
+                command.Connection = cn;
+                command.Parameters.AddWithValue("@MaYC", SqlDbType.VarChar).Value = mayc;
+                command.Parameters.AddWithValue("@MaTB", SqlDbType.VarChar).Value = matb;
+                command.ExecuteNonQuery();
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
     }
 }

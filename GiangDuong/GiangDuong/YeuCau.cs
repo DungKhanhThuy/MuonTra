@@ -17,7 +17,7 @@ namespace GiangDuong
             return cn.LoadData("HienThi_YeuCau");
         }
 
-        public void YeuCau_DB(string proc, string mayc, string mahv, string manv, DateTime tgmuon, DateTime tgtra, string ghichu )
+        public void YeuCau_DB(string proc, string mayc, string mahv, string manv, DateTime tgmuon, string ghichu )
         {
             try
             {
@@ -31,7 +31,31 @@ namespace GiangDuong
                 command.Parameters.AddWithValue("@MaHV", SqlDbType.VarChar).Value = mahv;
                 command.Parameters.AddWithValue("@MaNV", SqlDbType.VarChar).Value = manv;
                 command.Parameters.AddWithValue("@TGMuon", SqlDbType.VarChar).Value = tgmuon;
-                command.Parameters.AddWithValue("@TGTra", SqlDbType.VarChar).Value = tgtra;
+                command.Parameters.AddWithValue("@GhiChu", SqlDbType.VarChar).Value = ghichu;
+                command.ExecuteNonQuery();
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void SuaYeuCau(string proc, string mayc, string mahv, string manv, DateTime tgmuon, DateTime tgtra, string ghichu)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand();
+                SqlConnection cn = new SqlConnection(ConnectDB.getconnect());
+                cn.Open();
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = proc;
+                command.Connection = cn;
+                command.Parameters.AddWithValue("@MaYC", SqlDbType.VarChar).Value = mayc;
+                command.Parameters.AddWithValue("@MaHV", SqlDbType.VarChar).Value = mahv;
+                command.Parameters.AddWithValue("@MaNV", SqlDbType.VarChar).Value = manv;
+                command.Parameters.AddWithValue("@TGMuon", SqlDbType.DateTime).Value = tgmuon;
+                command.Parameters.AddWithValue("@TGTra", SqlDbType.DateTime).Value = tgtra;
                 command.Parameters.AddWithValue("@GhiChu", SqlDbType.VarChar).Value = ghichu;
                 command.ExecuteNonQuery();
                 cn.Close();

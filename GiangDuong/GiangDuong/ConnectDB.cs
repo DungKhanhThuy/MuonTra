@@ -143,6 +143,29 @@ namespace GiangDuong
             return table;
         }
 
+        public DataTable LoadData6(string proc, string param1, string param2, string param3, string param4, string param5, string param6,
+            string value1, string value2, string value3, string value4, string value5, string value6)
+        {
+            DataTable table = new DataTable();
+            SqlCommand command = new SqlCommand();
+            SqlConnection cn = new SqlConnection(ConnectDB.getconnect());
+            cn.Open();
+            command.Connection = cn;
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = proc;
+            command.Parameters.AddWithValue(param1, SqlDbType.VarChar).Value = value1;
+            command.Parameters.AddWithValue(param2, SqlDbType.VarChar).Value = value2;
+            command.Parameters.AddWithValue(param3, SqlDbType.VarChar).Value = value3;
+            command.Parameters.AddWithValue(param4, SqlDbType.VarChar).Value = value4;
+            command.Parameters.AddWithValue(param5, SqlDbType.VarChar).Value = value5;
+            command.Parameters.AddWithValue(param6, SqlDbType.VarChar).Value = value6;
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            adapter.Fill(table);
+            cn.Close();
+            adapter.Dispose();
+            return table;
+        }
+
 
 
         public void Xoa(string proc, string param, string ma)
