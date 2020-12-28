@@ -18,7 +18,8 @@ namespace GiangDuong
         //}
 
         public delegate void SendMessage(string message);
-        public SendMessage Sender; public frmMuonTra()
+        public SendMessage Sender; 
+        public frmMuonTra()
         {
             InitializeComponent();
             Sender = new SendMessage(GetMessage);
