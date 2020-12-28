@@ -63,6 +63,7 @@
     <Compile Include="ClassNguoiDung.cs" />
     <Compile Include="ClassNhanVien.cs" />
     <Compile Include="ClassPhong.cs" />
+    <Compile Include="ClassThietBi.cs" />
     <Compile Include="ClassThoiKhoaBieu.cs" />
     <Compile Include="ConnectDB.cs" />
     <Compile Include="DangNhap.cs" />
