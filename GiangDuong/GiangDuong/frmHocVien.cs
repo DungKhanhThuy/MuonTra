@@ -161,30 +161,6 @@ namespace GiangDuong
 
         
 
-        private void comboBoxMaLop_SelectedValueChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                DataTable dt = cn.LoadData1("HienThi_TenLop", "@MaLop", comboBoxMaLop.Text);
-                if (dt.Rows.Count != 0)
-                {
-                    if (comboBoxMaLop.SelectedItem != null)
-                    {
-                        textTenLop.Text = dt.Rows[0][1].ToString();
-                    }
-                }
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-
-        #region MenuStrip
-
         private void mượnTrảToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmMuonTra hd = new frmMuonTra();
@@ -300,6 +276,5 @@ namespace GiangDuong
                 MessageBox.Show(ex.Message);
             }
         }
-        #endregion
     }
 }

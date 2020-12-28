@@ -16,8 +16,6 @@ namespace GiangDuong
         {
             InitializeComponent();
         }
-
-
         DangNhap dn = new DangNhap();
 
         private void btnDangNhap_Click(object sender, EventArgs e)
@@ -25,23 +23,12 @@ namespace GiangDuong
             if (dn.DangNhapHT(txtUserName.Text, txtPass.Text) == true)
             {
                 MessageBox.Show("Bạn đăng nhập thành công ^^", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                frmMuonTra mt = new frmMuonTra();
-                mt.Sender(txtUserName.Text);
-                ConnectDB cn = new ConnectDB();
-                DataTable dt = cn.LoadData1("HienThi_MatKhau_LaAdmin", "@MaNV", txtUserName.Text);
-                if (dt.Rows[0][2].ToString() == "co")
-                {
-                    bientoancuc.ad = true;
-                }
-                //frmHocVien hv = new frmHocVien();
-                //hv.Show();
-                mt.Show();
+                frmMuonTra MuonTra = new frmMuonTra();
+                MuonTra.Show();
                 Hide();
             }
             else MessageBox.Show("Tên đăng nhập hoặc mật khẩu sai. Mời bạn nhập lại !!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
@@ -54,8 +41,6 @@ namespace GiangDuong
             SetStyle(ControlStyles.ResizeRedraw, true);
 
         }
-
-        
 
     }
 }

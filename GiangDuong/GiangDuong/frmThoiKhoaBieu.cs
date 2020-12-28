@@ -201,10 +201,8 @@ namespace GiangDuong
         private void frmThoiKhoaBieu_Load(object sender, EventArgs e)
         {
             KhoiTao();
-
-            dataGridViewTKB.DataSource = thoiKhoaBieu.Show();
-            HienThi_MaLop();
-            HienThi_MaPhong();
+            dataGridViewTKB_CellClick.DataSource = hv.Show();
+            HienThi_MaHV();
             chon = 0;
             ngườiDùngToolStripMenuItem.Enabled = frmDangNhap.bientoancuc.ad;
 
@@ -254,26 +252,12 @@ namespace GiangDuong
         public void HienThi_MaHV()
         {
             comboBoxMaLop.DataSource = cn.LoadData("HienThi_Lop");
-
-            comboBoxMaLop.DisplayMember = "TenLop";
-            comboBoxMaLop.ValueMember = "MaLop";
-
-            comboBoxMaLop.SelectedValue = "MaLop";
-            comboBoxMaLop.SelectedIndex = 0;
-
-        }
-
-
-        public void HienThi_MaPhong()
-        {
-            comboBoxMaLop.DataSource = cn.LoadData("HienThi_Phong");
             comboBoxMaLop.DisplayMember = "MaLop";
-            comboBoxMaLop.ValueMember = "MaLop";
+            comboBoxMaLop.ValueMember = "TenLop";
             comboBoxMaLop.SelectedValue = "MaLop";
             comboBoxMaLop.SelectedIndex = 0;
 
         }
-
 
 
         private void comboBoxMaLop_SelectedValueChanged(object sender, EventArgs e)
