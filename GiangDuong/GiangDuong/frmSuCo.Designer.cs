@@ -42,8 +42,9 @@
             this.giaoBanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sựCốToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ngườiDùngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridViewGiaoBan = new System.Windows.Forms.DataGridView();
+            this.dataGridViewSuCo = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBoxMaTB = new System.Windows.Forms.ComboBox();
             this.comboBoxMaYC = new System.Windows.Forms.ComboBox();
@@ -62,7 +63,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGiaoBan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSuCo)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,7 +75,8 @@
             this.thôngTinToolStripMenuItem,
             this.giaoBanToolStripMenuItem,
             this.sựCốToolStripMenuItem,
-            this.ngườiDùngToolStripMenuItem});
+            this.ngườiDùngToolStripMenuItem,
+            this.đăngXuấtToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1026, 28);
@@ -180,6 +182,13 @@
             this.ngườiDùngToolStripMenuItem.Text = "Người dùng";
             this.ngườiDùngToolStripMenuItem.Click += new System.EventHandler(this.ngườiDùngToolStripMenuItem_Click);
             // 
+            // đăngXuấtToolStripMenuItem
+            // 
+            this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
+            this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
+            this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -187,7 +196,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.dataGridViewGiaoBan, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dataGridViewSuCo, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 45);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -197,20 +206,19 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1026, 595);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
-            // dataGridViewGiaoBan
+            // dataGridViewSuCo
             // 
-            this.dataGridViewGiaoBan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewGiaoBan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewGiaoBan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewGiaoBan.Location = new System.Drawing.Point(3, 229);
-            this.dataGridViewGiaoBan.Name = "dataGridViewGiaoBan";
-            this.dataGridViewGiaoBan.ReadOnly = true;
-            this.dataGridViewGiaoBan.RowHeadersWidth = 51;
-            this.dataGridViewGiaoBan.RowTemplate.Height = 24;
-            this.dataGridViewGiaoBan.Size = new System.Drawing.Size(1020, 363);
-            this.dataGridViewGiaoBan.TabIndex = 1;
+            this.dataGridViewSuCo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.dataGridViewSuCo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewSuCo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSuCo.Location = new System.Drawing.Point(3, 229);
+            this.dataGridViewSuCo.Name = "dataGridViewSuCo";
+            this.dataGridViewSuCo.ReadOnly = true;
+            this.dataGridViewSuCo.RowHeadersWidth = 51;
+            this.dataGridViewSuCo.RowTemplate.Height = 24;
+            this.dataGridViewSuCo.Size = new System.Drawing.Size(1020, 363);
+            this.dataGridViewSuCo.TabIndex = 1;
+            this.dataGridViewSuCo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSuCo_CellClick);
             // 
             // panel1
             // 
@@ -237,6 +245,7 @@
             // 
             // comboBoxMaTB
             // 
+            this.comboBoxMaTB.Enabled = false;
             this.comboBoxMaTB.FormattingEnabled = true;
             this.comboBoxMaTB.Location = new System.Drawing.Point(714, 24);
             this.comboBoxMaTB.Name = "comboBoxMaTB";
@@ -245,11 +254,13 @@
             // 
             // comboBoxMaYC
             // 
+            this.comboBoxMaYC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMaYC.FormattingEnabled = true;
             this.comboBoxMaYC.Location = new System.Drawing.Point(459, 24);
             this.comboBoxMaYC.Name = "comboBoxMaYC";
             this.comboBoxMaYC.Size = new System.Drawing.Size(121, 24);
             this.comboBoxMaYC.TabIndex = 4;
+            this.comboBoxMaYC.SelectedIndexChanged += new System.EventHandler(this.comboBoxMaYC_SelectedIndexChanged);
             // 
             // richTextBoxXuLy
             // 
@@ -302,6 +313,7 @@
             this.buttonHuy.TabIndex = 9;
             this.buttonHuy.Text = "Huỷ";
             this.buttonHuy.UseVisualStyleBackColor = true;
+            this.buttonHuy.Click += new System.EventHandler(this.buttonHuy_Click);
             // 
             // buttonLuu
             // 
@@ -311,6 +323,7 @@
             this.buttonLuu.TabIndex = 8;
             this.buttonLuu.Text = "Lưu";
             this.buttonLuu.UseVisualStyleBackColor = true;
+            this.buttonLuu.Click += new System.EventHandler(this.buttonLuu_Click);
             // 
             // buttonXoa
             // 
@@ -320,6 +333,7 @@
             this.buttonXoa.TabIndex = 2;
             this.buttonXoa.Text = "Xoá";
             this.buttonXoa.UseVisualStyleBackColor = true;
+            this.buttonXoa.Click += new System.EventHandler(this.buttonXoa_Click);
             // 
             // buttonSua
             // 
@@ -329,6 +343,7 @@
             this.buttonSua.TabIndex = 1;
             this.buttonSua.Text = "Sửa";
             this.buttonSua.UseVisualStyleBackColor = true;
+            this.buttonSua.Click += new System.EventHandler(this.buttonSua_Click);
             // 
             // buttonThem
             // 
@@ -338,6 +353,7 @@
             this.buttonThem.TabIndex = 0;
             this.buttonThem.Text = "Thêm";
             this.buttonThem.UseVisualStyleBackColor = true;
+            this.buttonThem.Click += new System.EventHandler(this.buttonThem_Click);
             // 
             // textMaSC
             // 
@@ -375,10 +391,11 @@
             this.Name = "frmSuCo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin Sự cố";
+            this.Load += new System.EventHandler(this.frmSuCo_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGiaoBan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSuCo)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -399,7 +416,7 @@
         private System.Windows.Forms.ToolStripMenuItem giaoBanToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sựCốToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataGridView dataGridViewGiaoBan;
+        private System.Windows.Forms.DataGridView dataGridViewSuCo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textMaSC;
         private System.Windows.Forms.Label label2;
@@ -420,5 +437,6 @@
         private System.Windows.Forms.ToolStripMenuItem ngườiDùngToolStripMenuItem;
         private System.Windows.Forms.ComboBox comboBoxMaTB;
         private System.Windows.Forms.ComboBox comboBoxMaYC;
+        private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
     }
 }
