@@ -43,21 +43,17 @@
             this.sựCốToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ngườiDùngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textTenTB = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textMaTB = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textMaYC_CTYC = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.buttonHuy_CTYC = new System.Windows.Forms.Button();
+            this.buttonLuu_CTYC = new System.Windows.Forms.Button();
+            this.buttonXoa_CTYC = new System.Windows.Forms.Button();
+            this.buttonSua_CTYC = new System.Windows.Forms.Button();
+            this.buttonThem_CTYC = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textGhiChu = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -83,6 +79,11 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridView_YeuCau = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.textTinhTrang = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.textMaPhong = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -208,154 +209,123 @@
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.panel2.Controls.Add(this.textBox12);
-            this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.textBox11);
-            this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.textBox10);
-            this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.textBox9);
+            this.panel2.Controls.Add(this.checkBox1);
+            this.panel2.Controls.Add(this.textTinhTrang);
             this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.textBox8);
+            this.panel2.Controls.Add(this.textTenTB);
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.textMaTB);
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.textMaYC_CTYC);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.button10);
-            this.panel2.Controls.Add(this.button9);
-            this.panel2.Controls.Add(this.button8);
-            this.panel2.Controls.Add(this.button7);
-            this.panel2.Controls.Add(this.button6);
+            this.panel2.Controls.Add(this.buttonHuy_CTYC);
+            this.panel2.Controls.Add(this.buttonLuu_CTYC);
+            this.panel2.Controls.Add(this.buttonXoa_CTYC);
+            this.panel2.Controls.Add(this.buttonSua_CTYC);
+            this.panel2.Controls.Add(this.buttonThem_CTYC);
             this.panel2.Location = new System.Drawing.Point(622, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(614, 269);
             this.panel2.TabIndex = 3;
             // 
-            // textBox12
+            // textTenTB
             // 
-            this.textBox12.Location = new System.Drawing.Point(82, 112);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(100, 22);
-            this.textBox12.TabIndex = 33;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(29, 118);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(54, 17);
-            this.label12.TabIndex = 32;
-            this.label12.Text = "label12";
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(315, 60);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 22);
-            this.textBox11.TabIndex = 31;
+            this.textTenTB.Location = new System.Drawing.Point(315, 60);
+            this.textTenTB.Name = "textTenTB";
+            this.textTenTB.Size = new System.Drawing.Size(100, 22);
+            this.textTenTB.TabIndex = 31;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(262, 66);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(54, 17);
+            this.label11.Size = new System.Drawing.Size(79, 17);
             this.label11.TabIndex = 30;
-            this.label11.Text = "label11";
+            this.label11.Text = "Tên thiết bị";
             // 
-            // textBox10
+            // textMaTB
             // 
-            this.textBox10.Location = new System.Drawing.Point(82, 60);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 22);
-            this.textBox10.TabIndex = 29;
+            this.textMaTB.Location = new System.Drawing.Point(82, 60);
+            this.textMaTB.Name = "textMaTB";
+            this.textMaTB.Size = new System.Drawing.Size(100, 22);
+            this.textMaTB.TabIndex = 29;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(29, 66);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 17);
+            this.label10.Size = new System.Drawing.Size(73, 17);
             this.label10.TabIndex = 28;
-            this.label10.Text = "label10";
+            this.label10.Text = "Mã thiết bị";
             // 
-            // textBox9
+            // textMaYC_CTYC
             // 
-            this.textBox9.Location = new System.Drawing.Point(315, 12);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 22);
-            this.textBox9.TabIndex = 27;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(262, 18);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(46, 17);
-            this.label9.TabIndex = 26;
-            this.label9.Text = "label9";
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(82, 12);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 22);
-            this.textBox8.TabIndex = 25;
+            this.textMaYC_CTYC.Location = new System.Drawing.Point(82, 12);
+            this.textMaYC_CTYC.Name = "textMaYC_CTYC";
+            this.textMaYC_CTYC.Size = new System.Drawing.Size(100, 22);
+            this.textMaYC_CTYC.TabIndex = 25;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(29, 18);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(46, 17);
+            this.label8.Size = new System.Drawing.Size(81, 17);
             this.label8.TabIndex = 24;
-            this.label8.Text = "label8";
+            this.label8.Text = "Mã yêu cầu";
             // 
-            // button10
+            // buttonHuy_CTYC
             // 
-            this.button10.Location = new System.Drawing.Point(378, 215);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(68, 42);
-            this.button10.TabIndex = 23;
-            this.button10.Text = "button10";
-            this.button10.UseVisualStyleBackColor = true;
+            this.buttonHuy_CTYC.Location = new System.Drawing.Point(378, 215);
+            this.buttonHuy_CTYC.Name = "buttonHuy_CTYC";
+            this.buttonHuy_CTYC.Size = new System.Drawing.Size(68, 42);
+            this.buttonHuy_CTYC.TabIndex = 23;
+            this.buttonHuy_CTYC.Text = "Hủy";
+            this.buttonHuy_CTYC.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // buttonLuu_CTYC
             // 
-            this.button9.Location = new System.Drawing.Point(282, 215);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(68, 42);
-            this.button9.TabIndex = 22;
-            this.button9.Text = "button9";
-            this.button9.UseVisualStyleBackColor = true;
+            this.buttonLuu_CTYC.Location = new System.Drawing.Point(282, 215);
+            this.buttonLuu_CTYC.Name = "buttonLuu_CTYC";
+            this.buttonLuu_CTYC.Size = new System.Drawing.Size(68, 42);
+            this.buttonLuu_CTYC.TabIndex = 22;
+            this.buttonLuu_CTYC.Text = "Lưu";
+            this.buttonLuu_CTYC.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // buttonXoa_CTYC
             // 
-            this.button8.Location = new System.Drawing.Point(195, 215);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(68, 42);
-            this.button8.TabIndex = 21;
-            this.button8.Text = "button8";
-            this.button8.UseVisualStyleBackColor = true;
+            this.buttonXoa_CTYC.Location = new System.Drawing.Point(195, 215);
+            this.buttonXoa_CTYC.Name = "buttonXoa_CTYC";
+            this.buttonXoa_CTYC.Size = new System.Drawing.Size(68, 42);
+            this.buttonXoa_CTYC.TabIndex = 21;
+            this.buttonXoa_CTYC.Text = "Xóa";
+            this.buttonXoa_CTYC.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // buttonSua_CTYC
             // 
-            this.button7.Location = new System.Drawing.Point(100, 215);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(68, 42);
-            this.button7.TabIndex = 20;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
+            this.buttonSua_CTYC.Location = new System.Drawing.Point(100, 215);
+            this.buttonSua_CTYC.Name = "buttonSua_CTYC";
+            this.buttonSua_CTYC.Size = new System.Drawing.Size(68, 42);
+            this.buttonSua_CTYC.TabIndex = 20;
+            this.buttonSua_CTYC.Text = "Sửa";
+            this.buttonSua_CTYC.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // buttonThem_CTYC
             // 
-            this.button6.Location = new System.Drawing.Point(12, 215);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(68, 42);
-            this.button6.TabIndex = 19;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
+            this.buttonThem_CTYC.Location = new System.Drawing.Point(12, 215);
+            this.buttonThem_CTYC.Name = "buttonThem_CTYC";
+            this.buttonThem_CTYC.Size = new System.Drawing.Size(68, 42);
+            this.buttonThem_CTYC.TabIndex = 19;
+            this.buttonThem_CTYC.Text = "Thêm";
+            this.buttonThem_CTYC.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel1.Controls.Add(this.textMaPhong);
+            this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.textGhiChu);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.textTGTra);
@@ -386,7 +356,7 @@
             // 
             this.textGhiChu.Location = new System.Drawing.Point(65, 189);
             this.textGhiChu.Name = "textGhiChu";
-            this.textGhiChu.Size = new System.Drawing.Size(100, 22);
+            this.textGhiChu.Size = new System.Drawing.Size(335, 22);
             this.textGhiChu.TabIndex = 22;
             // 
             // label13
@@ -422,6 +392,7 @@
             this.buttonHuyYC.TabIndex = 18;
             this.buttonHuyYC.Text = "Hủy";
             this.buttonHuyYC.UseVisualStyleBackColor = true;
+            this.buttonHuyYC.Click += new System.EventHandler(this.buttonHuyYC_Click);
             // 
             // buttonLuuYC
             // 
@@ -429,7 +400,7 @@
             this.buttonLuuYC.Name = "buttonLuuYC";
             this.buttonLuuYC.Size = new System.Drawing.Size(68, 42);
             this.buttonLuuYC.TabIndex = 17;
-            this.buttonLuuYC.Text = "Luu";
+            this.buttonLuuYC.Text = "Lưu";
             this.buttonLuuYC.UseVisualStyleBackColor = true;
             this.buttonLuuYC.Click += new System.EventHandler(this.buttonLuuYC_Click);
             // 
@@ -501,6 +472,7 @@
             this.textMaNV.Name = "textMaNV";
             this.textMaNV.Size = new System.Drawing.Size(100, 22);
             this.textMaNV.TabIndex = 9;
+            this.textMaNV.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textMaNV_KeyDown);
             // 
             // label5
             // 
@@ -550,7 +522,6 @@
             this.textMaYC.Name = "textMaYC";
             this.textMaYC.Size = new System.Drawing.Size(100, 22);
             this.textMaYC.TabIndex = 1;
-            this.textMaYC.MouseEnter += new System.EventHandler(this.textMaYC_MouseEnter);
             // 
             // label1
             // 
@@ -612,6 +583,48 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1239, 594);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
+            // textTinhTrang
+            // 
+            this.textTinhTrang.Location = new System.Drawing.Point(82, 122);
+            this.textTinhTrang.Name = "textTinhTrang";
+            this.textTinhTrang.Size = new System.Drawing.Size(100, 22);
+            this.textTinhTrang.TabIndex = 33;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(29, 128);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(73, 17);
+            this.label9.TabIndex = 32;
+            this.label9.Text = "Tình trạng";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(315, 122);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(69, 21);
+            this.checkBox1.TabIndex = 35;
+            this.checkBox1.Text = "Đã trả";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // textMaPhong
+            // 
+            this.textMaPhong.Location = new System.Drawing.Point(300, 9);
+            this.textMaPhong.Name = "textMaPhong";
+            this.textMaPhong.Size = new System.Drawing.Size(100, 22);
+            this.textMaPhong.TabIndex = 24;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(247, 15);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(49, 17);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "Phòng";
+            // 
             // frmMuonTra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -654,21 +667,17 @@
         private System.Windows.Forms.ToolStripMenuItem lớpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loạiToolStripMenuItem;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox textTenTB;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textMaTB;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textMaYC_CTYC;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button buttonHuy_CTYC;
+        private System.Windows.Forms.Button buttonLuu_CTYC;
+        private System.Windows.Forms.Button buttonXoa_CTYC;
+        private System.Windows.Forms.Button buttonSua_CTYC;
+        private System.Windows.Forms.Button buttonThem_CTYC;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonHuyYC;
         private System.Windows.Forms.Button buttonLuuYC;
@@ -695,5 +704,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textGhiChu;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox textTinhTrang;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textMaPhong;
+        private System.Windows.Forms.Label label12;
     }
 }
