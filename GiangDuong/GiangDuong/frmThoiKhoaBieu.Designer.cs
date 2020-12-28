@@ -61,7 +61,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+
             this.ngườiDùngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
+            this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTKB)).BeginInit();
@@ -76,7 +80,8 @@
             this.thôngTinToolStripMenuItem,
             this.giaoBanToolStripMenuItem,
             this.sựCốToolStripMenuItem,
-            this.ngườiDùngToolStripMenuItem});
+            this.ngườiDùngToolStripMenuItem,
+            this.đăngXuấtToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1026, 28);
@@ -194,9 +199,10 @@
             // 
             // dataGridViewTKB
             // 
-            this.dataGridViewTKB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+
+            this.dataGridViewTKB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.dataGridViewTKB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+
             this.dataGridViewTKB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTKB.Location = new System.Drawing.Point(3, 262);
             this.dataGridViewTKB.Name = "dataGridViewTKB";
@@ -373,12 +379,21 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên lớp";
             // 
+
             // ngườiDùngToolStripMenuItem
             // 
             this.ngườiDùngToolStripMenuItem.Name = "ngườiDùngToolStripMenuItem";
             this.ngườiDùngToolStripMenuItem.Size = new System.Drawing.Size(103, 24);
             this.ngườiDùngToolStripMenuItem.Text = "Người dùng";
             this.ngườiDùngToolStripMenuItem.Click += new System.EventHandler(this.ngườiDùngToolStripMenuItem_Click);
+
+            // đăngXuấtToolStripMenuItem
+            // 
+            this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
+            this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
+            this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
+
             // 
             // frmThoiKhoaBieu
             // 
@@ -438,5 +453,11 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerNgayKetThuc;
         private System.Windows.Forms.DateTimePicker dateTimePickerNgayBatDau;
         private System.Windows.Forms.ToolStripMenuItem ngườiDùngToolStripMenuItem;
+
+        private System.Windows.Forms.ComboBox comboBoxMaPhong;
+        private System.Windows.Forms.ComboBox comboBoxMaLop;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
+
     }
 }
