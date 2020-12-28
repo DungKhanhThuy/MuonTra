@@ -41,6 +41,9 @@
             this.loạiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.giaoBanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sựCốToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
+            this.ngườiDùngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewNhanVien = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -171,6 +174,15 @@
             this.sựCốToolStripMenuItem.Text = "Sự cố";
             this.sựCốToolStripMenuItem.Click += new System.EventHandler(this.sựCốToolStripMenuItem_Click);
             // 
+
+            // ngườiDùngToolStripMenuItem
+            // 
+            this.ngườiDùngToolStripMenuItem.Name = "ngườiDùngToolStripMenuItem";
+            this.ngườiDùngToolStripMenuItem.Size = new System.Drawing.Size(103, 24);
+            this.ngườiDùngToolStripMenuItem.Text = "Người dùng";
+            this.ngườiDùngToolStripMenuItem.Click += new System.EventHandler(this.ngườiDùngToolStripMenuItem_Click);
+            // 
+
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -193,6 +205,9 @@
             this.dataGridViewNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+
+            this.dataGridViewNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+
             this.dataGridViewNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewNhanVien.Location = new System.Drawing.Point(3, 229);
             this.dataGridViewNhanVien.Name = "dataGridViewNhanVien";
@@ -200,7 +215,9 @@
             this.dataGridViewNhanVien.RowHeadersWidth = 51;
             this.dataGridViewNhanVien.RowTemplate.Height = 24;
             this.dataGridViewNhanVien.Size = new System.Drawing.Size(1020, 363);
-            this.dataGridViewNhanVien.TabIndex = 0;
+
+            this.dataGridViewNhanVien.TabIndex = 1;
+
             // 
             // panel1
             // 
@@ -221,7 +238,25 @@
             this.panel1.Location = new System.Drawing.Point(220, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(586, 220);
-            this.panel1.TabIndex = 1;
+
+            this.panel1.TabIndex = 0;
+            // 
+            // textTenNV
+            // 
+            this.textTenNV.Location = new System.Drawing.Point(428, 38);
+            this.textTenNV.Name = "textTenNV";
+            this.textTenNV.Size = new System.Drawing.Size(100, 22);
+            this.textTenNV.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(313, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 17);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Tên nhân viên";
+
             // 
             // buttonHuy
             // 
@@ -273,7 +308,9 @@
             this.textChucVu.Location = new System.Drawing.Point(428, 98);
             this.textChucVu.Name = "textChucVu";
             this.textChucVu.Size = new System.Drawing.Size(100, 22);
-            this.textChucVu.TabIndex = 7;
+
+            this.textChucVu.TabIndex = 6;
+
             // 
             // textSDT
             // 
@@ -394,5 +431,9 @@
         private System.Windows.Forms.ToolStripMenuItem lớpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loạiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ngườiDùngToolStripMenuItem;
+
+        private System.Windows.Forms.TextBox textTenNV;
+        private System.Windows.Forms.Label label1;
+
     }
 }

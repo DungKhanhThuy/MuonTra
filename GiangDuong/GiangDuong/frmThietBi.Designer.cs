@@ -44,6 +44,12 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewThietBi = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+
+            this.comboBoxMaLoai = new System.Windows.Forms.ComboBox();
+            this.textMaTB = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+
             this.textMaPhong = new System.Windows.Forms.TextBox();
             this.textTinhTrang = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -61,7 +67,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+
             this.ngườiDùngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewThietBi)).BeginInit();
@@ -175,6 +183,15 @@
             this.sựCốToolStripMenuItem.Text = "Sự cố";
             this.sựCốToolStripMenuItem.Click += new System.EventHandler(this.sựCốToolStripMenuItem_Click);
             // 
+
+            // ngườiDùngToolStripMenuItem
+            // 
+            this.ngườiDùngToolStripMenuItem.Name = "ngườiDùngToolStripMenuItem";
+            this.ngườiDùngToolStripMenuItem.Size = new System.Drawing.Size(103, 24);
+            this.ngườiDùngToolStripMenuItem.Text = "Người dùng";
+            this.ngườiDùngToolStripMenuItem.Click += new System.EventHandler(this.ngườiDùngToolStripMenuItem_Click);
+            // 
+
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -197,6 +214,9 @@
             this.dataGridViewThietBi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+
+            this.dataGridViewThietBi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+
             this.dataGridViewThietBi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewThietBi.Location = new System.Drawing.Point(3, 262);
             this.dataGridViewThietBi.Name = "dataGridViewThietBi";
@@ -204,11 +224,19 @@
             this.dataGridViewThietBi.RowHeadersWidth = 51;
             this.dataGridViewThietBi.RowTemplate.Height = 24;
             this.dataGridViewThietBi.Size = new System.Drawing.Size(1020, 330);
-            this.dataGridViewThietBi.TabIndex = 0;
+
+            this.dataGridViewThietBi.TabIndex = 1;
+
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+
+            this.panel1.Controls.Add(this.comboBoxMaLoai);
+            this.panel1.Controls.Add(this.textMaTB);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label2);
+
             this.panel1.Controls.Add(this.textMaPhong);
             this.panel1.Controls.Add(this.textTinhTrang);
             this.panel1.Controls.Add(this.label5);
@@ -229,7 +257,17 @@
             this.panel1.Location = new System.Drawing.Point(220, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(586, 253);
-            this.panel1.TabIndex = 1;
+
+            this.panel1.TabIndex = 0;
+            // 
+            // comboBoxMaLoai
+            // 
+            this.comboBoxMaLoai.FormattingEnabled = true;
+            this.comboBoxMaLoai.Location = new System.Drawing.Point(145, 78);
+            this.comboBoxMaLoai.Name = "comboBoxMaLoai";
+            this.comboBoxMaLoai.Size = new System.Drawing.Size(103, 24);
+            this.comboBoxMaLoai.TabIndex = 5;
+
             // 
             // textMaPhong
             // 
@@ -237,6 +275,13 @@
             this.textMaPhong.Name = "textMaPhong";
             this.textMaPhong.Size = new System.Drawing.Size(100, 22);
             this.textMaPhong.TabIndex = 16;
+            // 
+            // textMaPhong
+            // 
+            this.textMaPhong.Location = new System.Drawing.Point(431, 135);
+            this.textMaPhong.Name = "textMaPhong";
+            this.textMaPhong.Size = new System.Drawing.Size(100, 22);
+            this.textMaPhong.TabIndex = 8;
             // 
             // textTinhTrang
             // 
@@ -307,17 +352,12 @@
             this.buttonThem.TabIndex = 8;
             this.buttonThem.Text = "Thêm";
             this.buttonThem.UseVisualStyleBackColor = true;
-            // 
-            // textMaLoai
-            // 
-            this.textMaLoai.Location = new System.Drawing.Point(431, 78);
-            this.textMaLoai.Name = "textMaLoai";
-            this.textMaLoai.Size = new System.Drawing.Size(100, 22);
-            this.textMaLoai.TabIndex = 7;
+
             // 
             // textTenLoai
             // 
-            this.textTenLoai.Location = new System.Drawing.Point(145, 78);
+            this.textTenLoai.Location = new System.Drawing.Point(431, 79);
+
             this.textTenLoai.Name = "textTenLoai";
             this.textTenLoai.Size = new System.Drawing.Size(100, 22);
             this.textTenLoai.TabIndex = 6;
@@ -373,6 +413,7 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên thiết bị";
             // 
+
             // ngườiDùngToolStripMenuItem
             // 
             this.ngườiDùngToolStripMenuItem.Name = "ngườiDùngToolStripMenuItem";
@@ -380,6 +421,7 @@
             this.ngườiDùngToolStripMenuItem.Text = "Người dùng";
             this.ngườiDùngToolStripMenuItem.Click += new System.EventHandler(this.ngườiDùngToolStripMenuItem_Click);
             // 
+
             // frmThietBi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -438,5 +480,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ToolStripMenuItem ngườiDùngToolStripMenuItem;
+
+        private System.Windows.Forms.ComboBox comboBoxMaLoai;
+        private System.Windows.Forms.TextBox textMaTB;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
+
     }
 }

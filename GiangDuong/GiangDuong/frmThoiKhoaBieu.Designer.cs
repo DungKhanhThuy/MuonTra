@@ -41,6 +41,9 @@
             this.loạiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.giaoBanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sựCốToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
+            this.ngườiDùngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewTKB = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -62,9 +65,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
 
+
             this.ngườiDùngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
 
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -180,6 +185,15 @@
             this.sựCốToolStripMenuItem.Text = "Sự cố";
             this.sựCốToolStripMenuItem.Click += new System.EventHandler(this.sựCốToolStripMenuItem_Click);
             // 
+
+            // ngườiDùngToolStripMenuItem
+            // 
+            this.ngườiDùngToolStripMenuItem.Name = "ngườiDùngToolStripMenuItem";
+            this.ngườiDùngToolStripMenuItem.Size = new System.Drawing.Size(103, 24);
+            this.ngườiDùngToolStripMenuItem.Text = "Người dùng";
+            this.ngườiDùngToolStripMenuItem.Click += new System.EventHandler(this.ngườiDùngToolStripMenuItem_Click);
+            // 
+
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -200,8 +214,12 @@
             // dataGridViewTKB
             // 
 
+
+
             this.dataGridViewTKB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dataGridViewTKB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+
+
 
             this.dataGridViewTKB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTKB.Location = new System.Drawing.Point(3, 262);
@@ -210,7 +228,9 @@
             this.dataGridViewTKB.RowHeadersWidth = 51;
             this.dataGridViewTKB.RowTemplate.Height = 24;
             this.dataGridViewTKB.Size = new System.Drawing.Size(1020, 330);
-            this.dataGridViewTKB.TabIndex = 0;
+
+            this.dataGridViewTKB.TabIndex = 1;
+
             // 
             // panel1
             // 
@@ -235,28 +255,48 @@
             this.panel1.Location = new System.Drawing.Point(168, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(690, 253);
-            this.panel1.TabIndex = 1;
+
+            this.panel1.TabIndex = 0;
+            // 
+            // comboBoxMaPhong
+            // 
+            this.comboBoxMaPhong.FormattingEnabled = true;
+            this.comboBoxMaPhong.Location = new System.Drawing.Point(470, 139);
+            this.comboBoxMaPhong.Name = "comboBoxMaPhong";
+            this.comboBoxMaPhong.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxMaPhong.TabIndex = 8;
+            // 
+            // comboBoxMaLop
+            // 
+            this.comboBoxMaLop.FormattingEnabled = true;
+            this.comboBoxMaLop.Location = new System.Drawing.Point(145, 26);
+            this.comboBoxMaLop.Name = "comboBoxMaLop";
+            this.comboBoxMaLop.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxMaLop.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(34, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 17);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Mã lớp";
             // 
             // dateTimePickerNgayKetThuc
             // 
-            this.dateTimePickerNgayKetThuc.Location = new System.Drawing.Point(470, 79);
+            this.dateTimePickerNgayKetThuc.Location = new System.Drawing.Point(470, 83);
             this.dateTimePickerNgayKetThuc.Name = "dateTimePickerNgayKetThuc";
             this.dateTimePickerNgayKetThuc.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePickerNgayKetThuc.TabIndex = 18;
+            this.dateTimePickerNgayKetThuc.TabIndex = 6;
             // 
             // dateTimePickerNgayBatDau
             // 
-            this.dateTimePickerNgayBatDau.Location = new System.Drawing.Point(145, 79);
+            this.dateTimePickerNgayBatDau.Location = new System.Drawing.Point(145, 83);
             this.dateTimePickerNgayBatDau.Name = "dateTimePickerNgayBatDau";
             this.dateTimePickerNgayBatDau.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePickerNgayBatDau.TabIndex = 17;
-            // 
-            // textMaPhong
-            // 
-            this.textMaPhong.Location = new System.Drawing.Point(470, 139);
-            this.textMaPhong.Name = "textMaPhong";
-            this.textMaPhong.Size = new System.Drawing.Size(100, 22);
-            this.textMaPhong.TabIndex = 16;
+            this.dateTimePickerNgayBatDau.TabIndex = 5;
+
             // 
             // textBuoi
             // 
@@ -327,6 +367,7 @@
             this.buttonThem.TabIndex = 8;
             this.buttonThem.Text = "Thêm";
             this.buttonThem.UseVisualStyleBackColor = true;
+
             // 
             // textMaLop
             // 
@@ -380,6 +421,7 @@
             this.label1.Text = "Tên lớp";
             // 
 
+
             // ngườiDùngToolStripMenuItem
             // 
             this.ngườiDùngToolStripMenuItem.Name = "ngườiDùngToolStripMenuItem";
@@ -395,6 +437,7 @@
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
 
             // 
+
             // frmThoiKhoaBieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);

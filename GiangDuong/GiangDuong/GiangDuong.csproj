@@ -63,6 +63,7 @@
     <Compile Include="ClassLop.cs" />
     <Compile Include="ClassNguoiDung.cs" />
     <Compile Include="ClassPhong.cs" />
+
     <Compile Include="ClassThoiKhoaBieu.cs" />
 
     <Compile Include="ConnectDB.cs" />
@@ -152,6 +153,10 @@
       <DependentUpon>frmThoiKhoaBieu.cs</DependentUpon>
     </Compile>
     <Compile Include="HV.cs" />
+
+    <Compile Include="NhanVien.cs" />
+    <Compile Include="YeuCau.cs" />
+
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

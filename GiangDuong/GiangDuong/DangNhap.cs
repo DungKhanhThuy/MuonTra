@@ -9,6 +9,7 @@ namespace GiangDuong
 {
     public class DangNhap
     {
+
         public bool DangNhapHT(string Username, string Pass)
         {
             string sql = "SELECT * FROM NguoiDung WHERE MaNV='" + Username + "' AND MatKhau='" + Pass + "'";

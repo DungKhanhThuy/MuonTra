@@ -57,7 +57,9 @@
             this.textMaNK = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+
             this.ngườiDùngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGiaoBan)).BeginInit();
@@ -193,6 +195,9 @@
             this.dataGridViewGiaoBan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+
+            this.dataGridViewGiaoBan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+
             this.dataGridViewGiaoBan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewGiaoBan.Location = new System.Drawing.Point(3, 229);
             this.dataGridViewGiaoBan.Name = "dataGridViewGiaoBan";
@@ -242,10 +247,12 @@
             // 
             // dateTimePickerThoiGian
             // 
-            this.dateTimePickerThoiGian.Location = new System.Drawing.Point(612, 28);
+
+            this.dateTimePickerThoiGian.Location = new System.Drawing.Point(612, 27);
             this.dateTimePickerThoiGian.Name = "dateTimePickerThoiGian";
             this.dateTimePickerThoiGian.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePickerThoiGian.TabIndex = 14;
+            this.dateTimePickerThoiGian.TabIndex = 5;
+
             // 
             // label3
             // 
@@ -334,6 +341,7 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã nhật ký";
             // 
+
             // ngườiDùngToolStripMenuItem
             // 
             this.ngườiDùngToolStripMenuItem.Name = "ngườiDùngToolStripMenuItem";
@@ -341,6 +349,7 @@
             this.ngườiDùngToolStripMenuItem.Text = "Người dùng";
             this.ngườiDùngToolStripMenuItem.Click += new System.EventHandler(this.ngườiDùngToolStripMenuItem_Click);
             // 
+
             // frmGiaoBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -395,5 +404,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox richTextBoxNoiDung;
         private System.Windows.Forms.ToolStripMenuItem ngườiDùngToolStripMenuItem;
+
+        private System.Windows.Forms.ComboBox comboBoxMaNV;
+
     }
 }
