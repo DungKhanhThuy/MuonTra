@@ -42,6 +42,7 @@
             this.giaoBanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sựCốToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ngườiDùngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewTKB = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -62,13 +63,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-
-
-            this.ngườiDùngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-
-            this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-
-
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTKB)).BeginInit();
@@ -190,6 +184,13 @@
             this.ngườiDùngToolStripMenuItem.Text = "Người dùng";
             this.ngườiDùngToolStripMenuItem.Click += new System.EventHandler(this.ngườiDùngToolStripMenuItem_Click);
             // 
+            // đăngXuấtToolStripMenuItem
+            // 
+            this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
+            this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
+            this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -209,12 +210,8 @@
             // 
             // dataGridViewTKB
             // 
-
-
             this.dataGridViewTKB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dataGridViewTKB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-
-
             this.dataGridViewTKB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTKB.Location = new System.Drawing.Point(3, 262);
             this.dataGridViewTKB.Name = "dataGridViewTKB";
@@ -223,6 +220,7 @@
             this.dataGridViewTKB.RowTemplate.Height = 24;
             this.dataGridViewTKB.Size = new System.Drawing.Size(1020, 330);
             this.dataGridViewTKB.TabIndex = 1;
+            this.dataGridViewTKB.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTKB_CellClick);
             // 
             // panel1
             // 
@@ -264,6 +262,7 @@
             this.comboBoxMaLop.Name = "comboBoxMaLop";
             this.comboBoxMaLop.Size = new System.Drawing.Size(121, 24);
             this.comboBoxMaLop.TabIndex = 3;
+            this.comboBoxMaLop.SelectedValueChanged += new System.EventHandler(this.comboBoxMaLop_SelectedValueChanged);
             // 
             // label2
             // 
@@ -276,17 +275,23 @@
             // 
             // dateTimePickerNgayKetThuc
             // 
+            this.dateTimePickerNgayKetThuc.CustomFormat = "yyyy/MM/dd";
+            this.dateTimePickerNgayKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerNgayKetThuc.Location = new System.Drawing.Point(470, 83);
             this.dateTimePickerNgayKetThuc.Name = "dateTimePickerNgayKetThuc";
             this.dateTimePickerNgayKetThuc.Size = new System.Drawing.Size(200, 22);
             this.dateTimePickerNgayKetThuc.TabIndex = 6;
+            this.dateTimePickerNgayKetThuc.Value = new System.DateTime(2015, 11, 30, 0, 0, 0, 0);
             // 
             // dateTimePickerNgayBatDau
             // 
+            this.dateTimePickerNgayBatDau.CustomFormat = "yyyy/MM/dd";
+            this.dateTimePickerNgayBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerNgayBatDau.Location = new System.Drawing.Point(145, 83);
             this.dateTimePickerNgayBatDau.Name = "dateTimePickerNgayBatDau";
             this.dateTimePickerNgayBatDau.Size = new System.Drawing.Size(200, 22);
             this.dateTimePickerNgayBatDau.TabIndex = 5;
+            this.dateTimePickerNgayBatDau.Value = new System.DateTime(2015, 11, 30, 0, 0, 0, 0);
             // 
             // textBuoi
             // 
@@ -321,6 +326,7 @@
             this.buttonHuy.TabIndex = 10;
             this.buttonHuy.Text = "Huỷ";
             this.buttonHuy.UseVisualStyleBackColor = true;
+            this.buttonHuy.Click += new System.EventHandler(this.buttonHuy_Click);
             // 
             // buttonLuu
             // 
@@ -330,6 +336,7 @@
             this.buttonLuu.TabIndex = 9;
             this.buttonLuu.Text = "Lưu";
             this.buttonLuu.UseVisualStyleBackColor = true;
+            this.buttonLuu.Click += new System.EventHandler(this.buttonLuu_Click);
             // 
             // buttonXoa
             // 
@@ -339,6 +346,7 @@
             this.buttonXoa.TabIndex = 2;
             this.buttonXoa.Text = "Xoá";
             this.buttonXoa.UseVisualStyleBackColor = true;
+            this.buttonXoa.Click += new System.EventHandler(this.buttonXoa_Click);
             // 
             // buttonSua
             // 
@@ -348,6 +356,7 @@
             this.buttonSua.TabIndex = 1;
             this.buttonSua.Text = "Sửa";
             this.buttonSua.UseVisualStyleBackColor = true;
+            this.buttonSua.Click += new System.EventHandler(this.buttonSua_Click);
             // 
             // buttonThem
             // 
@@ -357,12 +366,14 @@
             this.buttonThem.TabIndex = 0;
             this.buttonThem.Text = "Thêm";
             this.buttonThem.UseVisualStyleBackColor = true;
+            this.buttonThem.Click += new System.EventHandler(this.buttonThem_Click);
             // 
             // textTenLop
             // 
+            this.textTenLop.Enabled = false;
             this.textTenLop.Location = new System.Drawing.Point(470, 27);
             this.textTenLop.Name = "textTenLop";
-            this.textTenLop.Size = new System.Drawing.Size(100, 22);
+            this.textTenLop.Size = new System.Drawing.Size(200, 22);
             this.textTenLop.TabIndex = 4;
             // 
             // label4
@@ -392,24 +403,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên lớp";
             // 
-
-
-            // ngườiDùngToolStripMenuItem
-            // 
-            this.ngườiDùngToolStripMenuItem.Name = "ngườiDùngToolStripMenuItem";
-            this.ngườiDùngToolStripMenuItem.Size = new System.Drawing.Size(103, 24);
-            this.ngườiDùngToolStripMenuItem.Text = "Người dùng";
-            this.ngườiDùngToolStripMenuItem.Click += new System.EventHandler(this.ngườiDùngToolStripMenuItem_Click);
-
-            // đăngXuấtToolStripMenuItem
-            // 
-            this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
-            this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
-            this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
-
-            // 
-
             // frmThoiKhoaBieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -421,6 +414,7 @@
             this.Name = "frmThoiKhoaBieu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin Thời kháo biểu";
+            this.Load += new System.EventHandler(this.frmThoiKhoaBieu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);

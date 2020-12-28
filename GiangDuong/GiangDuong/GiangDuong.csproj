@@ -58,14 +58,13 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-
     <Compile Include="ClassLoai.cs" />
     <Compile Include="ClassLop.cs" />
     <Compile Include="ClassNguoiDung.cs" />
+    <Compile Include="ClassNhanVien.cs" />
     <Compile Include="ClassPhong.cs" />
-
+    <Compile Include="ClassThietBi.cs" />
     <Compile Include="ClassThoiKhoaBieu.cs" />
-
     <Compile Include="ConnectDB.cs" />
     <Compile Include="CTYC.cs" />
     <Compile Include="DangNhap.cs" />
@@ -154,7 +153,6 @@
       <DependentUpon>frmThoiKhoaBieu.cs</DependentUpon>
     </Compile>
     <Compile Include="HV.cs" />
-    <Compile Include="NhanVien.cs" />
     <Compile Include="YeuCau.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

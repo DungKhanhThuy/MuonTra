@@ -115,7 +115,7 @@ namespace GiangDuong
 
         public void KhoiTao()
         {
-            comboBoxMaLop.Enabled = textTenLop.Enabled = dateTimePickerNgayBatDau.Enabled = dateTimePickerNgayKetThuc.Enabled = textBuoi.Enabled = comboBoxMaPhong.Enabled = false;
+            comboBoxMaLop.Enabled =   dateTimePickerNgayBatDau.Enabled = dateTimePickerNgayKetThuc.Enabled = textBuoi.Enabled = comboBoxMaPhong.Enabled = false;
             buttonThem.Enabled = buttonSua.Enabled = buttonXoa.Enabled = true;
             buttonLuu.Enabled = buttonHuy.Enabled = false;
         }
@@ -123,7 +123,7 @@ namespace GiangDuong
         //Mo cac button enable
         public void Mo()
         {
-            comboBoxMaLop.Enabled = textTenLop.Enabled = dateTimePickerNgayBatDau.Enabled = dateTimePickerNgayKetThuc.Enabled = textBuoi.Enabled = comboBoxMaPhong.Enabled = true;
+            comboBoxMaLop.Enabled =   dateTimePickerNgayBatDau.Enabled = dateTimePickerNgayKetThuc.Enabled = textBuoi.Enabled = comboBoxMaPhong.Enabled = true;
             buttonThem.Enabled = buttonSua.Enabled = buttonXoa.Enabled = false;
             buttonLuu.Enabled = buttonHuy.Enabled = true;
         }
@@ -144,19 +144,29 @@ namespace GiangDuong
                 dateTimePickerNgayBatDau.Text = dataGridViewTKB.Rows[e.RowIndex].Cells[2].Value.ToString();
                 dateTimePickerNgayKetThuc.Text = dataGridViewTKB.Rows[e.RowIndex].Cells[3].Value.ToString();
                 textBuoi.Text = dataGridViewTKB.Rows[e.RowIndex].Cells[4].Value.ToString();
-                comboBoxMaPhong.Text = dataGridViewTKB.Rows[e.RowIndex].Cells[4].Value.ToString();
+                comboBoxMaPhong.Text = dataGridViewTKB.Rows[e.RowIndex].Cells[5].Value.ToString();
             }
-            catch
-            { }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void buttonThem_Click(object sender, EventArgs e)
         {
-            Mo();
-            SetNull();
-            chon = 1;
-            DataTable dt = cn.LoadData("HienThi_TKB");
-            comboBoxMaLop.Text = dt.Rows[0][0].ToString();
-            comboBoxMaPhong.Text = dt.Rows[0][5].ToString();
+            try
+            {
+                Mo();
+                SetNull();
+                chon = 1;
+                DataTable dt = cn.LoadData("HienThi_TKB");
+                comboBoxMaLop.Text = dt.Rows[0][0].ToString();
+                comboBoxMaPhong.Text = dt.Rows[0][5].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void buttonHuy_Click(object sender, EventArgs e)
@@ -200,12 +210,20 @@ namespace GiangDuong
 
         private void frmThoiKhoaBieu_Load(object sender, EventArgs e)
         {
-            KhoiTao();
-            dataGridViewTKB.DataSource = thoiKhoaBieu.Show();
-            HienThi_MaLop();
-            HienThi_MaPhong();
-            chon = 0;
-            ngườiDùngToolStripMenuItem.Enabled = frmDangNhap.bientoancuc.ad;
+            try
+            {
+                KhoiTao();
+                dataGridViewTKB.DataSource = thoiKhoaBieu.Show();
+                HienThi_MaLop();
+                HienThi_MaPhong();
+                chon = 0;
+                ngườiDùngToolStripMenuItem.Enabled = frmDangNhap.bientoancuc.ad;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonLuu_Click(object sender, EventArgs e)
@@ -252,7 +270,7 @@ namespace GiangDuong
         public void HienThi_MaLop()
         {
             comboBoxMaLop.DataSource = cn.LoadData("HienThi_Lop");
-            comboBoxMaLop.DisplayMember = "TenLop";
+            comboBoxMaLop.DisplayMember = "MaLop";
             comboBoxMaLop.ValueMember = "MaLop";
             comboBoxMaLop.SelectedValue = "MaLop";
             comboBoxMaLop.SelectedIndex = 0;
@@ -261,11 +279,11 @@ namespace GiangDuong
 
         public void HienThi_MaPhong()
         {
-            comboBoxMaLop.DataSource = cn.LoadData("HienThi_Phong");
-            comboBoxMaLop.DisplayMember = "MaLop";
-            comboBoxMaLop.ValueMember = "MaLop";
-            comboBoxMaLop.SelectedValue = "MaLop";
-            comboBoxMaLop.SelectedIndex = 0;
+            comboBoxMaPhong.DataSource = cn.LoadData("HienThi_Phong");
+            comboBoxMaPhong.DisplayMember = "MaPhong";
+            comboBoxMaPhong.ValueMember = "MaPhong";
+            comboBoxMaPhong.SelectedValue = "MaPhong";
+            comboBoxMaPhong.SelectedIndex = 0;
 
         }
 
