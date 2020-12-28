@@ -203,7 +203,7 @@
             this.dataGridViewLop.RowTemplate.Height = 24;
             this.dataGridViewLop.Size = new System.Drawing.Size(1020, 363);
             this.dataGridViewLop.TabIndex = 1;
-            this.dataGridViewLop.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHocVien_CellClick);
+            this.dataGridViewLop.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLop_CellClick);
             // 
             // panel1
             // 

@@ -15,7 +15,7 @@ namespace GiangDuong
         public frmHocVien()
         {
             InitializeComponent();
-            HienThi_MaHV();
+     
         }
 
         HocVien hv = new HocVien();
@@ -109,9 +109,11 @@ namespace GiangDuong
         private void frmHocVien_Load(object sender, EventArgs e)
         {
             KhoiTao();
-            dataGridViewHocVien.DataSource = hv.Show();         
-
+            dataGridViewHocVien.DataSource = hv.Show();
+            HienThi_MaHV();
             chon = 0;
+            ngườiDùngToolStripMenuItem.Enabled = frmDangNhap.bientoancuc.ad;
+            
         }
 
         private void buttonLuu_Click(object sender, EventArgs e)
@@ -247,7 +249,7 @@ namespace GiangDuong
 
         private void loạiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmNguoiDung hd = new frmNguoiDung();
+            frmLoai hd = new frmLoai();
             hd.Show();
             Hide();
         }
@@ -268,15 +270,16 @@ namespace GiangDuong
 
         private void ngườiDùngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmLoai hd = new frmLoai();
+            frmNguoiDung hd = new frmNguoiDung();
             hd.Show();
             Hide();
         }
 
-        
-
-        
-
-        
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDangNhap hd = new frmDangNhap();
+            hd.Show();
+            Hide();
+        }
     }
 }

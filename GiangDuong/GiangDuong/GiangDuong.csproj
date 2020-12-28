@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="ClassLoai.cs" />
     <Compile Include="ClassLop.cs" />
+    <Compile Include="ClassNguoiDung.cs" />
     <Compile Include="ClassPhong.cs" />
     <Compile Include="ConnectDB.cs" />
     <Compile Include="CTYC.cs" />

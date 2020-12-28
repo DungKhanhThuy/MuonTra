@@ -100,145 +100,144 @@ namespace GiangDuong
             Hide();
         }
 
-        ClassLop lop = new ClassLop();
+        ClassPhong phong = new ClassPhong();
         int chon;
         ConnectDB cn = new ConnectDB();
 
 
-        //public void KhoiTao()
-        //{
-        //    textMaLop.Enabled = textTenLop.Enabled = false;
-        //    buttonThem.Enabled = buttonSua.Enabled = buttonXoa.Enabled = true;
-        //    buttonLuu.Enabled = buttonHuy.Enabled = false;
-        //}
+        public void KhoiTao()
+        {
+            textMaPhong.Enabled = false;
+            buttonThem.Enabled =  buttonXoa.Enabled = true;
+            buttonLuu.Enabled = buttonHuy.Enabled = false;
+        }
 
-        ////Mo cac button enable
-        //public void Mo()
-        //{
-        //    textMaLop.Enabled = textTenLop.Enabled = true;
-        //    buttonThem.Enabled = buttonSua.Enabled = buttonXoa.Enabled = false;
-        //    buttonLuu.Enabled = buttonHuy.Enabled = true;
-        //}
+        //Mo cac button enable
+        public void Mo()
+        {
+            textMaPhong.Enabled = true;
+            buttonThem.Enabled =  buttonXoa.Enabled = false;
+            buttonLuu.Enabled = buttonHuy.Enabled = true;
+        }
 
-        //public void SetNull()
-        //{
-        //    textMaLop.Text = textTenLop.Text = "";
-        //}
+        public void SetNull()
+        {
+            textMaPhong.Text = "";
+        }
 
 
 
-        //private void dataGridViewHocVien_CellClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    try
-        //    {
-        //        textMaLop.Text = dataGridViewLop.Rows[e.RowIndex].Cells[0].Value.ToString();
-        //        textTenLop.Text = dataGridViewLop.Rows[e.RowIndex].Cells[1].Value.ToString();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-        //}
-        //private void buttonThem_Click(object sender, EventArgs e)
-        //{
-        //    Mo();
-        //    SetNull();
-        //    chon = 1;
-        //    DataTable dt = cn.LoadData("HienThi_Lop");
-        //}
+        private void dataGridViewPhong_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                textMaPhong.Text = dataGridViewPhong.Rows[e.RowIndex].Cells[0].Value.ToString();
+               
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void buttonThem_Click(object sender, EventArgs e)
+        {
+            Mo();
+            SetNull();
+            chon = 1;
+            DataTable dt = cn.LoadData("HienThi_Phong");
+        }
 
-        //private void buttonHuy_Click(object sender, EventArgs e)
-        //{
-        //    frmLop_Load(sender, e);
-        //    SetNull();
-        //}
+        private void buttonHuy_Click(object sender, EventArgs e)
+        {
+            frmPhong_Load(sender, e);
+            SetNull();
+        }
 
-        //private void buttonSua_Click(object sender, EventArgs e)
-        //{
-        //    Mo();
-        //    textMaLop.Enabled = false;
-        //    chon = 2;
-        //}
+        private void buttonSua_Click(object sender, EventArgs e)
+        {
+            Mo();
+            chon = 2;
+        }
 
-        //private void buttonXoa_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        if (cn.LoadData1("XemLop", "@MaLop", textMaLop.Text).Rows.Count == 0)
-        //            MessageBox.Show("Không tìm thấy Lớp này");
-        //        else
-        //        {
-        //            if (DialogResult.Yes == MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-        //            {
-        //                cn.Xoa("XoaLop", "@MaLop", textMaLop.Text);
-        //                MessageBox.Show("Xóa thành công!");
-        //                frmLop_Load(sender, e);
-        //                SetNull();
-        //            }
-        //        }
+        private void buttonXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cn.LoadData1("XemPhong", "@MaPhong", textMaPhong.Text).Rows.Count == 0)
+                    MessageBox.Show("Không tìm thấy Phòng này");
+                else
+                {
+                    if (DialogResult.Yes == MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                    {
+                        cn.Xoa("XoaPhong", "@MaPhong", textMaPhong.Text);
+                        MessageBox.Show("Xóa thành công!");
+                        frmPhong_Load(sender, e);
+                        SetNull();
+                    }
+                }
 
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
-        //}
+        }
 
-        //private void frmLop_Load(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        KhoiTao();
-        //        dataGridViewLop.DataSource = lop.Show();
-        //        chon = 0;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-        //}
+        private void frmPhong_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                KhoiTao();
+                dataGridViewPhong.DataSource = phong.Show();
+                chon = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
-        //private void buttonLuu_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        if (chon == 1) //Them
-        //        {
-        //            if (cn.LoadData1("XemLop", "@MaLop", textMaLop.Text).Rows.Count > 0)
-        //                MessageBox.Show("Mã lớp đã có trong danh sách");
-        //            else
-        //            {
-        //                if (textTenLop.Text == "")
-        //                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
-        //                else
-        //                {
-        //                    lop.ThemLop(textMaLop.Text, textTenLop.Text);
-        //                    MessageBox.Show("Thêm thành công");
-        //                    frmLop_Load(sender, e);
-        //                }
-        //            }
+        private void buttonLuu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (chon == 1) //Them
+                {
+                    if (cn.LoadData1("XemPhong", "@MaPhong", textMaPhong.Text).Rows.Count > 0)
+                        MessageBox.Show("Mã phòng đã có trong danh sách");
+                    else
+                    {
+                        if (textMaPhong.Text == "")
+                            MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+                        else
+                        {
+                            phong.ThemPhong(textMaPhong.Text);
+                            MessageBox.Show("Thêm thành công");
+                            frmPhong_Load(sender, e);
+                        }
+                    }
 
-        //        }
-        //        else if (chon == 2) //Sua
-        //        {
-        //            if (textTenLop.Text == "")
-        //                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
-        //            else
-        //            {
-        //                if (DialogResult.Yes == MessageBox.Show("Bạn có muốn sửa loại này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-        //                {
-        //                    lop.SuaLop(textMaLop.Text, textTenLop.Text);
-        //                    MessageBox.Show("Sửa thành công");
-        //                    frmLop_Load(sender, e);
-        //                }
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-        //}
+                }
+                else if (chon == 2) //Sua
+                {
+                    if (textMaPhong.Text == "")
+                        MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+                    else
+                    {
+                        if (DialogResult.Yes == MessageBox.Show("Bạn có muốn sửa loại này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                        {
+                            phong.SuaPhong(textMaPhong.Text);
+                            MessageBox.Show("Sửa thành công");
+                            frmPhong_Load(sender, e);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
