@@ -249,6 +249,7 @@
             // 
             // comboBoxMaPhong
             // 
+            this.comboBoxMaPhong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMaPhong.FormattingEnabled = true;
             this.comboBoxMaPhong.Location = new System.Drawing.Point(470, 139);
             this.comboBoxMaPhong.Name = "comboBoxMaPhong";
@@ -257,6 +258,7 @@
             // 
             // comboBoxMaLop
             // 
+            this.comboBoxMaLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMaLop.FormattingEnabled = true;
             this.comboBoxMaLop.Location = new System.Drawing.Point(145, 26);
             this.comboBoxMaLop.Name = "comboBoxMaLop";

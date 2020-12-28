@@ -556,6 +556,11 @@ namespace GiangDuong
             KhoiTao_CTYC();
         }
 
-
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDangNhap dn = new frmDangNhap();
+            dn.Show();
+            Hide();
+        }
     }
 }

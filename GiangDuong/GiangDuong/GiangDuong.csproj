@@ -63,16 +63,20 @@
     <Compile Include="ClassLop.cs" />
     <Compile Include="ClassNguoiDung.cs" />
     <Compile Include="CTYC.cs" />
-    <Compile Include="frmMuonTra.cs" />
-    <Compile Include="frmMuonTra.designer.cs">
-      <DependentUpon>frmMuonTra.cs</DependentUpon>
-    </Compile>
+    
     <Compile Include="NhanVien.cs" />
     <Compile Include="ClassPhong.cs" />
     <Compile Include="ClassThietBi.cs" />
     <Compile Include="ClassThoiKhoaBieu.cs" />
     <Compile Include="ConnectDB.cs" />
     <Compile Include="DangNhap.cs" />
+	
+	<Compile Include="frmMuonTra.cs" >
+      <SubType>Form</SubType>
+    </Compile>	
+    <Compile Include="frmMuonTra.designer.cs">
+      <DependentUpon>frmMuonTra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
