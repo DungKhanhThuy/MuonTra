@@ -14,10 +14,10 @@ namespace GiangDuong
         ConnectDB cn = new ConnectDB();
         public DataTable Show()
         {
-            return cn.LoadData("HienThi_TKB");
+            return cn.LoadData("HienThi_GiaoBan");
         }
 
-        public void TKB_DB(string proc, string malop, string maphong, string ngaybatdau, string buoi, string ngayketthuc)
+        public void GiaoBan_DB(string proc, string mank, string manv, string thoigian, string noidung)
         {
             try
             {
@@ -28,11 +28,10 @@ namespace GiangDuong
                 command.CommandText = proc;
                 command.Connection = cn;
 
-                command.Parameters.AddWithValue("@MaLop", malop);
-                command.Parameters.AddWithValue("@MaPhong", maphong);
-                command.Parameters.AddWithValue("@NgayBatDau", ngaybatdau);
-                command.Parameters.AddWithValue("@Buoi", buoi);
-                command.Parameters.AddWithValue("@NgayKetThuc", ngayketthuc);
+                command.Parameters.AddWithValue("@MaNK", mank);
+                command.Parameters.AddWithValue("@MaNV", manv);
+                command.Parameters.AddWithValue("@ThoiGian", thoigian);
+                command.Parameters.AddWithValue("@NoiDung", noidung);
                 command.ExecuteNonQuery();
                 command.Dispose();
                 cn.Close();
