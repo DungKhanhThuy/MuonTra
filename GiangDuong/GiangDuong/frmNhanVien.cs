@@ -100,7 +100,7 @@ namespace GiangDuong
             Hide();
         }
 
-        ClassNhanVien nhanVien = new ClassNhanVien();
+        NhanVien nhanVien = new NhanVien();
         int chon;
         ConnectDB cn = new ConnectDB();
 

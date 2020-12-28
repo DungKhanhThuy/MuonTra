@@ -251,88 +251,66 @@ namespace GiangDuong
         {
             try
             {
-                if (comboBoxMaPhong.Text == "")
+
+                if (chon == 1) //Them
                 {
-                    if (chon == 1) //Them
+                    if (cn.LoadData1("XemTB", "@MaTB", textMaTB.Text).Rows.Count > 0)
+                        MessageBox.Show("Thiết bị đã có trong danh sách");
+                    else
                     {
-                        if (cn.LoadData1("XemTB", "@MaTB", textMaTB.Text).Rows.Count > 0)
-                            MessageBox.Show("Thiết bị đã có trong danh sách");
+                        if (textTenTB.Text == "" || textTenLoai.Text == "" || textTinhTrang.Text == "")
+                            MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
                         else
                         {
-                            if (textTenTB.Text == "" || textTenLoai.Text == "" || textTinhTrang.Text == "")
-                                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
-                            else
-                            {
+                            if (comboBoxMaPhong.Text == "")
+
                                 thietBi.TB_DB("ThemTB", textMaTB.Text, textTenTB.Text, comboBoxMaLoai.Text, textTinhTrang.Text);
-                                MessageBox.Show("Thêm thành công");
-                                frmThietBi_Load(sender, e);
-                            }
-                        }
-
-                    }
-                    else if (chon == 2) //Sua
-                    {
-                        if (cn.LoadData1("XemTB", "@MaTB", textMaTB.Text).Rows.Count == 0)
-                            MessageBox.Show("Thiết bị này chưa có trong danh sách");
-                        else
-                        {
-                            if (textTenTB.Text == "" || textTenLoai.Text == "" || textTinhTrang.Text == "")
-                                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
                             else
-                            {
-                                if (DialogResult.Yes == MessageBox.Show("Bạn có muốn sửa thiết bị này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-                                {
-                                    thietBi.TB_DB("SuaTB", textMaTB.Text, textTenTB.Text, comboBoxMaLoai.Text, textTinhTrang.Text);
-                                    MessageBox.Show("Sửa thành công");
-                                    frmThietBi_Load(sender, e);
-                                }
-                            }
-                        }
-                    }
-                }
-                else
-                {
-                    if (chon == 1) //Them
-                    {
-                        if (cn.LoadData1("XemTB", "@MaTB", textMaTB.Text).Rows.Count > 0)
-                            MessageBox.Show("Thiết bị đã có trong danh sách");
-                        else
-                        {
-                            if (textTenTB.Text == "" || textTenLoai.Text == "" || textTinhTrang.Text == "")
-                                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
-                            else
-                            {
                                 cn.LoadData5("ThemTB1", "@MaTB", "@TenTB", "@MaLoai", "@TinhTrang", "@MaPhong",
-                                    textMaTB.Text, textTenTB.Text, comboBoxMaLoai.Text, textTinhTrang.Text, comboBoxMaPhong.Text);
-                                MessageBox.Show("Thêm thành công");
-                                frmThietBi_Load(sender, e);
-                            }
-                        }
+                                textMaTB.Text, textTenTB.Text, comboBoxMaLoai.Text, textTinhTrang.Text, comboBoxMaPhong.Text);
 
+                            MessageBox.Show("Thêm thành công");
+                            frmThietBi_Load(sender, e);
+                        }
                     }
-                    else if (chon == 2) //Sua
+
+                }
+                else if (chon == 2) //Sua
+                {
+                    if (cn.LoadData1("XemTB", "@MaTB", textMaTB.Text).Rows.Count == 0)
+                        MessageBox.Show("Thiết bị này chưa có trong danh sách");
+                    else
                     {
-                        if (cn.LoadData1("XemTB", "@MaTB", textMaTB.Text).Rows.Count == 0)
-                            MessageBox.Show("Thiết bị này chưa có trong danh sách");
-                        //elif// kiẻm tra co trong danh sach chua
+                        if (textTenTB.Text == "" || textTenLoai.Text == "" || textTinhTrang.Text == "")
+                            MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
                         else
                         {
-                            if (textTenTB.Text == "" || textTenLoai.Text == "" || textTinhTrang.Text == "")
-                                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
-                            else
+                            if (DialogResult.Yes == MessageBox.Show("Bạn có muốn sửa thiết bị này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                             {
-                                if (DialogResult.Yes == MessageBox.Show("Bạn có muốn sửa thiết bị này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                                if (comboBoxMaPhong.Text == "")
+                                    thietBi.TB_DB("SuaTB", textMaTB.Text, textTenTB.Text, comboBoxMaLoai.Text, textTinhTrang.Text);
+                                else
                                 {
-                                    cn.LoadData5("SuaTB1", "@MaTB", "@TenTB", "@MaLoai", "@TinhTrang", "@MaPhong",
-                                        textMaTB.Text, textTenTB.Text, comboBoxMaLoai.Text, textTinhTrang.Text, comboBoxMaPhong.Text);
-                                    MessageBox.Show("Sửa thành công");
-                                    frmThietBi_Load(sender, e);
+                                    try
+                                    {
+                                        cn.LoadData5("SuaTB2", "@MaTB", "@TenTB", "@MaLoai", "@TinhTrang", "@MaPhong",
+                                                                                textMaTB.Text, textTenTB.Text, comboBoxMaLoai.Text, textTinhTrang.Text, comboBoxMaPhong.Text);
+                                    }
+                                    catch (Exception)
+                                    {
+                                        cn.LoadData5("SuaTB1", "@MaTB", "@TenTB", "@MaLoai", "@TinhTrang", "@MaPhong",
+                                                                                textMaTB.Text, textTenTB.Text, comboBoxMaLoai.Text, textTinhTrang.Text, comboBoxMaPhong.Text);
+                                    }
                                 }
+                                MessageBox.Show("Sửa thành công");
+                                frmThietBi_Load(sender, e);
                             }
                         }
                     }
                 }
             }
+
+
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);

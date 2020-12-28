@@ -61,7 +61,7 @@
     <Compile Include="ClassLoai.cs" />
     <Compile Include="ClassLop.cs" />
     <Compile Include="ClassNguoiDung.cs" />
-    <Compile Include="ClassNhanVien.cs" />
+    <Compile Include="NhanVien.cs" />
     <Compile Include="ClassPhong.cs" />
     <Compile Include="ClassThietBi.cs" />
     <Compile Include="ClassThoiKhoaBieu.cs" />

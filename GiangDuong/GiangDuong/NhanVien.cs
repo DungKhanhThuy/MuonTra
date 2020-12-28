@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace GiangDuong
 {
-    class ClassNhanVien
+    class NhanVien
     {
         ConnectDB cn = new ConnectDB();
         public DataTable Show()
