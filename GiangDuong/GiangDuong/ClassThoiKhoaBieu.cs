@@ -27,12 +27,19 @@ namespace GiangDuong
                 command.CommandType = CommandType.StoredProcedure;
                 command.CommandText = proc;
                 command.Connection = cn;
-                command.Parameters.AddWithValue("@MaLop", SqlDbType.VarChar).Value = malop;
-                command.Parameters.AddWithValue("@MaPhong", SqlDbType.VarChar).Value = maphong;
-                command.Parameters.AddWithValue("@NgayBatDau", SqlDbType.VarChar).Value = ngaybatdau;
-                command.Parameters.AddWithValue("@Buoi", SqlDbType.VarChar).Value = buoi;
-                command.Parameters.AddWithValue("@NgayKetThuc", SqlDbType.VarChar).Value = ngayketthuc;
+
+                command.Parameters.AddWithValue("@MaLop", malop);
+                command.Parameters.AddWithValue("@MaPhong", maphong);
+                command.Parameters.AddWithValue("@NgayBatDau", ngaybatdau);
+                command.Parameters.AddWithValue("@Buoi", buoi);
+                command.Parameters.AddWithValue("@NgayKetThuc", ngayketthuc);
+                //command.Parameters.AddWithValue("@MaLop", SqlDbType.VarChar).Value = malop;
+                //command.Parameters.AddWithValue("@MaPhong", SqlDbType.VarChar).Value = maphong;
+                //command.Parameters.AddWithValue("@NgayBatDau", SqlDbType.VarChar).Value = ngaybatdau;
+                //command.Parameters.AddWithValue("@Buoi", SqlDbType.VarChar).Value = buoi;
+                //command.Parameters.AddWithValue("@NgayKetThuc", SqlDbType.VarChar).Value = ngayketthuc;
                 command.ExecuteNonQuery();
+                command.Dispose();
                 cn.Close();
             }
             catch (Exception ex)
