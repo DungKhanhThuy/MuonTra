@@ -328,41 +328,18 @@ namespace GiangDuong
 
         public void HienThi_MaPhong()
         {
-            //comboBoxMaPhong.DataSource = cn.LoadData("HienThi_Phong");
-            //comboBoxMaPhong.DisplayMember = "MaPhong";
-            //comboBoxMaPhong.ValueMember = "MaPhong";
-            //comboBoxMaPhong.SelectedValue = "MaPhong";
-            //comboBoxMaPhong.SelectedIndex = 0;
-            ////comboBoxMaPhong.SelectedItem = -1;
-
-            //comboBoxMaPhong.ResetText();
-
-            ////to reset selected value
-            //comboBoxMaPhong.SelectedIndex = -1;
-            //comboBoxMaPhong.Items.Add("Tokyo");
-
-
-
-
-
-
             DataTable dt = new DataTable();
 
             dt = cn.LoadData("HienThi_Phong");
 
-            //dt.Columns.Add("ID", typeof(int));
-            //dt.Columns.Add("CategoryName");
+
 
             DataRow dr = dt.NewRow();
             dr["MaPhong"] = "";
-            //dr["ID"] = 0;
+
 
             dt.Rows.InsertAt(dr, 0);
 
-            //cmbCategory.DisplayMember = "CategoryName";
-            //cmbCategory.ValueMember = "ID";
-            //cmbCategory.DataSource = dt;
-            //cmbCategory.SelectedIndex = 0;
 
             comboBoxMaPhong.DataSource = dt;
             comboBoxMaPhong.DisplayMember = "MaPhong";
