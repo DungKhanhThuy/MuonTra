@@ -74,7 +74,7 @@ namespace GiangDuong
 
         private void loạiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmNguoiDung hd = new frmNguoiDung();
+            frmLoai hd = new frmLoai();
             hd.Show();
             Hide();
         }
@@ -95,8 +95,176 @@ namespace GiangDuong
 
         private void ngườiDùngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmLoai hd = new frmLoai();
+            frmNguoiDung hd = new frmNguoiDung();
             hd.Show();
+            Hide();
+        }
+
+        ClassNhanVien nhanVien = new ClassNhanVien();
+        int chon;
+        ConnectDB cn = new ConnectDB();
+
+
+        public void KhoiTao()
+        {
+            textMaNV.Enabled = textTenNV.Enabled = textSDT.Enabled = textChucVu.Enabled  = false;
+            buttonThem.Enabled = buttonSua.Enabled = buttonXoa.Enabled = true;
+            buttonLuu.Enabled = buttonHuy.Enabled = false;
+        }
+
+        //Mo cac button enable
+        public void Mo()
+        {
+            textMaNV.Enabled = textTenNV.Enabled = textSDT.Enabled = textChucVu.Enabled  = true;
+            buttonThem.Enabled = buttonSua.Enabled = buttonXoa.Enabled = false;
+            buttonLuu.Enabled = buttonHuy.Enabled = true;
+        }
+
+        public void SetNull()
+        {
+            textMaNV.Text = textTenNV.Text = textSDT.Text = textChucVu.Text = "";
+        }
+
+
+
+        private void dataGridViewNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                textMaNV.Text = dataGridViewNhanVien.Rows[e.RowIndex].Cells[0].Value.ToString();
+                textTenNV.Text = dataGridViewNhanVien.Rows[e.RowIndex].Cells[1].Value.ToString();
+                textSDT.Text = dataGridViewNhanVien.Rows[e.RowIndex].Cells[2].Value.ToString();
+                textChucVu.Text = dataGridViewNhanVien.Rows[e.RowIndex].Cells[3].Value.ToString();
+                }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void buttonThem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Mo();
+                SetNull();
+                chon = 1;
+                DataTable dt = cn.LoadData("HienThi_NhanVien");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void buttonHuy_Click(object sender, EventArgs e)
+        {
+            frmNhanVien_Load(sender, e);
+            SetNull();
+        }
+
+        private void buttonSua_Click(object sender, EventArgs e)
+        {
+            Mo();
+            textMaNV.Enabled = false;
+            chon = 2;
+        }
+
+        private void buttonXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cn.LoadData1("XemNV", "@MaNV", textMaNV.Text).Rows.Count == 0)
+                    MessageBox.Show("Không tìm thấy Nhân viên này");
+                else
+                {
+                    if (DialogResult.Yes == MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                    {
+                        cn.LoadData1("XoaNV", "@MaNV", textMaNV.Text);
+                        MessageBox.Show("Xóa thành công!");
+                        frmNhanVien_Load(sender, e);
+                        SetNull();
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void frmNhanVien_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                KhoiTao();
+                dataGridViewNhanVien.DataSource = nhanVien.Show();
+                dataGridViewNhanVien.Columns[0].Width = 100;
+                chon = 0;
+                ngườiDùngToolStripMenuItem.Enabled = frmDangNhap.bientoancuc.ad;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void buttonLuu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (chon == 1) //Them
+                {
+                    if (cn.LoadData1("XemNV", "@MaNV", textMaNV.Text).Rows.Count > 0)
+                        MessageBox.Show("NhanVien đã có trong danh sách");
+                    else
+                    {
+                        if (textTenNV.Text == "" || textSDT.Text == "" || textChucVu.Text == "")
+                            MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+                        else
+                        {
+                            nhanVien.NV_DB("ThemNV", textMaNV.Text, textTenNV.Text, textChucVu.Text, textSDT.Text);
+                            MessageBox.Show("Thêm thành công");
+                            frmNhanVien_Load(sender, e);
+                        }
+                    }
+
+                }
+                else if (chon == 2) //Sua
+                {
+                    if (cn.LoadData1("XemNV", "@MaNV", textMaNV.Text).Rows.Count == 0)
+                        MessageBox.Show("Nhân viên này chưa có trong danh sách");
+                    else
+                    {
+                        if (textTenNV.Text == "" || textSDT.Text == "" || textChucVu.Text == "")
+                            MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+                        else
+                        {
+                            if (DialogResult.Yes == MessageBox.Show("Bạn có muốn sửa nhân viên này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                            {
+                                nhanVien.NV_DB("SuaNV", textMaNV.Text, textTenNV.Text, textChucVu.Text, textSDT.Text);
+                                MessageBox.Show("Sửa thành công");
+                                frmNhanVien_Load(sender, e);
+                            }
+                        }
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDangNhap dn = new frmDangNhap();
+            dn.Show();
             Hide();
         }
     }

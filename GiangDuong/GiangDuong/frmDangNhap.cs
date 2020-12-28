@@ -30,9 +30,13 @@ namespace GiangDuong
                 MessageBox.Show("Bạn đăng nhập thành công ^^", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ConnectDB cn = new ConnectDB();
                 DataTable dt = cn.LoadData1("HienThi_MatKhau_LaAdmin", "@MaNV", txtUserName.Text);
-                if (dt.Rows[0][2].ToString() == "co")
+                if (dt.Rows[0][2].ToString() == "Co")
                 {
                     bientoancuc.ad = true;
+                }
+                else
+                {
+                    bientoancuc.ad = false;
                 }
                 frmHocVien hv = new frmHocVien();
                 hv.Show();

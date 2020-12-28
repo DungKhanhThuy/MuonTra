@@ -9,15 +9,15 @@ using System.Windows.Forms;
 
 namespace GiangDuong
 {
-    class ClassThoiKhoaBieu
+    class ClassNhanVien
     {
         ConnectDB cn = new ConnectDB();
         public DataTable Show()
         {
-            return cn.LoadData("HienThi_TKB");
+            return cn.LoadData("HienThi_NhanVien");
         }
 
-        public void TKB_DB(string proc, string malop, string maphong, string ngaybatdau, string buoi, string ngayketthuc)
+        public void NV_DB(string proc, string manv, string ten, string chucvu, string sdt)
         {
             try
             {
@@ -28,11 +28,10 @@ namespace GiangDuong
                 command.CommandText = proc;
                 command.Connection = cn;
 
-                command.Parameters.AddWithValue("@MaLop", malop);
-                command.Parameters.AddWithValue("@MaPhong", maphong);
-                command.Parameters.AddWithValue("@NgayBatDau", ngaybatdau);
-                command.Parameters.AddWithValue("@Buoi", buoi);
-                command.Parameters.AddWithValue("@NgayKetThuc", ngayketthuc);
+                command.Parameters.AddWithValue("@MaNV", manv);
+                command.Parameters.AddWithValue("@TenNV", ten);
+                command.Parameters.AddWithValue("@ChucVu", chucvu);
+                command.Parameters.AddWithValue("@SDT", sdt);
                 command.ExecuteNonQuery();
                 command.Dispose();
                 cn.Close();

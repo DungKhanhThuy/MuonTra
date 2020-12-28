@@ -19,7 +19,7 @@ namespace GiangDuong
 
         YeuCau yc = new YeuCau();
         HocVien hv = new HocVien();
-        NhanVien nv = new NhanVien();
+        ClassNhanVien nv = new ClassNhanVien();
         int chon;
         ConnectDB cn = new ConnectDB();
 
