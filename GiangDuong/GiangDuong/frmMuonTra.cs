@@ -25,7 +25,7 @@ namespace GiangDuong
 
         public void KhoiTao_YeuCau()
         {
-            textMaYC.Enabled = textMaHV.Enabled = textTenHV.Enabled = textMaNV.Enabled = textTenNV.Enabled = textTGMuon.Enabled = textTGTra.Enabled = textGhiChu.Enabled = false;
+            textMaYC.Enabled = textMaPhong.Enabled = textMaHV.Enabled = textTenHV.Enabled = textMaNV.Enabled = textTenNV.Enabled = textTGMuon.Enabled = textTGTra.Enabled = textGhiChu.Enabled = false;
             buttonThemYC.Enabled = buttonSuaYC.Enabled = buttonXoaYC.Enabled = true;
             buttonLuuYC.Enabled = buttonHuyYC.Enabled = false;
         }
@@ -33,14 +33,14 @@ namespace GiangDuong
         //Mo cac button enable
         public void Mo_YeuCau()
         {
-            textMaYC.Enabled = textMaHV.Enabled = textTenHV.Enabled = textMaNV.Enabled = textTenNV.Enabled = textTGMuon.Enabled = textTGTra.Enabled = textGhiChu.Enabled = true;
+            textMaYC.Enabled = textMaPhong.Enabled = textMaHV.Enabled = textTenHV.Enabled = textMaNV.Enabled = textTenNV.Enabled = textTGMuon.Enabled = textTGTra.Enabled = textGhiChu.Enabled = true;
             buttonThemYC.Enabled = buttonSuaYC.Enabled = buttonXoaYC.Enabled = false;
             buttonLuuYC.Enabled = buttonHuyYC.Enabled = true;
         }
 
         public void SetNull_YeuCau()
         {
-            textMaYC.Text = textMaHV.Text = textTenHV.Text = textMaNV.Text = textTenNV.Text = textTGMuon.Text = textTGTra.Text = textGhiChu.Text = "";
+            textMaYC.Text = textMaPhong.Text = textMaHV.Text = textTenHV.Text = textMaNV.Text = textTenNV.Text = textTGMuon.Text = textTGTra.Text = textGhiChu.Text = "";
         }
 
 
@@ -150,13 +150,14 @@ namespace GiangDuong
             try
             {
                 textMaYC.Text = dataGridView_YeuCau.Rows[e.RowIndex].Cells[0].Value.ToString();
-                textMaHV.Text = dataGridView_YeuCau.Rows[e.RowIndex].Cells[1].Value.ToString();
-                textTenHV.Text = dataGridView_YeuCau.Rows[e.RowIndex].Cells[2].Value.ToString();
-                textMaNV.Text = dataGridView_YeuCau.Rows[e.RowIndex].Cells[3].Value.ToString();
-                textTenNV.Text = dataGridView_YeuCau.Rows[e.RowIndex].Cells[4].Value.ToString();
-                textTGMuon.Text = dataGridView_YeuCau.Rows[e.RowIndex].Cells[5].Value.ToString();
-                textTGTra.Text = dataGridView_YeuCau.Rows[e.RowIndex].Cells[6].Value.ToString();
-                textGhiChu.Text = dataGridView_YeuCau.Rows[e.RowIndex].Cells[7].Value.ToString();
+                textMaPhong.Text = dataGridView_YeuCau.Rows[e.RowIndex].Cells[1].Value.ToString();
+                textMaHV.Text = dataGridView_YeuCau.Rows[e.RowIndex].Cells[2].Value.ToString();
+                textTenHV.Text = dataGridView_YeuCau.Rows[e.RowIndex].Cells[3].Value.ToString();
+                textMaNV.Text = dataGridView_YeuCau.Rows[e.RowIndex].Cells[4].Value.ToString();
+                textTenNV.Text = dataGridView_YeuCau.Rows[e.RowIndex].Cells[5].Value.ToString();
+                textTGMuon.Text = dataGridView_YeuCau.Rows[e.RowIndex].Cells[6].Value.ToString();
+                textTGTra.Text = dataGridView_YeuCau.Rows[e.RowIndex].Cells[7].Value.ToString();
+                textGhiChu.Text = dataGridView_YeuCau.Rows[e.RowIndex].Cells[8].Value.ToString();
             }
             catch
             { }
@@ -167,6 +168,7 @@ namespace GiangDuong
             Mo_YeuCau();
             SetNull_YeuCau();
             chon = 1;
+            //textTGMuon.Text = 
         }
 
         private void buttonSuaYC_Click(object sender, EventArgs e)
@@ -215,7 +217,7 @@ namespace GiangDuong
                     MessageBox.Show("Mã yêu cầu này đã có trong danh sách");
                 else
                 {
-                    if (textMaHV.Text == "" || textTenHV.Text == "" || textMaNV.Text == "" || textTenNV.Text == "" || textTGMuon.Text == "" || textTGTra.Text == "" || textGhiChu.Text == "")
+                    if (textMaHV.Text == "" || textTenHV.Text == "" || textMaNV.Text == "" || textTenNV.Text == "" || textTGMuon.Text == "")
                         MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
                     else
                     {
@@ -232,7 +234,7 @@ namespace GiangDuong
                     MessageBox.Show("Yêu cầu chưa có trong danh sách");
                 else
                 {
-                    if (textMaHV.Text == "" || textTenHV.Text == "" || textMaNV.Text == "" || textTenNV.Text == "" || textTGMuon.Text == "" || textTGTra.Text == "" || textGhiChu.Text == "")
+                    if (textMaHV.Text == "" || textTenHV.Text == "" || textMaNV.Text == "" || textTenNV.Text == "" || textTGMuon.Text == "")
                         MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
                     else
                     {
@@ -248,25 +250,14 @@ namespace GiangDuong
 
         }
 
-        
-
-        private void textMaHV_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
-        private void textMaYC_MouseEnter(object sender, EventArgs e)
-        {
-            
-        }
 
         private void textMaHV_KeyDown(object sender, KeyEventArgs e)
         {
-            //try
+            try
             {
                 if(e.KeyCode == Keys.Enter)
                 {
-                    DataTable dt = cn.LoadData1("HienThi_HocVien", "@MaHV", textMaHV.Text);
+                    DataTable dt = cn.LoadData1("XemHocVien", "@MaHV", textMaHV.Text);
                     if (dt.Rows.Count != 0)
                     {
                         textTenHV.Text = dt.Rows[0][1].ToString();
@@ -274,10 +265,36 @@ namespace GiangDuong
                 }    
                 
             }
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void textMaNV_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    DataTable dt = cn.LoadData1("XemNhanVien", "@MaNV", textMaNV.Text);
+                    if (dt.Rows.Count != 0)
+                    {
+                        textTenNV.Text = dt.Rows[0][1].ToString();
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void buttonHuyYC_Click(object sender, EventArgs e)
+        {
+            frmMuonTra_Load(sender, e);
+            SetNull_YeuCau();
         }
     }
 }

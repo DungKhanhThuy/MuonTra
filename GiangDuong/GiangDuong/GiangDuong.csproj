@@ -67,6 +67,7 @@
     <Compile Include="ClassThoiKhoaBieu.cs" />
 
     <Compile Include="ConnectDB.cs" />
+    <Compile Include="CTYC.cs" />
     <Compile Include="DangNhap.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
