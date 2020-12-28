@@ -58,6 +58,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassGiaoBan.cs" />
     <Compile Include="ClassLoai.cs" />
     <Compile Include="ClassLop.cs" />
     <Compile Include="ClassNguoiDung.cs" />

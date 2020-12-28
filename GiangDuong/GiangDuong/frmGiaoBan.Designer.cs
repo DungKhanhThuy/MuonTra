@@ -58,6 +58,7 @@
             this.textMaNK = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGiaoBan)).BeginInit();
@@ -72,7 +73,8 @@
             this.thôngTinToolStripMenuItem,
             this.giaoBanToolStripMenuItem,
             this.sựCốToolStripMenuItem,
-            this.ngườiDùngToolStripMenuItem});
+            this.ngườiDùngToolStripMenuItem,
+            this.đăngXuấtToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1026, 28);
@@ -197,9 +199,7 @@
             // 
             // dataGridViewGiaoBan
             // 
-            this.dataGridViewGiaoBan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewGiaoBan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dataGridViewGiaoBan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewGiaoBan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewGiaoBan.Location = new System.Drawing.Point(3, 229);
@@ -258,9 +258,11 @@
             // 
             // dateTimePickerThoiGian
             // 
+            this.dateTimePickerThoiGian.CustomFormat = "yyyy/MM/dd";
+            this.dateTimePickerThoiGian.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerThoiGian.Location = new System.Drawing.Point(612, 27);
             this.dateTimePickerThoiGian.Name = "dateTimePickerThoiGian";
-            this.dateTimePickerThoiGian.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerThoiGian.Size = new System.Drawing.Size(114, 22);
             this.dateTimePickerThoiGian.TabIndex = 5;
             // 
             // label3
@@ -342,6 +344,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã nhật ký";
             // 
+            // đăngXuấtToolStripMenuItem
+            // 
+            this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
+            this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
+            this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
+            // 
             // frmGiaoBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -396,5 +405,6 @@
         private System.Windows.Forms.RichTextBox richTextBoxNoiDung;
         private System.Windows.Forms.ToolStripMenuItem ngườiDùngToolStripMenuItem;
         private System.Windows.Forms.ComboBox comboBoxMaNV;
+        private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
     }
 }
