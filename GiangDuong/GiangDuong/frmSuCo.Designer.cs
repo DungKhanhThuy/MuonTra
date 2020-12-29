@@ -245,6 +245,7 @@
             // 
             // comboBoxMaTB
             // 
+            this.comboBoxMaTB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMaTB.Enabled = false;
             this.comboBoxMaTB.FormattingEnabled = true;
             this.comboBoxMaTB.Location = new System.Drawing.Point(714, 24);
@@ -261,6 +262,7 @@
             this.comboBoxMaYC.Size = new System.Drawing.Size(121, 24);
             this.comboBoxMaYC.TabIndex = 4;
             this.comboBoxMaYC.SelectedIndexChanged += new System.EventHandler(this.comboBoxMaYC_SelectedIndexChanged);
+            this.comboBoxMaYC.Click += new System.EventHandler(this.comboBoxMaYC_Click);
             // 
             // richTextBoxXuLy
             // 

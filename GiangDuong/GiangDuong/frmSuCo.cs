@@ -176,6 +176,7 @@ namespace GiangDuong
         {
             Mo();
             textMaSC.Enabled = false;
+            comboBoxMaTB.Enabled = true;
 
             chon = 2;
         }
@@ -209,6 +210,7 @@ namespace GiangDuong
         {
             try
             {
+                comboBoxMaTB.Enabled = false;
                 KhoiTao();
                 dataGridViewSuCo.DataSource = suCo.Show();
                 HienThi_MaYC();
@@ -293,24 +295,24 @@ namespace GiangDuong
             comboBoxMaTB.SelectedIndex = 0;
         }
 
-        private void comboBoxMaYC_SelectedValueChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void comboBoxMaYC_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
-                comboBoxMaTB.Enabled = true;
+                //comboBoxMaTB.Enabled = true;
                 HienThi_MaTB(comboBoxMaYC.Text);
 
-
             }
-            catch (Exception ex)
+            catch 
             {
-                MessageBox.Show(ex.Message);
+                
             }
+        }
+
+        private void comboBoxMaYC_Click(object sender, EventArgs e)
+        {
+            comboBoxMaTB.Enabled = true;
         }
     }
 }
