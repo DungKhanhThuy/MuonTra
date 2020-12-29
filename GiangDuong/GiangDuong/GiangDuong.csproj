@@ -64,6 +64,7 @@
     <Compile Include="ClassNguoiDung.cs" />
     <Compile Include="ClassSuCo.cs" />
     <Compile Include="CTYC.cs" />
+    <Compile Include="LichSu.cs" />
     <Compile Include="NhanVien.cs" />
     <Compile Include="ClassPhong.cs" />
     <Compile Include="ClassThietBi.cs" />

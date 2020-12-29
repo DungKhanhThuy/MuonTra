@@ -12,17 +12,29 @@ namespace GiangDuong
 {
     public partial class frmHocVien : Form
     {
-        public frmHocVien()
+        
+
+        public static string manv;
+        public string hvCu;
+
+        public delegate void SendMessage(string message);
+        public SendMessage Sender; public frmHocVien()
         {
             InitializeComponent();
-     
+            Sender = new SendMessage(GetMessage);
+        }
+
+        private void GetMessage(string message)
+        {
+            manv = message;
         }
 
         HocVien hv = new HocVien();
         int chon;
         ConnectDB cn = new ConnectDB();
 
-        
+        LichSu ls = new LichSu();
+
         public void KhoiTao()
         {
             textMaHV.Enabled = textTenHV.Enabled = comboBoxMaLop.Enabled = textTenLop.Enabled = textSDT.Enabled = textDonVi.Enabled = false;
@@ -76,9 +88,16 @@ namespace GiangDuong
 
         private void buttonSua_Click(object sender, EventArgs e)
         {
-            Mo();
-            textMaHV.Enabled = false;
-            chon = 2;
+            if (cn.LoadData1("XemHocVien", "@MaHV", textMaHV.Text).Rows.Count == 0)
+                MessageBox.Show("Mã học viên chưa có trong danh sách");
+            else
+            {
+                Mo();
+                textMaHV.Enabled = false;
+                chon = 2;
+                hvCu = convert_HocVien_ToString(textMaHV.Text);
+
+            }
         }
 
         private void buttonXoa_Click(object sender, EventArgs e)
@@ -91,19 +110,19 @@ namespace GiangDuong
                 {
                     if (DialogResult.Yes == MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                     {
-                        cn.Xoa("XoaHocVien","@MaHV", textMaHV.Text);
+                        cn.Xoa("XoaHocVien", "@MaHV", textMaHV.Text);
                         MessageBox.Show("Xóa thành công!");
                         frmHocVien_Load(sender, e);
                         SetNull();
                     }
                 }
-                
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            
+
         }
 
         private void frmHocVien_Load(object sender, EventArgs e)
@@ -189,7 +208,14 @@ namespace GiangDuong
             }
         }
 
-
+        public string convert_HocVien_ToString(string mahv)
+        {
+            DataTable dt = cn.LoadData1("XemHocVien", "@MaHV", mahv);
+            if (dt.Rows.Count > 0)
+                return dt.Rows[0][1].ToString() + "__" + dt.Rows[0][2].ToString() + "__" + dt.Rows[0][3].ToString() + "__" + dt.Rows[0][4].ToString();
+            else
+                return "";
+        }
 
         private void mượnTrảToolStripMenuItem_Click(object sender, EventArgs e)
         {

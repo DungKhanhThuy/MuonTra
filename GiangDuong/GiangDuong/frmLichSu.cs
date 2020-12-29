@@ -16,6 +16,11 @@ namespace GiangDuong
         {
             InitializeComponent();
         }
+
+        ConnectDB cn = new ConnectDB();
+        LichSu ls = new LichSu();
+
+        #region menustrip
         private void mượnTrảToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmMuonTra hd = new frmMuonTra();
@@ -98,6 +103,32 @@ namespace GiangDuong
             frmLoai hd = new frmLoai();
             hd.Show();
             Hide();
+        }
+        #endregion
+
+        private void frmLichSu_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                dataGridViewLichSu.DataSource = ls.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dataGridViewLichSu_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textMaLS.Text = dataGridViewLichSu.Rows[e.RowIndex].Cells[0].Value.ToString();
+            textTenBang.Text = dataGridViewLichSu.Rows[e.RowIndex].Cells[1].Value.ToString();
+            textNhanVien.Text = dataGridViewLichSu.Rows[e.RowIndex].Cells[4].Value.ToString();
+            textThoiGian.Text = dataGridViewLichSu.Rows[e.RowIndex].Cells[5].Value.ToString();
+            textKey1.Text = dataGridViewLichSu.Rows[e.RowIndex].Cells[2].Value.ToString();
+            textKey2.Text = dataGridViewLichSu.Rows[e.RowIndex].Cells[3].Value.ToString();
+            textNoiDung.Text = dataGridViewLichSu.Rows[e.RowIndex].Cells[6].Value.ToString();
+            textNdCu.Text = dataGridViewLichSu.Rows[e.RowIndex].Cells[7].Value.ToString();
+            textNdMoi.Text = dataGridViewLichSu.Rows[e.RowIndex].Cells[8].Value.ToString();
         }
     }
 }

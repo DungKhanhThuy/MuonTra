@@ -17,6 +17,7 @@ namespace GiangDuong
             InitializeComponent();
         }
         DangNhap dn = new DangNhap();
+        LichSu ls = new LichSu();
 
         public class bientoancuc
         {
@@ -30,6 +31,8 @@ namespace GiangDuong
                 MessageBox.Show("Bạn đăng nhập thành công ^^", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 frmMuonTra mt = new frmMuonTra();
                 mt.Sender(txtUserName.Text);
+                frmHocVien frmHV = new frmHocVien();
+                frmHV.Sender(txtUserName.Text);
                 ConnectDB cn = new ConnectDB();
                 DataTable dt = cn.LoadData1("HienThi_MatKhau_LaAdmin", "@MaNV", txtUserName.Text);
                 if (dt.Rows[0][2].ToString() == "Co")
@@ -42,6 +45,9 @@ namespace GiangDuong
                 }
                 mt.Show();
                 Hide();
+
+                ls.ThemLichSu(ls.create_MaLS(), "Đăng nhập", txtUserName.Text, DateTime.Now.ToString(), "Đã đăng nhập");
+
             }
             else MessageBox.Show("Tên đăng nhập hoặc mật khẩu sai. Mời bạn nhập lại !!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
